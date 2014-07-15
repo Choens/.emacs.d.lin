@@ -1,0 +1,54 @@
+* emacs-config - Laptop Edition
+
+** Description of Contents
+  The laptop version contains the following files:
+  - init.el
+  - lisp/sessions.el
+  - lisp/sql-connect.el
+
+  The file, "sessions.el", is an example of my "sessions" file, my
+  SIMPLE project management system. The file, "sql-conect.el" is an
+  demonstrates how I manage database connection information. These
+  files are structurally what I use for, with private information
+  removed. I like open source, but I see no reason to share the IP
+  address of the servers I work with! If you want to re-use my setup,
+  I suggest you fork this project and change these (and other files)
+  to meet your needs.
+
+  As I settle down and the rate of change diminishes, it may even be
+  useful to fork and track my gradual changes. However, in mid-2013,
+  the rate of change is such that I do not suggest this.
+** Setup
+  The file "SetupEmacs" is a bash file useful for automating the
+  installation of your configuration. Once you have created a clone of
+  this project on your computer with git (I suggest
+  ~/dev/emacs-config), you can run SetupEmacs. It will setup a local
+  Emacs environment in ~/.emacs.d/. I don't put my actual .emacs.d
+  folder under revision control because there are so many files stored
+  there that are useful locally but that are not needed elsewhere and
+  are thus silly to put under revision control. The scripts are all
+  documented and won't do anything dangerous to your system. But, they
+  do assume that you are setting up emacs cleanly. They do not work
+  correctly on an existing .emacs.d folder.
+
+  Dependencies are basic, but not handled in the scripts. You have to
+  handle dependencies manually. You will need Emacs version 24 or
+  greater. You will also need the Ubuntu / Debian packages
+  emacs-goodies-el. I am working on a easy way to make
+  auto-complete.el a dependency since it is a truly terrific package,
+  but right now it still depends on Emacs23 on Ubuntu, which causes
+  other problems for me. I don't know what these are called on other
+  platforms, sorry. If you want this to work on Ubuntu or debian, I
+  suggest running the following code:
+
+  #+begin_src sh exports:code
+    sudo apt-get install emacs24 emacs-goodies-el
+  #+end_src
+** Crazy Custom Andy Stuff
+  There are a series of custom lisp functions "open-" that define some
+  custom open commands, to make it easy for me to quickly open some
+  commonly used files. These may or may not be useful or relevant to
+  others. I intend to pull out all of the custom lisp and move it into
+  a file (or two) in the lisp folder to make it easier for someone
+  else to use this repo, without having to use all of my little weird
+  customizations.

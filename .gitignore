@@ -1,0 +1,12 @@
+# Folders To Ignore
+auto-save-list/
+backups/
+elpa/
+ehsell/
+sql/
+tutorial/
+
+# File To Ignore
+*.elc
+#*#
+tramp

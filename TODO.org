@@ -1,0 +1,4 @@
+* Bugs
+
+* Enhancements
+** TODO Add Magit
