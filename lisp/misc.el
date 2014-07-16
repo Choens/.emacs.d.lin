@@ -21,27 +21,19 @@
 ;; -- User-Specific Files --
 (defun open-passwords ()
   (interactive)
-  (find-file "~/Documents/Passwords.org"))
+  (find-file "~/Git/Notes/passwords.org.pgp"))
 
 (defun open-andy ()
   (interactive)
-  (find-file "/media/andy/Sync/Sync/Andy-TODO.org"))
+  (find-file "/Git/Notes/andy.org"))
 
 (defun open-buy ()
   (interactive)
-  (find-file "/media/andy/Sync/Sync/Buy-TODO.org"))
-
-(defun open-work ()
-  (interactive)
-  (find-file "/media/andy/Sync/Sync/Work-TODO.org"))
+  (find-file "/Git/Notes/buy.org"))
 
 (defun open-sync-drive ()
   (interactive)
   (find-file "/media/andy/Sync/"))
-
-(defun open-sync-local ()
-  (interactive)
-  (find-file "~/sync/"))
 
 (defun open-git ()
   (interactive)
