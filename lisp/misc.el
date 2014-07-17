@@ -21,19 +21,15 @@
 ;; -- User-Specific Files --
 (defun open-passwords ()
   (interactive)
-  (find-file "~/Documents/Passwords.org"))
+  (find-file "~/Git/Notes/passwords.org"))
 
 (defun open-andy ()
   (interactive)
-  (find-file "/media/andy/Sync/Sync/Andy-TODO.org"))
+  (find-file "~/Git/Notes/andy.org"))
 
 (defun open-buy ()
   (interactive)
-  (find-file "/media/andy/Sync/Sync/Buy-TODO.org"))
-
-(defun open-work ()
-  (interactive)
-  (find-file "/media/andy/Sync/Sync/Work-TODO.org"))
+  (find-file "~/Git/Notes/buy.org"))
 
 (defun open-sync-drive ()
   (interactive)
@@ -41,7 +37,7 @@
 
 (defun open-sync-local ()
   (interactive)
-  (find-file "~/sync/"))
+  (find-file "~/Git/sync/"))
 
 (defun open-git ()
   (interactive)
@@ -80,6 +76,8 @@
 (defun open-programming ()
   (interactive)
   (find-file "~/config/install/Optimus/Install-Programming.sh"))
+
+
 
 ;; =============================================================================
 ;; -- Highlight Functions --
