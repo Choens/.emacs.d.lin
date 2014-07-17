@@ -11,9 +11,10 @@
 ;;   - Polymode
 ;;   - Python
 ;;   - SQL Mode
-;;   - TRAMP Mode
 ;;   - Web Development
 ;; #############################################################################
+
+
 
 ;; =============================================================================
 ;; -- Dired --
@@ -27,12 +28,14 @@
 (setq dired-dwim-target t)
 
 
+
 ;; =============================================================================
 ;; -- EPA Mode --
 ;;
 ;; - Enables Easy PG (GNU PG interface for Emacs)
 ;; =============================================================================
 (autoload 'epa-file "epa-file.elc")
+
 
 
 ;; =============================================================================
@@ -48,9 +51,11 @@
 (setq comint-move-point-for-output t)
 (setq ess-use-auto-complete t)
 (setq ess-help-own-frame nil)
-;(ess-toggle-underscore nil)
-;(setq ess-S-assign-key (kbd "C-="))
-;(setq ess-toggle-S-assign-key t)
+
+; Simple fix for the ESS underscore thing --------------------------------------
+(ess-toggle-underscore nil)
+(ess-toggle-S-assign-key t)
+
 
 
 ;; =============================================================================
@@ -69,6 +74,7 @@
 (require 'magit)
 
 
+
 ;; =============================================================================
 ;; -- Markdown Mode
 ;; =============================================================================
@@ -83,13 +89,29 @@
               auto-mode-alist))
 
 
+
 ;; =============================================================================
 ;; -- Org Mode --
 ;; =============================================================================
 
-(setq org-agenda-files (list "~/Documents/ToDo.org"))
-(setq org-default-notes-file "~/Documents/Notes.org")
+;; ORG PIM Config --------------------------------------------------------------
+;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
+(setq org-default-notes-file "~/Git/Notes/notes.org")
 
+(setq org-agenda-files (quote (
+                               "~/Git/Notes/andy.org"
+                               "~/Git/Notes/doh-admin.org"
+                               "~/Git/Notes/doh-health-homes.org"
+                               "~/Git/Notes/doh-health-plans.org"
+                              )))
+(setq org-todo-keywords
+           '((sequence "TODO(t)" "|" "DONE(d!)")
+             (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f!)")
+             (sequence "|" "CANCELED(c@/!)")
+             (sequence "|" "WAITING(w@/!)")
+             ))
+
+;; ORG Programming Config ------------------------------------------------------
 (setq org-src-fontify-natively t)
 (add-hook 'text-mode-hook '(lambda () (auto-fill-mode 1)))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -107,7 +129,11 @@
    (sql . t)
    (sqlite . t)
    ))
-(setq org-confirm-babel-evaluate nil)
+
+;; Disables org-mode from asking for permission to run stuff -------------------
+;(setq org-confirm-babel-evaluate nil)
+
+
 
 ;; =============================================================================
 ;; -- Polymode --
@@ -120,14 +146,19 @@
 (require 'poly-R)
 (require 'poly-markdown)
 
-(add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mdw" . poly-markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
 (add-to-list 'auto-mode-alist '("\\.Snw" . poly-noweb+r-mode))
 (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+(add-to-list 'auto-mode-alist '("\\.Rpres" . poly-noweb+r-mode))
+
+
 
 ;; =============================================================================
 ;; -- Python Mode --
 ;; =============================================================================
+
+(setq-default py-indent-offset 4)
 
 ;; -- IPython --
 (setq ipython-command "/usr/bin/ipython3")
@@ -158,12 +189,16 @@
 (setq ein:use-auto-complete t)
 
 
+
 ;; =============================================================================
 ;; -- SQL Mode --
 ;; =============================================================================
-(setq-default sql-indent-offset 2)
+
+;; Stored Passwords ------------------------------------------------------------
 (load-file "~/config/sql-connections.el" ) 
 
+;; SQL Editing -----------------------------------------------------------------
+(setq-default sql-indent-offset 4)
 
 (setq auto-mode-alist
       (append '(("\\.sql$" . sql-mode)
@@ -177,7 +212,7 @@
 ;; Runs SQL commands asynchronously, improves usability for big stuff.
 (set 'sql-preferred-evaluation-method "background")
 
-;; Save SQL History in product-specific files.
+;; Save SQL History in product-specific files ----------------------------------
 ;; Source: http://www.emacswiki.org/emacs/SqlMode
 (defun my-sql-save-history-hook ()
   (let ((lval 'sql-input-ring-file-name)
@@ -195,7 +230,7 @@
 (add-hook 'sql-interactive-mode-hook 'my-sql-save-history-hook)
 
 
-;; Make SQL Returns look nicer (lines things up correctly).
+;; Make SQL Returns look nicer (lines things up correctly) ---------------------
 ;; Source: http://www.emacswiki.org/emacs/SqlMode
 (defvar sql-last-prompt-pos 1
   "position of last prompt when added recording started")
@@ -229,12 +264,6 @@
 
 
 ;; =============================================================================
-;; -- TRAMP Mode --
-;; =============================================================================
-;(setq tramp-default-method "ssh")
-
-
-;; =============================================================================
 ;; -- Web Development --
 ;; =============================================================================
 (autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
@@ -247,8 +276,6 @@
                 ("\\.PHP$" . php-mode)
                 )
               auto-mode-alist))
-
-
 
 ;; -- PHP --
 ;; (autoload 'php-mode "php-mode.el" t)
