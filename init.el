@@ -6,19 +6,22 @@
 ;; - Package Repos
 ;; - Editor Settings
 ;;   - Tabs
-;;   - Editor Settings
-;;   - Backup Settings
+;;   - Editing
+;;   - Backup
+;;   - Proxy
 ;; - Mode / Language Specific Config
 ;; - Custom Lisp
 ;; - Aliases
 ;; - Keybindings
-;; - Start Session
+;; - Server
 ;; #############################################################################
 
 ;; -------------------------------------
 ;; Uncomment to enable debugging
 ;; -------------------------------------
 ;;(setq debug-on-error t)
+
+
 
 ;; =============================================================================
 ;; -- External Files --
@@ -27,27 +30,25 @@
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (let ((default-directory "~/.emacs.d/elpa"))
   (normal-top-level-add-subdirs-to-load-path))
-;(add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-theme/")
+
 
 
 ;; =============================================================================
 ;; -- Package Archives --
 ;; =============================================================================
 (require 'package)
-(setq package-archives
-      '(
-        ("gnu" . "http://elpa.gnu.org/packages/")
-        ("marmalade" . "http://marmalade-repo.org/packages/")
-        ("melpa" . "http://melpa.milkbox.net/packages/")
-        ("org" . "http://orgmode.org/elpa/")
-       ))
+(setq package-archives'(
+                        ("gnu" . "http://elpa.gnu.org/packages/")
+                        ("marmalade" . "http://marmalade-repo.org/packages/")
+                        ("melpa" . "http://melpa.milkbox.net/packages/")
+                        ("org" . "http://orgmode.org/elpa/")
+                       ))
+
 
 
 ;; =============================================================================
 ;; -- Editor Settings --
 ;; =============================================================================
-
-;;(server-start)
 
 ;; -----------------------------------------------------------------------------
 ;; -- Theme --
@@ -65,7 +66,7 @@
               )
     (load-theme 'solarized-dark t)
     ;(load-theme 'spacegray t)
-    )
+)
 
 ;;(load-theme 'tango-dark t)
 
@@ -73,13 +74,14 @@
 ;; -----------------------------------------------------------------------------
 ;; -- Frames --
 ;;
-;; - Disables menu-bar
-;; - Enables tool-bar
-;; - Pop-Up / Special buffers must create new frame 
+;; - Menu-bar: 1 = On, 0 = Off
+;; - Toolbar:  1 = On, 0 = Off
+;; - Special buffers
 ;; -----------------------------------------------------------------------------
 ;;(menu-bar-mode 1)
 ;;(tool-bar-mode 1)
 
+;; Pop-Up / Special buffers must create new frame -----------------------------
 ;;(set 'pop-up-frames t)
 ;; (setq special-display-buffer-names
 ;;       '("*R*" "*SQL*" "*grep*" ) )
@@ -95,7 +97,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; -----------------------------------------------------------------------------
-;; -- Editor Settings --
+;; -- Editing --
 ;;
 ;; - Col # in mode bar
 ;; - Scrollbar
@@ -118,9 +120,9 @@
 (set-default 'cursor-type 'bar)
 
 ; EVAL ------------------------
-(setq blink-cursor-mode nil)
-(setq x-stretch-cursor 1)
-(setq global-hl-line-mode t)
+;(setq blink-cursor-mode nil)
+;(setq x-stretch-cursor 1)
+;(setq global-hl-line-mode t)
 ; EVAL ------------------------
 
 (setq visible-bell t)                   
@@ -137,7 +139,7 @@
 (iimage-mode)
 
 ;; -----------------------------------------------------------------------------
-;; -- Backup Settings --
+;; -- Backup --
 ;;
 ;; - Enables Emacs backups
 ;; - Sets the backup directory (~/emacs.d/backups)
@@ -154,6 +156,14 @@
 (setq kept-old-versions 2 )
 (setq version-control t )                  
 
+;; -----------------------------------------------------------------------------
+;; Proxy
+;; -----------------------------------------------------------------------------
+;;(setq url-proxy-services '(
+;;                           ("http" . "websense2.health.state.ny.us:8080")
+;;                           ("https" . "websense2.health.state.ny.us:8080")
+;;                          )
+;;      )
 
 ;; =============================================================================
 ;; -- Load Custom Lisp --
@@ -161,3 +171,10 @@
 (load "key-bindings.el" )
 (load "misc.el" )
 (load "mode-specific-config.el" )
+
+
+
+;; =============================================================================
+;; Server
+;; =============================================================================
+;;(server-start)
