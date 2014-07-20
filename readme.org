@@ -1,0 +1,4 @@
+README
+
+Instructions for use:
+    git clone git@github.com:Choens/.emacs.d.lin.git .emacs.d
