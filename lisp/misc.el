@@ -19,11 +19,6 @@
 ;; =============================================================================
 
 ;; -- User-Specific Files --
-(defun open-passwords ()
-  (interactive)
-<<<<<<< HEAD
-  (find-file "~/Git/Notes/passwords.org"))
-
 (defun open-andy ()
   (interactive)
   (find-file "~/Git/Notes/andy.org"))
@@ -31,29 +26,19 @@
 (defun open-buy ()
   (interactive)
   (find-file "~/Git/Notes/buy.org"))
-=======
+
+(defun open-passwords ()
+  (interactive)
   (find-file "~/Git/Notes/passwords.org.pgp"))
-
-(defun open-andy ()
-  (interactive)
-  (find-file "/Git/Notes/andy.org"))
-
-(defun open-buy ()
-  (interactive)
-  (find-file "/Git/Notes/buy.org"))
->>>>>>> 9e92c669624c280c7770e9ee7254a707ae4ddd5a
 
 (defun open-sync-drive ()
   (interactive)
   (find-file "/media/andy/Sync/"))
 
-<<<<<<< HEAD
 (defun open-sync-local ()
   (interactive)
   (find-file "~/Git/sync/"))
 
-=======
->>>>>>> 9e92c669624c280c7770e9ee7254a707ae4ddd5a
 (defun open-git ()
   (interactive)
   (find-file "~/Git/"))
@@ -114,6 +99,7 @@
 	(highlight-phrase "NOTE - "))
 
 
+
 ;; ============================================================================= 
 ;; -- toggle-fullscreen --
 ;; Source: http://www.emacswiki.org/emacs/FullScreen#toc17
@@ -125,6 +111,7 @@
     (set-frame-parameter
      nil 'fullscreen
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth))))
+
 
 
 ;; =============================================================================
