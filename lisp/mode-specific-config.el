@@ -266,16 +266,16 @@
 ;; =============================================================================
 ;; -- Web Development --
 ;; =============================================================================
-(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
-(setq auto-mode-alist
-      (append '(
-                ("\\.html$" . html-helper-mode) 
-                ("\\.asp$" . html-helper-mode)  
-                ("\\.phtml$" . html-helper-mode)
-                ("\\.php$" . php-mode)
-                ("\\.PHP$" . php-mode)
-                )
-              auto-mode-alist))
+;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
+;;(setq auto-mode-alist
+;;      (append '(
+;;                ("\\.html$" . html-helper-mode) 
+;;                ("\\.asp$" . html-helper-mode)  
+;;                ("\\.phtml$" . html-helper-mode)
+;;                ("\\.php$" . php-mode)
+;;                ("\\.PHP$" . php-mode)
+;;                )
+;;              auto-mode-alist))
 
 ;; -- PHP --
 ;; (autoload 'php-mode "php-mode.el" t)
