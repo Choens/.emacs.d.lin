@@ -5,8 +5,13 @@ elpa/
 ehsell/
 sql/
 tutorial/
+eshell/history
+eshell/lastdir
+url/cookies
 
 # File To Ignore
 *.elc
 #*#
 tramp
+
+
