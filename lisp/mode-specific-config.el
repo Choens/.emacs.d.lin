@@ -86,6 +86,7 @@
                 ("\\.text" . markdown-mode)
                 ("\\.md" . markdown-mode)
                 ("\\.Rmd" . markdown-mode)
+                ("\\.Rpres" . markdown-mode)
                 )
               auto-mode-alist))
 
