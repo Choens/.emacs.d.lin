@@ -35,10 +35,6 @@
   (interactive)
   (find-file "/media/andy/Sync/"))
 
-(defun open-sync-local ()
-  (interactive)
-  (find-file "~/Git/sync/"))
-
 (defun open-git ()
   (interactive)
   (find-file "~/Git/"))
@@ -56,26 +52,26 @@
   (interactive)
   (find-file "~/config/sql-connections.el"))
 
-(defun open-templates-file ()
-  (interactive)
-  (find-file "/media/andy/Sync/Sync/analytic_templates/file_templates"))
+;; (defun open-templates-file ()
+;;   (interactive)
+;;   (find-file "/media/andy/Sync/Sync/analytic_templates/file_templates"))
  
-(defun open-templates-proj ()
-  (interactive)
-  (find-file "/media/andy/Sync/Sync/analytic_templates/project_templates"))
+;; (defun open-templates-proj ()
+;;   (interactive)
+;;   (find-file "/media/andy/Sync/Sync/analytic_templates/project_templates"))
  
-(defun open-templates-snip ()
-  (interactive)
-  (find-file "/media/andy/Sync/Sync/analytic_templates/snippets"))
+;; (defun open-templates-snip ()
+;;   (interactive)
+;;   (find-file "/media/andy/Sync/Sync/analytic_templates/snippets"))
 
 ;; -- Installation Files / Notes --
-(defun open-desktop ()
-  (interactive)
-  (find-file "~/config/install/Optimus/Install-Desktop.sh"))
+;; (defun open-desktop ()
+;;   (interactive)
+;;   (find-file "~/config/install/Optimus/Install-Desktop.sh"))
 
-(defun open-programming ()
-  (interactive)
-  (find-file "~/config/install/Optimus/Install-Programming.sh"))
+;; (defun open-programming ()
+;;   (interactive)
+;;   (find-file "~/config/install/Optimus/Install-Programming.sh"))
 
 
 
