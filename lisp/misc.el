@@ -29,7 +29,7 @@
 
 (defun open-passwords ()
   (interactive)
-  (find-file "~/Git/Notes/passwords.org.pgp"))
+  (find-file "~/Git/Notes/passwords.org.gpg"))
 
 (defun open-sync-drive ()
   (interactive)
