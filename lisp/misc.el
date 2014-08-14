@@ -21,15 +21,15 @@
 ;; -- User-Specific Files --
 (defun open-andy ()
   (interactive)
-  (find-file "~/Git/Notes/andy.org"))
+  (find-file "~/Notes/andy.org"))
 
 (defun open-buy ()
   (interactive)
-  (find-file "~/Git/Notes/buy.org"))
+  (find-file "~/Notes/buy.org"))
 
 (defun open-passwords ()
   (interactive)
-  (find-file "~/Git/Notes/passwords.org.gpg"))
+  (find-file "~/Notes/passwords.org.gpg"))
 
 (defun open-sync-drive ()
   (interactive)
