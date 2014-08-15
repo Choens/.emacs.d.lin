@@ -19,13 +19,13 @@
 ;; =============================================================================
 
 ;; -- User-Specific Files --
-(defun open-andy ()
-  (interactive)
-  (find-file "~/Notes/andy.org"))
-
 (defun open-buy ()
   (interactive)
   (find-file "~/Notes/buy.org"))
+
+(defun open-notes ()
+  (interactive)
+  (find-file "~/Notes/"))
 
 (defun open-passwords ()
   (interactive)
