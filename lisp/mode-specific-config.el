@@ -96,6 +96,8 @@
 ;; -- Org Mode --
 ;; =============================================================================
 
+(add-to-list 'org-modules 'org-habit t)
+
 ;; ORG PIM Config --------------------------------------------------------------
 ;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
 (setq org-default-notes-file "~/Git/Notes/notes.org")
