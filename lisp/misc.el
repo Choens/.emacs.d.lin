@@ -7,31 +7,71 @@
 ;; Where possible, I document the original source of the function, but the
 ;; function here may or may not be the same as the original source function(s).
 ;;
+;; - Analytic Template Integration
 ;; - Open Functions
+;; - Project Functions
 ;; - Highlight Functions
 ;; - toggle-fullscreen
 ;; - Text Manipulation
 ;; #############################################################################
 
+;; =============================================================================
+;; -- Analytic Template Integration --
+;;
+;; Small collection of functions to help me integrate my analytic templates
+;; stuff into my workflow. Probably a bit hacky, but whatever.
+;;
+;; =============================================================================
+
+(defun template-files ()
+  (interactive)
+  (find-file "/media/andy/Sync/Sync/analytic_templates/file_templates"))
+
+(defun template-proj ()
+  (interactive)
+  (find-file "/media/andy/Sync/Sync/analytic_templates/project_templates"))
+
+(defun template-snips ()
+  (interactive)
+  (find-file "/media/andy/Sync/Sync/analytic_templates/snippets"))
+
+
 
 ;; =============================================================================
 ;; -- Open Functions --
+;;
+;; Collection of open-* functions intended to make it easier to open specific
+;; files and folders.
+;;
 ;; =============================================================================
 
-;; -- User-Specific Files --
+;; -- Open-Specific Files --
 (defun open-buy ()
   (interactive)
   (find-file "~/Notes/buy.org"))
 
-(defun open-notes ()
+(defun open-init ()
   (interactive)
-  (find-file "~/Notes/"))
+  (find-file "~/.emacs.d/"))
 
 (defun open-passwords ()
   (interactive)
   (find-file "~/Notes/passwords.org.gpg"))
 
-(defun open-sync-drive ()
+(defun open-sql-conn ()
+  (interactive)
+  (find-file "~/config/sql-connections.el"))
+
+;; -- Open-Specific Folders --
+(defun open-config ()
+  (interactive)
+  (find-file "~/config/"))
+
+(defun open-notes ()
+  (interactive)
+  (find-file "~/Notes/"))
+
+(defun open-sync ()
   (interactive)
   (find-file "/media/andy/Sync/"))
 
@@ -39,39 +79,19 @@
   (interactive)
   (find-file "~/Git/"))
 
-;; -- Emacs-Specific Files --
-(defun open-init ()
+
+
+;; =============================================================================
+;; -- Project Functions --
+;;
+;; Collection of open- commands to make it easier to direct dired to open
+;; specific pre-defined project folders.
+;;
+;; =============================================================================
+
+(defun proj-ipsur ()
   (interactive)
-  (find-file "~/.emacs.d/"))
-
-(defun open-lisp ()
-  (interactive)
-  (find-file "~/.emacs.d/lisp/"))
-
-(defun open-sql-conn ()
-  (interactive)
-  (find-file "~/config/sql-connections.el"))
-
-;; (defun open-templates-file ()
-;;   (interactive)
-;;   (find-file "/media/andy/Sync/Sync/analytic_templates/file_templates"))
- 
-;; (defun open-templates-proj ()
-;;   (interactive)
-;;   (find-file "/media/andy/Sync/Sync/analytic_templates/project_templates"))
- 
-;; (defun open-templates-snip ()
-;;   (interactive)
-;;   (find-file "/media/andy/Sync/Sync/analytic_templates/snippets"))
-
-;; -- Installation Files / Notes --
-;; (defun open-desktop ()
-;;   (interactive)
-;;   (find-file "~/config/install/Optimus/Install-Desktop.sh"))
-
-;; (defun open-programming ()
-;;   (interactive)
-;;   (find-file "~/config/install/Optimus/Install-Programming.sh"))
+  (find-file "/Git/ispur"))
 
 
 
