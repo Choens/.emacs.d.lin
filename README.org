@@ -1,8 +1,7 @@
-* .emacs.d.lin
+* README - .emacs.d.lin
 
-My emacs configuration for linux desktop systems. I am currently
-using two different Kubuntu installations, and I use this to sync
-emacs config changes between them.
+My emacs configuration for Linux desktop systems. I use this
+reposotiry to sync my Emacs configuration between multiple Kubuntu systems.
 
 ** Description of Contents
 
@@ -16,22 +15,21 @@ This emacs configuration contains the following:
     - mode-specific-config.el
     - sql-connections.el
 
-The contents of most of these files should be self-explanatory. If
-you can't figure out what is in the key-bindings.el file, I really
-don't think you are ready to install this.
+The contents of most of these files will be self-explanatory to
+experienced Emacs users.
 
-The file misc.el contains random stuff that doesn't really seem to
-fit anywhere else. The file sql-connections.el is a template of a
-file I use (but can not share publicly for obvious reasons) to store
-database passwords, making it easier to use SQL in emacs. Using this
-file is NOT required, but you will want to comment out the following
-line from mode-specific.el
+_Things Worth Explaining_
+
+- The file, misc.el, contains random stuff that doesn't really seem to
+  fit anywhere else.
+- The file, sql-connections.el, is a template of a file I use to store
+  database passwords for sql-mode. This file is not necessary for
+  everyone, but you will want to comment out the following
+  line from mode-specific.el
 
 #+begin_src lisp exports:code
   (load-file "~/config/sql-connections.el" ) 
 #+end_src
-
-This line appears on line 198 as of July, 2014.
 
 A final, installed version of this system will also have the
 following folders:
@@ -45,9 +43,7 @@ folders and do not belong as part of this project.
 
 ** Setup
 
-Previous, overly complicated versions, of this emacs config involved
-running several hundred lines of bash code. I am happy to report this
-is not longer necessary. The following bash "scipt" does 4 things.
+The following bash code ensures that a Linux system does 4 things.
 
 1. Installs emacs / emacs-goodies. This should work on ANY linux
    system using debian / ubuntu package names.
