@@ -42,10 +42,13 @@
 ;; =============================================================================
 ;; -- ESS Mode --
 ;;
-;; ESS is the layer connecting Emacs to R, SAS, etc.
+;; ESS is the interface between Emacs and R, SAS, etc.
 ;; - 
 ;; =============================================================================
+
+;; Provides an excellent data viewer function within ESS.
 (autoload 'ess-R-data-view "ess-R-data-view.el")
+
 (setq-default ess-indent-offset 4)
 (setq comint-scroll-to-bottom-on-input t)
 (setq comint-scroll-to-bottom-on-output t)
@@ -54,7 +57,7 @@
 (setq ess-help-own-frame nil)
 
 ; Simple fix for the ESS underscore thing --------------------------------------
-(ess-toggle-underscore nil)
+(ess-toggle-underscore t)
 (ess-toggle-S-assign-key t)
 
 
@@ -106,7 +109,6 @@
 (setq org-agenda-files (quote (
                                "~/Notes/andy.org"
                                "~/Notes/doh-meetings.org"
-                               "~/Notes/doh-phone-calls.org"
                                "~/Notes/doh-tasks.org"
                                "~/Notes/habits.org"
                                "~/Notes/uag.org"
@@ -214,7 +216,7 @@
               auto-mode-alist))
 
 (set 'sql-sqlite-program "sqlite3")
-(set 'sql-sybase-program "sqsh")
+;;(set 'sql-sybase-program "sqsh")
 
 ;; Runs SQL commands asynchronously, improves usability for big stuff.
 (set 'sql-preferred-evaluation-method "background")
