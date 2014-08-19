@@ -63,9 +63,21 @@
   (find-file "~/config/sql-connections.el"))
 
 ;; -- Open-Specific Folders --
+(defun open-bin ()
+  (interactive)
+  (find-file "~/bin/"))
+
 (defun open-config ()
   (interactive)
   (find-file "~/config/"))
+
+(defun open-documents ()
+  (interactive)
+  (find-file "~/Documents/"))
+
+(defun open-downloads ()
+  (interactive)
+  (find-file "~/Downloads/"))
 
 (defun open-notes ()
   (interactive)
