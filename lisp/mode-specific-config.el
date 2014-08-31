@@ -2,16 +2,17 @@
 ;; -- Mode Specific Config --
 ;;
 ;;   - Dired
-;;   - EPA Mode
-;;   - ESS Mode
-;;   - Ido Mode
+;;   - EPA
+;;   - ESHELL
+;;   - ESS
+;;   - Ido
 ;;   - Magit
 ;;   - Markdown
 ;;   - Org Mode
 ;;   - Polymode
 ;;   - Python
-;;   - SQL Mode
-;;   - Web Development
+;;   - SQL
+;;   - Web
 ;;
 ;; #############################################################################
 
@@ -31,7 +32,7 @@
 
 
 ;; =============================================================================
-;; -- EPA Mode --
+;; -- EPA --
 ;;
 ;; - Enables Easy PG (GNU PG interface for Emacs)
 ;; =============================================================================
@@ -40,7 +41,15 @@
 
 
 ;; =============================================================================
-;; -- ESS Mode --
+;; -- ESHELL --
+;;
+;; =============================================================================
+;;(setq eshell-path-env (concat "/home/andy/bin:" eshell-path-env))
+
+
+
+;; =============================================================================
+;; -- ESS --
 ;;
 ;; ESS is the interface between Emacs and R, SAS, etc.
 ;; - 
@@ -63,7 +72,7 @@
 
 
 ;; =============================================================================
-;; -- Ido Mode --
+;; -- Ido --
 ;; 
 ;; - Enables IDO Mode
 ;; - Enables flexible matching
@@ -73,14 +82,14 @@
 
 
 ;; =============================================================================
-;; -- Magit Mode
+;; -- Magit --
 ;; =============================================================================
 (require 'magit)
 
 
 
 ;; =============================================================================
-;; -- Markdown Mode --
+;; -- Markdown --
 ;; =============================================================================
 (autoload 'markdown-mode "markdown-mode.el" t)
 
@@ -164,7 +173,7 @@
 
 
 ;; =============================================================================
-;; -- Python Mode --
+;; -- Python --
 ;; =============================================================================
 
 (setq-default py-indent-offset 4)
@@ -200,7 +209,7 @@
 
 
 ;; =============================================================================
-;; -- SQL Mode --
+;; -- SQL --
 ;; =============================================================================
 
 ;; Stored Passwords ------------------------------------------------------------
@@ -273,35 +282,39 @@
 
 
 ;; =============================================================================
-;; -- Web Development --
+;; -- Web --
 ;; =============================================================================
-;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
-;;(setq auto-mode-alist
-;;      (append '(
-;;                ("\\.html$" . html-helper-mode) 
-;;                ("\\.asp$" . html-helper-mode)  
-;;                ("\\.phtml$" . html-helper-mode)
-;;                ("\\.php$" . php-mode)
-;;                ("\\.PHP$" . php-mode)
-;;                )
-;;              auto-mode-alist))
 
-;; -- PHP --
-;; (autoload 'php-mode "php-mode.el" t)
+;; PLEASE REMOVE ALL TRACES OF html-helper-mode
 
-;; (setq auto-mode-alist
-;;       (append '(("\\.php$" . php-mode)
-;;                 ("\\.PHP$" . php-mode))
-;;               auto-mode-alist))
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode)) 
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode)) 
+(add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode)) 
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode)) 
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)) 
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode)) 
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-;; To use abbrev-mode, add lines like this:
-;;   (add-hook 'php-mode-hook
-;;     '(lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")))
+(setq web-mode-engines-alist '(("php" . "\\.phtml\\'") ("blade" . "\\.blade\\.")) )
 
-;; To make php-mode compatible with html-mode, see http://php-mode.sf.net
+(setq web-mode-markup-indent-offset 4)
+(setq web-mode-css-indent-offset 4)
+(setq web-mode-code-indent-offset 4)
+(setq web-mode-style-padding 1)
+(setq web-mode-script-padding 1)
+(setq web-mode-block-padding 0)
 
-;; Many options available under Help:Customize
-;; Options specific to php-mode are in
-;;  Programming/Languages/Php
-;; Since it inherits much functionality from c-mode, look there too
-;;  Programming/Languages/C
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-css-colorization t)
+(setq web-mode-enable-block-face t)
+(setq web-mode-enable-part-face t)
+(setq web-mode-enable-comment-keywords t)
+(setq web-mode-enable-heredoc-fontification t)
+(setq web-mode-enable-current-element-highlight t)
+
+(setq web-mode-ac-sources-alist 
+      '(("css" . (ac-source-css-property)) 
+        ("html" . (ac-source-words-in-buffer ac-source-abbrev))) )
+
