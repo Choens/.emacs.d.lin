@@ -13,5 +13,7 @@ url/cookies
 *.elc
 #*#
 tramp
-
+bookmarks
+*.eld
+*.cache
 
