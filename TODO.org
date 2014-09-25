@@ -1,4 +1,4 @@
-* Bugs
-
-* Enhancements
-** TODO Add Magit
+* Bugs [0/0]
+* Enhancements [0/1]
+** TODO Perspective
+Need to install / setup Perspective.

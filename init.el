@@ -130,8 +130,13 @@
 (setq truncate-lines t)
 (setq display-time-day-and-date t)
 (display-time)
-(setq initial-scratch-message
-    "To err is human... to really foul up requires the root password.\n\n")
+
+;; Splash Screen Options -----------------------------------
+;;(setq initial-scratch-message
+;;    "To err is human... to really foul up requires the root password.\n\n")
+
+(setq inhibit-splash-screen t) ;; This is what you want for org-mode init at startup.
+
 (setq cua-mode t)
 (cua-selection-mode t)
 (delete-selection-mode 1)               
@@ -171,3 +176,7 @@
 (load "key-bindings.el" )
 (load "misc.el" )
 (load "mode-specific-config.el" )
+
+;;(add-hook 'after-init-hook 'org-agenda-list)
+(org-agenda-list 1)
+(delete-other-windows)
