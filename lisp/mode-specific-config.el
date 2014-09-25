@@ -6,10 +6,13 @@
 ;;   - ESHELL
 ;;   - ESS
 ;;   - Ido
+;;     - flx
 ;;   - Magit
 ;;   - Markdown
 ;;   - Org Mode
+;;   - Perspective
 ;;   - Polymode
+;;   - Projectile
 ;;   - Python
 ;;   - SQL
 ;;   - Web
@@ -70,7 +73,6 @@
 (ess-toggle-S-assign-key t)
 
 
-
 ;; =============================================================================
 ;; -- Ido --
 ;; 
@@ -78,7 +80,21 @@
 ;; - Enables flexible matching
 ;; =============================================================================
 (ido-mode t)
+(ido-everywhere 1)
 (setq ido-enable-flex-matching t)
+
+;; -----------------------------------------------------------------------------
+;; -- flx / flx-ido --
+;; 
+;; https://github.com/lewang/flx
+;; -----------------------------------------------------------------------------
+(require 'flx-ido)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+(setq gc-cons-threshold 20000000)
+
 
 
 ;; =============================================================================
@@ -156,6 +172,7 @@
 ;; =============================================================================
 ;; -- Polymode --
 ;; =============================================================================
+
 (require 'polymode-common)
 (require 'polymode-classes)
 (require 'polymode-methods)
@@ -171,6 +188,31 @@
 (add-to-list 'auto-mode-alist '("\\.Rpres" . poly-noweb+r-mode))
 
 
+
+;; =============================================================================
+;; -- Perspective --
+;;
+;; https://github.com/nex3/perspective-el
+;;
+;; =============================================================================
+(require 'perspective)
+
+
+
+;; =============================================================================
+;; -- Projectile --
+;;
+;; https://github.com/bbatsov/projectile
+;;
+;; =============================================================================
+
+(require 'projectile)
+(projectile-global-mode)
+(setq projectile-enable-caching t)
+(setq projectile-switch-project-action 'projectile-dired)
+
+
+;; TODO Finish This
 
 ;; =============================================================================
 ;; -- Python --
