@@ -196,6 +196,8 @@
 ;;
 ;; =============================================================================
 (require 'perspective)
+(persp-mode)
+(require 'persp-projectile)
 
 
 
