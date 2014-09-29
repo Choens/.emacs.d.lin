@@ -3,8 +3,10 @@
 ;;
 ;; Sections:
 ;; - External Files
+;; - Proxy Settings
 ;; - Package Repos
 ;; - Editor Settings
+;;   - Theme
 ;;   - Tabs
 ;;   - Editing
 ;;   - Backup
@@ -13,7 +15,7 @@
 ;; - Custom Lisp
 ;; - Aliases
 ;; - Keybindings
-;; - Server
+;; - Session
 ;; #############################################################################
 
 ;; -------------------------------------
@@ -26,6 +28,7 @@
 ;; =============================================================================
 ;; -- External Files --
 ;; =============================================================================
+
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (let ((default-directory "~/.emacs.d/elpa"))
@@ -34,8 +37,20 @@
 
 
 ;; =============================================================================
+;; -- Proxy --
+;; =============================================================================
+
+(setq url-proxy-services
+      '("http"  . "localhost:8888")
+      '("https" . "localhost:8888")
+      )
+
+
+
+;; =============================================================================
 ;; -- Package Archives --
 ;; =============================================================================
+
 (require 'package)
 (setq package-archives'(
                         ("gnu" . "http://elpa.gnu.org/packages/")
@@ -69,32 +84,27 @@
 )
 
 ;;(load-theme 'tango-dark t)
-
+;;(load-theme 'ir-black t)
 
 ;; -----------------------------------------------------------------------------
 ;; -- Frames --
-;;
-;; - Menu-bar: 1 = On, 0 = Off
-;; - Toolbar:  1 = On, 0 = Off
-;; - Special buffers
 ;; -----------------------------------------------------------------------------
-;;(menu-bar-mode 1)
-;;(tool-bar-mode 1)
+;; Menu-bar / Toolbar-----------------------------------------------------------
+;; 1 = On, 0 = Off
+(menu-bar-mode 1)
+(tool-bar-mode 0)
 
-;; Pop-Up / Special buffers must create new frame -----------------------------
+;; Pop-Up / Special buffers must create new frame ------------------------------
 ;;(set 'pop-up-frames t)
 ;; (setq special-display-buffer-names
 ;;       '("*R*" "*SQL*" "*grep*" ) )
 
 ;; -----------------------------------------------------------------------------
 ;; -- Tabs --
-;;
-;; - Sets default indentation
-;; - Use spaces not tabs
 ;; -----------------------------------------------------------------------------
 (setq-default tab-width 4)              	
 (setq-default c-basic-offset 4)
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil) ;; Use spaces, not tabs!
 
 ;; -----------------------------------------------------------------------------
 ;; -- Editing --
@@ -122,26 +132,25 @@
 ; EVAL ------------------------
 ;(setq blink-cursor-mode nil)
 ;(setq x-stretch-cursor 1)
-;(setq global-hl-line-mode t)
 ; EVAL ------------------------
 
+(setq global-hl-line-mode t)
 (setq visible-bell t)                   
 (setq fill-column 80)
 (setq truncate-lines t)
 (setq display-time-day-and-date t)
 (display-time)
-
-;; Splash Screen Options -----------------------------------
-;;(setq initial-scratch-message
-;;    "To err is human... to really foul up requires the root password.\n\n")
-
-(setq inhibit-splash-screen t) ;; This is what you want for org-mode init at startup.
-
 (setq cua-mode t)
 (cua-selection-mode t)
 (delete-selection-mode 1)               
 (put 'narrow-to-region 'disabled nil)	
 (iimage-mode)
+
+;; Splash Screen Options -------------------------------------------------------
+;;(setq initial-scratch-message
+;;    "To err is human... to really foul up requires the root password.\n\n")
+
+(setq inhibit-splash-screen t) ;; Hides splash screen, I jump straight to org.
 
 ;; -----------------------------------------------------------------------------
 ;; -- Backup --
@@ -161,14 +170,7 @@
 (setq kept-old-versions 2 )
 (setq version-control t )                  
 
-;; -----------------------------------------------------------------------------
-;; Proxy
-;; -----------------------------------------------------------------------------
-;;(setq url-proxy-services '(
-;;                           ("http" . "websense2.health.state.ny.us:8080")
-;;                           ("https" . "websense2.health.state.ny.us:8080")
-;;                          )
-;;      )
+
 
 ;; =============================================================================
 ;; -- Load Custom Lisp --
@@ -177,6 +179,11 @@
 (load "misc.el" )
 (load "mode-specific-config.el" )
 
-;;(add-hook 'after-init-hook 'org-agenda-list)
+
+
+;; =============================================================================
+;; Session Start
+;; =============================================================================
+;;(server start)
 (org-agenda-list 1)
 (delete-other-windows)
