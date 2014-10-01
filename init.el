@@ -40,10 +40,10 @@
 ;; -- Proxy --
 ;; =============================================================================
 
-(setq url-proxy-services
-      '("http"  . "localhost:8888")
-      '("https" . "localhost:8888")
-      )
+;(setq url-proxy-services
+;      '("http"  . "localhost:8888")
+;      '("https" . "localhost:8888")
+;      )
 
 
 
@@ -185,5 +185,3 @@
 ;; Session Start
 ;; =============================================================================
 ;;(server start)
-(org-agenda-list 1)
-(delete-other-windows)
