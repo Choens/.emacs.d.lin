@@ -21,7 +21,7 @@
 ;; -------------------------------------
 ;; Uncomment to enable debugging
 ;; -------------------------------------
-;;(setq debug-on-error t)
+;(setq debug-on-error t)
 
 
 
@@ -73,18 +73,19 @@
 (if (daemonp)
     (add-hook 'after-make-frame-functions
               (lambda (frame)
-                ;(load-theme 'solarized-light-theme t)
                 (load-theme 'solarized-dark t)
+                ;(load-theme 'solarized-light-theme t)
                 ;(load-theme 'spacegray t)
+                ;(load-theme 'tango-dark t)
                 ;(load-theme 'ir-black t)
                 )
               )
     (load-theme 'solarized-dark t)
+    ;(load-theme 'solarized-light-theme t)
     ;(load-theme 'spacegray t)
+    ;(load-theme 'tango-dark t)
+    ;(load-theme 'ir-black t)
 )
-
-;;(load-theme 'tango-dark t)
-;;(load-theme 'ir-black t)
 
 ;; -----------------------------------------------------------------------------
 ;; -- Frames --
