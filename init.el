@@ -148,10 +148,11 @@
 (iimage-mode)
 
 ;; Splash Screen Options -------------------------------------------------------
-;;(setq initial-scratch-message
-;;    "To err is human... to really foul up requires the root password.\n\n")
-
-(setq inhibit-splash-screen t) ;; Hides splash screen, I jump straight to org.
+; I prefer my own silly commentary.
+(setq initial-scratch-message
+	"To err is human... to really foul up requires the root password.\n\n")
+; And I don't need a splash screen from a text editor.
+(setq inhibit-splash-screen t)
 
 ;; -----------------------------------------------------------------------------
 ;; -- Backup --
