@@ -69,7 +69,7 @@
 (setq ess-help-own-frame nil)
 
 ; Simple fix for the ESS underscore thing --------------------------------------
-(ess-toggle-underscore t)
+(ess-toggle-underscore nil)
 (ess-toggle-S-assign-key t)
 
 
@@ -220,35 +220,43 @@
 ;; -- Python --
 ;; =============================================================================
 
-(setq-default py-indent-offset 4)
+;------------------------;
+;;; python-mode ;;;
+;------------------------;
+;(require 'python-mode)
+;(setq py-shell-name "ipython3")
 
-;; -- IPython --
-(setq ipython-command "/usr/bin/ipython3")
-(setq-default py-python-command-args '("-pylab" "-matplotlib"))
-(autoload 'ipython "ipython.el" t)
+;; -----------------------
+;; python.el
+;; -----------------------
 
+(require 'python)
 (setq
- python-shell-interpreter "ipython3"
- python-shell-interpreter-args ""
- python-shell-prompt-regexp "In \\[[0-9]+\\]: "
- python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
- python-shell-completion-setup-code
-   "from IPython.core.completerlib import module_completion"
- python-shell-completion-module-string-code
-   "';'.join(module_completion('''%s'''))\n"
- python-shell-completion-string-code
-   "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+  python-shell-interpreter "ipython3"
+  python-shell-interpreter-args "--pylab=qt --matplotlib=qt"
+)
 
-
-;; -- Basic Python Config --
-(setq python-shell-interpreter "ipython3" )
-;;(setq-default py-indent-offset 4)
-
+;; -----------------------------
 ;; EIN
-;; Shell ipython3 notebook
-;; Emacs M-x ein:notebooklist-open
-(autoload 'ein "ein.el" t)
-(setq ein:use-auto-complete t)
+;; -----------------------------
+
+; use autocompletion, but don't start to autocomplete after a dot
+(setq ein:complete-on-dot -1)
+(setq ein:use-auto-complete 1)
+
+
+; timeout settings
+(setq ein:query-timeout 1000)
+
+; IPython notebook
+;(include-plugin "emacs-ipython-notebook/lisp")
+(require 'ein)
+
+; shortcut function to load notebooklist
+(defun load-ein () 
+  (ein:notebooklist-load)
+  (interactive)
+  (ein:notebooklist-open))
 
 
 
