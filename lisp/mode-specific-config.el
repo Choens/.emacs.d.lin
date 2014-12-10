@@ -72,6 +72,8 @@
 (ess-toggle-underscore nil)
 (ess-toggle-S-assign-key t)
 
+; Turns on ESS auto complete!
+(setq ess-use-auto-complete t)
 
 ;; =============================================================================
 ;; -- Ido --
@@ -165,21 +167,28 @@
    ))
 
 ;; Disables org-mode from asking for permission to run stuff -------------------
-;(setq org-confirm-babel-evaluate nil)
+;; Make sure you know what you are doing if you use this.
+(setq org-confirm-babel-evaluate nil)
 
+(setq org-html-doctype "html5")
 
+;;(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)   
+;;(add-hook 'org-mode-hook 'org-display-inline-images)   
 
 ;; =============================================================================
 ;; -- Polymode --
 ;; =============================================================================
 
-(require 'polymode-common)
-(require 'polymode-classes)
-(require 'polymode-methods)
-(require 'polymode-export)
-(require 'polymode-weave)
-(require 'poly-R)
+;;(require 'polymode-common)
+;;(require 'polymode-classes)
+;;(require 'polymode-methods)
+;;(require 'polymode-export)
+;;(require 'polymode-weave)
 (require 'poly-markdown)
+(require 'poly-R)
+(require 'poly-noweb)
+
+
 
 (add-to-list 'auto-mode-alist '("\\.mdw" . poly-markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
