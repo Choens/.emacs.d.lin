@@ -49,12 +49,14 @@
 
 ;; =============================================================================
 ;; -- Package Archives --
+;; This is where we get new packages.
 ;; =============================================================================
 
 (require 'package)
 (setq package-archives'(
                         ("gnu" . "http://elpa.gnu.org/packages/")
-                        ("marmalade" . "http://marmalade-repo.org/packages/")
+                        ;; I tend to use melpa preferentially over marmalade.
+                        ;;("marmalade" . "http://marmalade-repo.org/packages/")
                         ("melpa" . "http://melpa.milkbox.net/packages/")
                         ("org" . "http://orgmode.org/elpa/")
                        ))
@@ -67,33 +69,35 @@
 
 ;; -----------------------------------------------------------------------------
 ;; -- Theme --
-;; Uncomment preferred theme
+;; If you want, you can have one theme on the console and a different theme in
+;; the gui. Either way, uncomment preferred theme(s)
 ;; -----------------------------------------------------------------------------
 (require 'solarized-theme)
 (if (daemonp)
     (add-hook 'after-make-frame-functions
               (lambda (frame)
-                (load-theme 'solarized-dark t)
-                ;(load-theme 'solarized-light t)
+                ;(load-theme 'ir-black t)
+                ;(load-theme 'solarized-dark t)
+                (load-theme 'solarized-light t)
                 ;(load-theme 'spacegray t)
                 ;(load-theme 'tango-dark t)
-                ;(load-theme 'ir-black t)
                 )
               )
-    (load-theme 'solarized-dark t)
-    ;(load-theme 'solarized-light t)
-    ;(load-theme 'spacegray t)
-    ;(load-theme 'tango-dark t)
-    ;(load-theme 'ir-black t)
+  ;(load-theme 'ir-black t)
+  ;(load-theme 'solarized-dark t)
+  (load-theme 'solarized-light t)
+  ;(load-theme 'spacegray t)
+  ;(load-theme 'tango-dark t)
+
 )
 
 ;; -----------------------------------------------------------------------------
 ;; -- Frames --
 ;; -----------------------------------------------------------------------------
 ;; Menu-bar / Toolbar-----------------------------------------------------------
-;; 1 = On, 0 = Off
-(menu-bar-mode 1)
-(tool-bar-mode 0)
+;; Although I disable the menu bar, it is always accessible if you hit F10.
+(menu-bar-mode 0) ; 1 = On, 0 = Off
+(tool-bar-mode 1) ; 1 = On, 0 = Off
 
 ;; Pop-Up / Special buffers must create new frame ------------------------------
 ;;(set 'pop-up-frames t)
@@ -103,32 +107,17 @@
 ;; -----------------------------------------------------------------------------
 ;; -- Tabs --
 ;; -----------------------------------------------------------------------------
-(setq-default tab-width 4)              	
-(setq-default c-basic-offset 4)
-(setq-default indent-tabs-mode nil) ;; Use spaces, not tabs!
+(setq-default tab-width 4)              ; Specifies default offset.
+(setq-default c-basic-offset 4)         ; Specifies offset for C
+(setq-default indent-tabs-mode nil)     ; Use spaces, not tabs!
 
 ;; -----------------------------------------------------------------------------
 ;; -- Editing --
-;;
-;; - Col # in mode bar
-;; - Scrollbar
-;; - Show Parenthesis
-;; - Use Bar Cursor
-;; - Enable visual bell
-;; - Set max # columns = 80
-;; - Truncate lines by default
-;; - Display the time and date in the mode-line
-;; - Display time
-;; - Set default message in the *scratch* buffer
-;; - Enable CUA Mode (Enables rectangular select) by default
-;; - Delete seleted text when typing over selection
-;; - Enable Narrow to region.
-;; - Enable Inline Images
 ;; -----------------------------------------------------------------------------
-(setq column-number-mode t)             
-(set-scroll-bar-mode nil)
-(show-paren-mode t)
-(set-default 'cursor-type 'bar)
+(setq column-number-mode t)             ; Col # in mode bar
+(set-scroll-bar-mode nil)               ; Scrollbar
+(show-paren-mode t)                     ; Show Parenthesis
+(set-default 'cursor-type 'bar)         ; Use Bar Cursor
 
 ; EVAL ------------------------
 ;(setq blink-cursor-mode nil)
@@ -136,41 +125,33 @@
 ; EVAL ------------------------
 
 (setq global-hl-line-mode t)
-(setq visible-bell t)                   
-(setq fill-column 80)
-(setq truncate-lines t)
-(setq display-time-day-and-date t)
-(display-time)
-(setq cua-mode t)
-(cua-selection-mode t)
-(delete-selection-mode 1)               
-(put 'narrow-to-region 'disabled nil)	
-(iimage-mode)
+(setq visible-bell t)                   ; Enable visual bell
+(setq fill-column 80)                   ; Set max # columns = 80
+(setq truncate-lines t)                 ; Truncate lines by default
+(setq display-time-day-and-date t)      ; Display time & date in mode-line
+(setq cua-mode t)                       ; Enable CUA Mode (Enables rectangular select) by default
+(cua-selection-mode t) 
+(delete-selection-mode 1)				; Delete seleted text when typing over selection
+(put 'narrow-to-region 'disabled nil)	; Enable Narrow to region.
+(iimage-mode)							; Enable Inline Images
 
 ;; Splash Screen Options -------------------------------------------------------
 ; I prefer my own silly commentary.
 (setq initial-scratch-message
-	"To err is human... to really foul up requires the root password.\n\n")
-; And I don't need a splash screen from a text editor.
+      ;;"To err is human... to really foul up requires the root password.\n\n")
+      "Nullius in verba.\n\n")
+; I don't need a splash screen from a text editor.
 (setq inhibit-splash-screen t)
 
 ;; -----------------------------------------------------------------------------
 ;; -- Backup --
-;;
-;; - Enables Emacs backups
-;; - Sets the backup directory (~/emacs.d/backups)
-;; - Delete old versions
-;; - Keep no more than 5 new versions
-;; - Keep no more than 2 old versions
-;; - Use 'version' control for files
 ;; -----------------------------------------------------------------------------
-(setq  backup-by-copying t ) 
-(setq   backup-directory-alist 
+(setq  backup-by-copying t )            ; Enables Emacs backups
+(setq   backup-directory-alist          ; Sets the backup directory
     '(("." . "~/.emacs.d/backups")) )     
-(setq delete-old-versions t )
-(setq kept-new-versions 5 )
-(setq kept-old-versions 2 )
-(setq version-control t )                  
+(setq delete-old-versions t )           ; Delete old versions
+(setq kept-new-versions 5 )             ; Keep no more than 5 new versions
+(setq version-control t )               ; Use 'version' control for files
 
 
 
@@ -186,4 +167,5 @@
 ;; =============================================================================
 ;; Session Start
 ;; =============================================================================
-;;(server start)
+;; I go back and forth on using this.
+(server start)

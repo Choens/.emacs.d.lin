@@ -27,6 +27,33 @@ _Things Worth Explaining_
   everyone, but you will want to comment out the following
   line from mode-specific.el
 
+** Setup
+
+The following bash code ensures that a Linux system does 4 things.
+
+1. Installs emacs / emacs-goodies. This should work on ANY linux
+   system using debian / ubuntu package names.
+2. Changes to the user's home directory.
+3. Clones this repo to the user's home directory, into the .emacs.d
+   folder.
+4. Starts emacs, using the init-first.el file rather than
+   init.el. This simplified init.el file is really the core of my
+   personal settings, but relies only on those things that are either
+   part of emacs by default or are brought in by installing
+   emacs-goodies.
+
+#+begin_src sh exports:code
+  sudo apt-get install emacs24 emacs-goodies-el git
+  cd ~
+  git clone git@github.com:Choens/.emacs.d.lin.git .emacs.d
+  emacs -q -l ~/.emacs.d init-first.el
+#+end_src
+
+Then, install the following emacs extensions. Someday I'll automate
+this last part.
+
+** Details
+
 #+begin_src lisp exports:code
   (load-file "~/config/sql-connections.el" ) 
 #+end_src
@@ -40,41 +67,3 @@ following folders:
 
 These folders are not tracked by the repo, as they are truly local
 folders and do not belong as part of this project.
-
-** Setup
-
-The following bash code ensures that a Linux system does 4 things.
-
-1. Installs emacs / emacs-goodies. This should work on ANY linux
-   system using debian / ubuntu package names.
-2. Changes to the user's home directory. Just in case.
-3. Clones this repo to the user's home directory, in .emacs.d
-4. Starts emacs, using the init-first.el file rather than
-   init.el. This simplified init.el file is really the core of my
-   personal settings, but relies only on those things that are either
-   part of emacs by default or are brought in by installing
-   emacs-goodies.
-
-#+begin_src sh exports:code
-  sudo apt-get install emacs24 emacs-goodies-el
-  cd ~
-  git clone git@github.com:Choens/.emacs.d.lin.git .emacs.d
-  emacs -q -l ~/.emacs.d init-first.el
-#+end_src
-
-Then, install the following emacs extensions. Someday I'll automate
-this last part.
-
-- 
-- 
-- 
-
-** Crazy Custom Andy Stuff
-
-There are a series of custom lisp functions "open-" that define some
-custom open commands, to make it easy for me to quickly open some
-commonly used files. These may or may not be useful or relevant to
-others. I intend to pull out all of the custom lisp and move it into a
-file (or two) in the lisp folder to make it easier for someone else to
-use this repo, without having to use all of my little weird
-customizations.

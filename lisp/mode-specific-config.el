@@ -23,29 +23,26 @@
 
 ;; =============================================================================
 ;; -- Dired --
-;;
-;; - Makes sizes human-readable, sorts version numbers
-;; - Orders dotfiles and capital-letters first.
-;; - Suggests dired targets
 ;; =============================================================================
-(setq-default dired-listing-switches "-alhv")
-(setq dired-recursive-copies 'always)
-(setq dired-dwim-target t)
+(setq-default dired-listing-switches "-alhv")     ; Makes sizes human-readable
+                                                  ; Sorts version numbers
+                                                  ; Lists dotfiles and
+                                                  ; capital-letters first.
+(setq dired-recursive-copies 'always)   ; Tells dired we want recursive copies.
+(setq dired-dwim-target t)              ; Suggests dired targets
 
 
 
 ;; =============================================================================
 ;; -- EPA --
-;;
-;; - Enables Easy PG (GNU PG interface for Emacs)
 ;; =============================================================================
-(autoload 'epa-file "epa-file.elc")
+(autoload 'epa-file "epa-file.elc")     ; Enables Easy PG
+                                        ; (the GNU PG interface for Emacs)
 
 
 
 ;; =============================================================================
 ;; -- ESHELL --
-;;
 ;; =============================================================================
 ;;(setq eshell-path-env (concat "/home/andy/bin:" eshell-path-env))
 
@@ -54,12 +51,11 @@
 ;; =============================================================================
 ;; -- ESS --
 ;;
-;; ESS is the interface between Emacs and R, SAS, etc.
+;; The interface between Emacs and R, SAS, etc.
 ;; - 
 ;; =============================================================================
 
-;; Provides an excellent data viewer function within ESS.
-(autoload 'ess-R-data-view "ess-R-data-view.el")
+(autoload 'ess-R-data-view "ess-R-data-view.el")  ; Data viewer function.
 
 (setq-default ess-indent-offset 4)
 (setq comint-scroll-to-bottom-on-input t)
@@ -72,8 +68,14 @@
 (ess-toggle-underscore nil)
 (ess-toggle-S-assign-key t)
 
-; Turns on ESS auto complete!
+;; Turns on ESS auto complete!
 (setq ess-use-auto-complete t)
+
+;; Helps Emacs help with large scripts.
+(setq ess-eval-visibly-p 'nowait)
+
+
+(setq ess-swv-processor 'knitr)
 
 ;; =============================================================================
 ;; -- Ido --

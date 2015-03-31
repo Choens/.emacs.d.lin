@@ -25,15 +25,11 @@
 
 (defun template-files ()
   (interactive)
-  (find-file "/media/andy/Sync/Sync/analytic_templates/file_templates"))
+  (find-file "/media/andy/Git/analytic-templates/"))
 
 (defun template-proj ()
   (interactive)
-  (find-file "/media/andy/Sync/Sync/analytic_templates/project_templates"))
-
-(defun template-snips ()
-  (interactive)
-  (find-file "/media/andy/Sync/Sync/analytic_templates/snippets"))
+  (find-file "/media/andy/Git/analytic-template-r/"))
 
 
 
@@ -83,27 +79,9 @@
   (interactive)
   (find-file "~/Notes/"))
 
-(defun open-sync ()
-  (interactive)
-  (find-file "/media/andy/Sync/"))
-
 (defun open-git ()
   (interactive)
   (find-file "~/Git/"))
-
-
-
-;; =============================================================================
-;; -- Project Functions --
-;;
-;; Collection of open- commands to make it easier to direct dired to open
-;; specific pre-defined project folders.
-;;
-;; =============================================================================
-
-(defun proj-ipsur ()
-  (interactive)
-  (find-file "/Git/ispur"))
 
 
 
