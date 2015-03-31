@@ -1,7 +1,7 @@
 * .emacs.d.lin
 
 My emacs configuration for Linux desktop systems. I use this
-reposotiry to sync my Emacs configuration between multiple Kubuntu systems.
+repository to sync my Emacs configuration between multiple Kubuntu systems.
 
 ** Description of Contents
 
@@ -32,7 +32,7 @@ _Things Worth Explaining_
 The following bash code ensures that a Linux system does 4 things.
 
 1. Installs emacs / emacs-goodies. This should work on ANY linux
-   system using debian / ubuntu package names.
+   system using Debian / Ubuntu package names.
 2. Changes to the user's home directory.
 3. Clones this repo to the user's home directory, into the .emacs.d
    folder.
