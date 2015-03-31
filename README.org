@@ -1,4 +1,4 @@
-* README - .emacs.d.lin
+* .emacs.d.lin
 
 My emacs configuration for Linux desktop systems. I use this
 reposotiry to sync my Emacs configuration between multiple Kubuntu systems.
