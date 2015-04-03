@@ -160,7 +160,7 @@
 ;; =============================================================================
 (load "key-bindings.el" )
 (load "misc.el" )
-(load "mode-specific-config.el" )
+(load "mode-specific.el" )
 
 
 

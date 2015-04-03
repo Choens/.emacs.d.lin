@@ -16,6 +16,7 @@
 ;;   - Python
 ;;   - SQL
 ;;   - Web
+;;   - Yasnippet
 ;;
 ;; #############################################################################
 
@@ -24,6 +25,7 @@
 ;; =============================================================================
 ;; -- Dired --
 ;; =============================================================================
+
 (setq-default dired-listing-switches "-alhv")     ; Makes sizes human-readable
                                                   ; Sorts version numbers
                                                   ; Lists dotfiles and
@@ -36,6 +38,7 @@
 ;; =============================================================================
 ;; -- EPA --
 ;; =============================================================================
+
 (autoload 'epa-file "epa-file.elc")     ; Enables Easy PG
                                         ; (the GNU PG interface for Emacs)
 
@@ -44,6 +47,7 @@
 ;; =============================================================================
 ;; -- ESHELL --
 ;; =============================================================================
+
 ;;(setq eshell-path-env (concat "/home/andy/bin:" eshell-path-env))
 
 
@@ -79,19 +83,21 @@
 
 ;; =============================================================================
 ;; -- Ido --
-;; 
+;;
 ;; - Enables IDO Mode
 ;; - Enables flexible matching
 ;; =============================================================================
+
 (ido-mode t)
 (ido-everywhere 1)
 (setq ido-enable-flex-matching t)
 
 ;; -----------------------------------------------------------------------------
 ;; -- flx / flx-ido --
-;; 
+;;
 ;; https://github.com/lewang/flx
 ;; -----------------------------------------------------------------------------
+
 (require 'flx-ido)
 (flx-ido-mode 1)
 ;; disable ido faces to see flx highlights.
@@ -104,13 +110,15 @@
 ;; =============================================================================
 ;; -- Magit --
 ;; =============================================================================
-(require 'magit)
 
+(require 'magit)
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 
 ;; =============================================================================
 ;; -- Markdown --
 ;; =============================================================================
+
 (autoload 'markdown-mode "markdown-mode.el" t)
 
 (setq auto-mode-alist
@@ -149,23 +157,27 @@
              (sequence "|" "WAITING(w@/!)")
              ))
 
+
+;; Sync Org Pim ----------------------------------------------------------------
+(setq org-icalendar-include-todo t)     ;; Exports org-files with TODO items. 
+
 ;; ORG Programming Config ------------------------------------------------------
 (setq org-src-fontify-natively t)
 (add-hook 'text-mode-hook '(lambda () (auto-fill-mode 1)))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-;; -- Babelfish -- 
+;; -- Babelfish --
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
-   (ditaa . t)
+   (ditaa      . t)
    (emacs-lisp . t)
-   (latex . t)
-   (python . t)
-   (R . t)
-   (sh . t)
-   (sql . t)
-   (sqlite . t)
+   (latex      . t)
+   (python     . t)
+   (R          . t)
+   (sh         . t)
+   (sql        . t)
+   (sqlite     . t)
    ))
 
 ;; Disables org-mode from asking for permission to run stuff -------------------
@@ -177,27 +189,6 @@
 ;;(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)   
 ;;(add-hook 'org-mode-hook 'org-display-inline-images)   
 
-;; =============================================================================
-;; -- Polymode --
-;; =============================================================================
-
-;;(require 'polymode-common)
-;;(require 'polymode-classes)
-;;(require 'polymode-methods)
-;;(require 'polymode-export)
-;;(require 'polymode-weave)
-(require 'poly-markdown)
-(require 'poly-R)
-(require 'poly-noweb)
-
-
-
-(add-to-list 'auto-mode-alist '("\\.mdw" . poly-markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
-(add-to-list 'auto-mode-alist '("\\.Snw" . poly-noweb+r-mode))
-(add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
-(add-to-list 'auto-mode-alist '("\\.Rpres" . poly-noweb+r-mode))
-
 
 
 ;; =============================================================================
@@ -206,9 +197,30 @@
 ;; https://github.com/nex3/perspective-el
 ;;
 ;; =============================================================================
+
 (require 'perspective)
 (persp-mode)
 (require 'persp-projectile)
+
+
+
+;; =============================================================================
+;; -- Polymode --
+;; =============================================================================
+
+(require 'polymode-common)
+(require 'polymode-classes)
+(require 'polymode-methods)
+(require 'polymode-export)
+(require 'polymode-weave)
+(require 'poly-R)
+(require 'poly-markdown)
+
+(add-to-list 'auto-mode-alist '("\\.mdw" . poly-markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+(add-to-list 'auto-mode-alist '("\\.Snw" . poly-noweb+r-mode))
+(add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
+(add-to-list 'auto-mode-alist '("\\.Rpres" . poly-noweb+r-mode))
 
 
 
@@ -225,7 +237,6 @@
 (setq projectile-switch-project-action 'projectile-dired)
 
 
-;; TODO Finish This
 
 ;; =============================================================================
 ;; -- Python --
@@ -234,6 +245,7 @@
 ;------------------------;
 ;;; python-mode ;;;
 ;------------------------;
+
 ;(require 'python-mode)
 ;(setq py-shell-name "ipython3")
 
@@ -348,8 +360,6 @@
 ;; -- Web --
 ;; =============================================================================
 
-;; PLEASE REMOVE ALL TRACES OF html-helper-mode
-
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode)) 
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode)) 
@@ -382,3 +392,19 @@
       '(("css" . (ac-source-css-property)) 
         ("html" . (ac-source-words-in-buffer ac-source-abbrev))) )
 
+
+
+;; =============================================================================
+;; -- Yasnippet --
+;; =============================================================================
+
+(require 'yasnippet)
+
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"                 ;; personal snippets
+        ;;"/path/to/some/collection/"           ;; foo-mode and bar-mode snippet collection
+        ;;"/path/to/yasnippet/yasmate/snippets" ;; the yasmate collection
+        ;;"/path/to/yasnippet/snippets"         ;; the default collection
+        ))
+
+(yas-global-mode 1)
