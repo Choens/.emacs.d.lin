@@ -1,6 +1,7 @@
 ;; #############################################################################
 ;; -- Mode Specific Config --
 ;;
+;;   - Comint
 ;;   - Dired
 ;;   - EPA
 ;;   - ESHELL
@@ -10,6 +11,7 @@
 ;;   - Magit
 ;;   - Markdown
 ;;   - Org Mode
+;;   - Perl
 ;;   - Perspective
 ;;   - Polymode
 ;;   - Projectile
@@ -19,6 +21,15 @@
 ;;   - Yasnippet
 ;;
 ;; #############################################################################
+
+
+;; =============================================================================
+;; -- Comint --
+;; =============================================================================
+
+(setq comint-scroll-to-bottom-on-input t)
+(setq comint-scroll-to-bottom-on-output t)
+(setq comint-move-point-for-output t)
 
 
 
@@ -59,18 +70,36 @@
 ;; - 
 ;; =============================================================================
 
-(autoload 'ess-R-data-view "ess-R-data-view.el")  ; Data viewer function.
-
+;; Basic Settings
 (setq-default ess-indent-offset 4)
-(setq comint-scroll-to-bottom-on-input t)
-(setq comint-scroll-to-bottom-on-output t)
-(setq comint-move-point-for-output t)
-(setq ess-use-auto-complete t)
-(setq ess-help-own-frame nil)
+(setq ess-help-own-frame t)
 
-; Simple fix for the ESS underscore thing --------------------------------------
-(ess-toggle-underscore nil)
+;; ESS Mode Hook
+(add-hook 'ess-mode-hook
+          (lambda ()
+            (ess-set-style 'C++ 'quiet)
+            ;; Because
+            ;;                                 DEF GNU BSD K&R  C++
+            ;; ess-indent-level                  2   2   8   5  4
+            ;; ess-continued-statement-offset    2   2   8   5  4
+            ;; ess-brace-offset                  0   0  -8  -5 -4
+            ;; ess-arg-function-offset           2   4   0   0  0
+            ;; ess-expression-offset             4   2   8   5  4
+            ;; ess-else-offset                   0   0   0   0  0
+            ;; ess-close-brace-offset            0   0   0   0  0
+            (add-hook 'local-write-file-hooks
+                      (lambda ()
+                        (ess-nuke-trailing-whitespace)))))
+(setq ess-nuke-trailing-whitespace-p 'ask)
+;; or even
+ ;; (setq ess-nuke-trailing-whitespace-p t)
+
+;; Fixes ESS underscore --------------------------------------------------------
+;; I hate the default ESS handling of underscores because I work with databases
+;; a lot and guess what database columns tend to have . . . . 
+(setq ess-S-assign-key (kbd "C-="))
 (ess-toggle-S-assign-key t)
+(ess-toggle-underscore nil)
 
 ;; Turns on ESS auto complete!
 (setq ess-use-auto-complete t)
@@ -78,8 +107,20 @@
 ;; Helps Emacs help with large scripts.
 (setq ess-eval-visibly-p 'nowait)
 
-
+;; Don't use Sweave. Use Knitr!
 (setq ess-swv-processor 'knitr)
+
+;; Fixes the ugly endless indentation when chaining functions, using pipes, etc.
+(setq ess-first-continued-statement-offset 2)
+(setq ess-continued-statement-offset 0)
+
+;; Long functions look better.
+(set 'ess-arg-function-offset t)
+
+;; Loads ESS-R-Data-View
+(autoload 'ess-R-data-view "ess-R-data-view.el")  ; Data viewer function.
+
+
 
 ;; =============================================================================
 ;; -- Ido --
@@ -188,6 +229,24 @@
 
 ;;(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)   
 ;;(add-hook 'org-mode-hook 'org-display-inline-images)   
+
+
+;; =============================================================================
+;; -- Pandoc --
+;;
+;; https://joostkremers.github.io/pandoc-mode/
+;;
+;; =============================================================================
+;;(load "pandoc-mode")
+
+
+
+;; =============================================================================
+;; -- Perl --
+;; =============================================================================
+
+ (add-hook 'perl-mode-hook
+           (lambda () (setq perl-indent-level 4)))
 
 
 
