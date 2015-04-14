@@ -71,6 +71,7 @@
 ;; =============================================================================
 
 ;; Basic Settings
+(require 'ess-site)
 (setq-default ess-indent-offset 4)
 (setq ess-help-own-frame t)
 
@@ -98,8 +99,8 @@
 ;; I hate the default ESS handling of underscores because I work with databases
 ;; a lot and guess what database columns tend to have . . . . 
 (setq ess-S-assign-key (kbd "C-="))
-(ess-toggle-S-assign-key t)
-(ess-toggle-underscore nil)
+(setq ess-toggle-S-assign-key t)
+(setq ess-toggle-underscore nil)
 
 ;; Turns on ESS auto complete!
 (setq ess-use-auto-complete t)
