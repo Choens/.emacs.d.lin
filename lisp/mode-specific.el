@@ -461,11 +461,9 @@
 (require 'yasnippet)
 
 (setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"           ;; Personal snippets
-        "~/Git/analytic-snippets"       ;; Snippets distributed with my
-                                        ;; analytic templates.
-        ;;"/path/to/yasnippet/yasmate/snippets" ;; the yasmate collection
-        ;;"/path/to/yasnippet/snippets"         ;; the default collection
+      '("~/.emacs.d/snippets"           ;; Local snippets
+        "~/Git/analytic-snippets"       ;; Analytic templates snippets.
+        "~/Git/yasnippet-snippets"      ;; https://github.com/AndreaCrotti/yasnippet-snippets.git
         ))
 
 (yas-global-mode 1)

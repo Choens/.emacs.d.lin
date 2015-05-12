@@ -96,7 +96,7 @@
 ;; -----------------------------------------------------------------------------
 ;; Menu-bar / Toolbar-----------------------------------------------------------
 ;; Although I disable the menu bar, it is always accessible if you hit F10.
-(menu-bar-mode 0) ; 1 = On, 0 = Off
+(menu-bar-mode 1) ; 1 = On, 0 = Off
 (tool-bar-mode 1) ; 1 = On, 0 = Off
 
 ;; Pop-Up / Special buffers must create new frame ------------------------------
@@ -128,6 +128,7 @@
 (setq visible-bell t)                   ; Enable visual bell
 (setq fill-column 80)                   ; Set max # columns = 80
 (setq truncate-lines t)                 ; Truncate lines by default
+(setq display-time-mode 1)
 (setq display-time-day-and-date t)      ; Display time & date in mode-line
 (setq cua-mode t)                       ; Enable CUA Mode (Enables rectangular select) by default
 (cua-selection-mode t) 
