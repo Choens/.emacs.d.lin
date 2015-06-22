@@ -186,11 +186,9 @@
 (setq org-default-notes-file "~/Git/Notes/notes.org")
 
 (setq org-agenda-files (quote (
-                               "~/Notes/andy-tasks.org"
-                               "~/Notes/doh-meetings.org"
-                               "~/Notes/doh-tasks.org"
+                               "~/Notes/TODO.org"
+                               "~/Notes/meetings.org"
                                "~/Notes/habits.org"
-                               "~/Notes/uag-tasks.org"
                               )))
 (setq org-todo-keywords
            '((sequence "TODO(t@)" "IN PROGRESS(i@)" "|" "DONE(d@/!)")

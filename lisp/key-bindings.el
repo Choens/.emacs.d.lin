@@ -39,7 +39,7 @@
 (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
 (global-set-key [(f9)] 'speedbar)
 (global-set-key [f11] 'toggle-fullscreen)
-(global-set-key [f12] 'menu-bar-mode)
+(global-set-key [f1] 'menu-bar-mode)
 
 
 ;; =============================================================================

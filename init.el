@@ -96,7 +96,7 @@
 ;; -----------------------------------------------------------------------------
 ;; Menu-bar / Toolbar-----------------------------------------------------------
 ;; Although I disable the menu bar, it is always accessible if you hit F10.
-(menu-bar-mode 1) ; 1 = On, 0 = Off
+(menu-bar-mode 0) ; 1 = On, 0 = Off
 (tool-bar-mode 1) ; 1 = On, 0 = Off
 
 ;; Pop-Up / Special buffers must create new frame ------------------------------
