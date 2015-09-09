@@ -15,7 +15,7 @@
 ## ============================================================================
 auto-save-list/
 backups/
-elpa/
+##elpa/
 ehsell/
 sql/
 tutorial/
@@ -36,4 +36,4 @@ bookmarks
 *.cache
 session*
 ido*
-
+ac-comphist.dat
