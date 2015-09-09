@@ -91,9 +91,10 @@
             (add-hook 'local-write-file-hooks
                       (lambda ()
                         (ess-nuke-trailing-whitespace)))))
+
 (setq ess-nuke-trailing-whitespace-p 'ask)
 ;; or even
- ;; (setq ess-nuke-trailing-whitespace-p t)
+;; (setq ess-nuke-trailing-whitespace-p t)
 
 ;; Fixes ESS underscore --------------------------------------------------------
 ;; I hate the default ESS handling of underscores because I work with databases
@@ -207,18 +208,18 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 ;; -- Babelfish --
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '(
-   (ditaa      . t)
-   (emacs-lisp . t)
-   (latex      . t)
-   (python     . t)
-   (R          . t)
-   (sh         . t)
-   (sql        . t)
-   (sqlite     . t)
-   ))
+;;(org-babel-do-load-languages
+;; 'org-babel-load-languages
+;; '(
+;;   (ditaa      . t)
+;;   (emacs-lisp . t)
+;;   (latex      . t)
+;;   (python     . t)
+;;   (R          . t)
+;;   (sh         . t)
+;;   (sql        . t)
+;;   (sqlite     . t)
+;;   ))
 
 ;; Disables org-mode from asking for permission to run stuff -------------------
 ;; Make sure you know what you are doing if you use this.
