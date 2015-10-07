@@ -99,9 +99,11 @@
 ;; Fixes ESS underscore --------------------------------------------------------
 ;; I hate the default ESS handling of underscores because I work with databases
 ;; a lot and guess what database columns tend to have . . . . 
-(setq ess-S-assign-key (kbd "C-="))
-(setq ess-toggle-S-assign-key t)
-(setq ess-toggle-underscore nil)
+(setq ess-S-assign-key (kbd "M--"))
+(ess-toggle-S-assign-key t)
+;;(ess-toggle-underscore nil)
+(ess-toggle-underscore nil)
+
 
 ;; Turns on ESS auto complete!
 (setq ess-use-auto-complete t)
