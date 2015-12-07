@@ -1,7 +1,6 @@
-* .emacs.d.lin
+* .emacs.d
 
-My emacs configuration for Linux desktop systems. I use this
-repository to sync my Emacs configuration between multiple Kubuntu systems.
+My emacs configuration for both Linux and Windows desktop systems.
 
 ** Description of Contents
 
@@ -16,7 +15,7 @@ This emacs configuration contains the following:
     - sql-connections.el
 
 The contents of most of these files will be self-explanatory to
-experienced Emacs users.
+most Emacs users.
 
 _Things Worth Explaining_
 
@@ -29,7 +28,7 @@ _Things Worth Explaining_
 
 ** Setup
 
-The following bash code ensures that a Linux system does 4 things.
+The following bash code ensures that a Ubuntu system does 4 things.
 
 1. Installs emacs / emacs-goodies. This should work on ANY linux
    system using Debian / Ubuntu package names.

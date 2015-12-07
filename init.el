@@ -120,7 +120,7 @@
 (set-default 'cursor-type 'bar)         ; Use Bar Cursor
 
 ; EVAL ------------------------
-;(setq blink-cursor-mode nil)
+(setq blink-cursor-mode nil)
 ;(setq x-stretch-cursor 1)
 ; EVAL ------------------------
 

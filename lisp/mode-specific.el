@@ -72,8 +72,8 @@
 
 ;; Basic Settings
 (require 'ess-site)
-(setq-default ess-indent-offset 4)
-(setq ess-help-own-frame t)
+(setq-default ess-indent-offset 2)
+;;(setq ess-help-own-frame t)
 
 ;; ESS Mode Hook
 (add-hook 'ess-mode-hook
