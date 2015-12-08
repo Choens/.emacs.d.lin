@@ -3,6 +3,7 @@
 ;;
 ;;   - Comint
 ;;   - Dired
+;;   - Emmet
 ;;   - EPA
 ;;   - ESHELL
 ;;   - ESS
@@ -43,6 +44,17 @@
                                                   ; capital-letters first.
 (setq dired-recursive-copies 'always)   ; Tells dired we want recursive copies.
 (setq dired-dwim-target t)              ; Suggests dired targets
+
+
+
+;; =============================================================================
+;; -- EMMET --
+;; =============================================================================
+
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'html-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
 
 
 
