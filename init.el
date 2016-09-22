@@ -21,13 +21,16 @@
 ;; -------------------------------------
 ;; Uncomment to enable debugging
 ;; -------------------------------------
-;(setq debug-on-error t)
+(setq debug-on-error t)
 
 
 
 ;; =============================================================================
 ;; -- External Files --
 ;; =============================================================================
+
+
+(package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/elpa")
@@ -72,37 +75,19 @@
 ;; If you want, you can have one theme on the console and a different theme in
 ;; the gui. Either way, uncomment preferred theme(s)
 ;; -----------------------------------------------------------------------------
-(require 'solarized-theme)
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                ;(load-theme 'ir-black t)
-                ;(load-theme 'solarized-dark t)
-                (load-theme 'solarized-light t)
-                ;(load-theme 'spacegray t)
-                ;(load-theme 'tango-dark t)
-                )
-              )
-  ;(load-theme 'ir-black t)
-  ;(load-theme 'solarized-dark t)
-  (load-theme 'solarized-light t)
-  ;(load-theme 'spacegray t)
-  ;(load-theme 'tango-dark t)
+;(load-theme 'ir-black t)
+(load-theme 'leuven)
+;(load-theme 'solarized-dark t)
+;(load-theme 'solarized-light t)
+;(load-theme 'spacegray t)
+;(load-theme 'tango-dark t)
 
-)
 
 ;; -----------------------------------------------------------------------------
-;; -- Frames --
+;; Menu-bar / Toolbar
 ;; -----------------------------------------------------------------------------
-;; Menu-bar / Toolbar-----------------------------------------------------------
-;; Although I disable the menu bar, it is always accessible if you hit F10.
-(menu-bar-mode 0) ; 1 = On, 0 = Off
+(menu-bar-mode 1) ; 1 = On, 0 = Off
 (tool-bar-mode 1) ; 1 = On, 0 = Off
-
-;; Pop-Up / Special buffers must create new frame ------------------------------
-;;(set 'pop-up-frames t)
-;; (setq special-display-buffer-names
-;;       '("*R*" "*SQL*" "*grep*" ) )
 
 ;; -----------------------------------------------------------------------------
 ;; -- Tabs --
@@ -115,15 +100,13 @@
 ;; -- Editing --
 ;; -----------------------------------------------------------------------------
 (setq column-number-mode t)             ; Col # in mode bar
-(set-scroll-bar-mode nil)               ; Scrollbar
+(set-scroll-bar-mode t)                 ; Scrollbar
 (show-paren-mode t)                     ; Show Parenthesis
 (set-default 'cursor-type 'bar)         ; Use Bar Cursor
 
 ; EVAL ------------------------
 (setq blink-cursor-mode nil)
 ;(setq x-stretch-cursor 1)
-; EVAL ------------------------
-
 (setq global-hl-line-mode t)
 (setq visible-bell t)                   ; Enable visual bell
 (setq fill-column 80)                   ; Set max # columns = 80
@@ -141,8 +124,10 @@
 (setq initial-scratch-message
       ;;"To err is human... to really foul up requires the root password.\n\n")
       "Nullius in verba.\n\n")
-; I don't need a splash screen from a text editor.
-(setq inhibit-splash-screen t)
+; Do I need a splash screen from a text editor?
+;;(setq inhibit-splash-screen t)
+
+
 
 ;; -----------------------------------------------------------------------------
 ;; -- Backup --
@@ -165,8 +150,36 @@
 
 
 
-;; =============================================================================
-;; Session Start
-;; =============================================================================
-;; I go back and forth on using this.
-;;(server start)
+;;;; =============================================================================
+;;;; Session Start
+;;;; =============================================================================
+;;;; I go back and forth on using this.
+;;;;(server start)
+;;(custom-set-variables
+;; ;; custom-set-variables was added by Custom.
+;; ;; If you edit it by hand, you could mess it up, so be careful.
+;; ;; Your init file should contain only one such instance.
+;; ;; If there is more than one, they won't work right.
+;; '(package-selected-packages
+;;   (quote
+;;    (yasnippet yaml-mode web-mode vertica solarized-theme python-mode polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-tree-slide org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp))))
+;;(custom-set-faces
+;; ;; custom-set-faces was added by Custom.
+;; ;; If you edit it by hand, you could mess it up, so be careful.
+;; ;; Your init file should contain only one such instance.
+;; ;; If there is more than one, they won't work right.
+;; )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yasnippet yaml-mode web-mode vertica solarized-theme python-mode polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-tree-slide org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

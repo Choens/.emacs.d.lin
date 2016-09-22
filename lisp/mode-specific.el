@@ -19,6 +19,7 @@
 ;;   - Python
 ;;   - SQL
 ;;   - Web
+;;   - YAML
 ;;   - Yasnippet
 ;;
 ;; #############################################################################
@@ -27,7 +28,6 @@
 ;; =============================================================================
 ;; -- Comint --
 ;; =============================================================================
-
 (setq comint-scroll-to-bottom-on-input t)
 (setq comint-scroll-to-bottom-on-output t)
 (setq comint-move-point-for-output t)
@@ -38,19 +38,22 @@
 ;; -- Dired --
 ;; =============================================================================
 
-(setq-default dired-listing-switches "-alhv")     ; Makes sizes human-readable
-                                                  ; Sorts version numbers
-                                                  ; Lists dotfiles and
-                                                  ; capital-letters first.
-(setq dired-recursive-copies 'always)   ; Tells dired we want recursive copies.
-(setq dired-dwim-target t)              ; Suggests dired targets
+;; Makes sizes human-readable
+;; Sorts version numbers
+;; Lists dotfiles and capital-letters first.
+(setq-default dired-listing-switches "-alhv")     
+                                                  
+;; Tells dired we want recursive copies.                                                  
+(setq dired-recursive-copies 'always)
+
+;; Suggests dired targets
+(setq dired-dwim-target t)
 
 
 
 ;; =============================================================================
 ;; -- EMMET --
 ;; =============================================================================
-
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'html-mode-hook 'emmet-mode)
@@ -60,62 +63,25 @@
 
 ;; =============================================================================
 ;; -- EPA --
+; Enables Easy PG (the GNU PG interface for Emacs)
 ;; =============================================================================
-
-(autoload 'epa-file "epa-file.elc")     ; Enables Easy PG
-                                        ; (the GNU PG interface for Emacs)
-
-
-
-;; =============================================================================
-;; -- ESHELL --
-;; =============================================================================
-
-;;(setq eshell-path-env (concat "/home/andy/bin:" eshell-path-env))
+(autoload 'epa-file "epa-file.elc")
 
 
 
 ;; =============================================================================
 ;; -- ESS --
-;;
 ;; The interface between Emacs and R, SAS, etc.
-;; - 
 ;; =============================================================================
 
 ;; Basic Settings
 (require 'ess-site)
-(setq-default ess-indent-offset 2)
-;;(setq ess-help-own-frame t)
 
-;; ESS Mode Hook
-(add-hook 'ess-mode-hook
-          (lambda ()
-            (ess-set-style 'C++ 'quiet)
-            ;; Because
-            ;;                                 DEF GNU BSD K&R  C++
-            ;; ess-indent-level                  2   2   8   5  4
-            ;; ess-continued-statement-offset    2   2   8   5  4
-            ;; ess-brace-offset                  0   0  -8  -5 -4
-            ;; ess-arg-function-offset           2   4   0   0  0
-            ;; ess-expression-offset             4   2   8   5  4
-            ;; ess-else-offset                   0   0   0   0  0
-            ;; ess-close-brace-offset            0   0   0   0  0
-            (add-hook 'local-write-file-hooks
-                      (lambda ()
-                        (ess-nuke-trailing-whitespace)))))
+;; Get rid of trailing whitespace.
+(setq ess-nuke-trailing-whitespace-p 't)
 
-(setq ess-nuke-trailing-whitespace-p 'ask)
-;; or even
-;; (setq ess-nuke-trailing-whitespace-p t)
-
-;; Fixes ESS underscore --------------------------------------------------------
-;; I hate the default ESS handling of underscores because I work with databases
-;; a lot and guess what database columns tend to have . . . . 
-(setq ess-S-assign-key (kbd "M--"))
-(ess-toggle-S-assign-key t)
-;;(ess-toggle-underscore nil)
-(ess-toggle-underscore nil)
-
+;; Indentation theme, makes it consistent with RStuduio, etc.
+(setq ess-default-style 'RRR)
 
 ;; Turns on ESS auto complete!
 (setq ess-use-auto-complete t)
@@ -133,14 +99,13 @@
 ;; Long functions look better.
 (set 'ess-arg-function-offset t)
 
-;; Loads ESS-R-Data-View
-(autoload 'ess-R-data-view "ess-R-data-view.el")  ; Data viewer function.
+;; Loads ESS-R-Data-View and view your data in ESS!
+(autoload 'ess-R-data-view "ess-R-data-view.el")
 
 
 
 ;; =============================================================================
 ;; -- Ido --
-;;
 ;; - Enables IDO Mode
 ;; - Enables flexible matching
 ;; =============================================================================
@@ -149,12 +114,9 @@
 (ido-everywhere 1)
 (setq ido-enable-flex-matching t)
 
-;; -----------------------------------------------------------------------------
-;; -- flx / flx-ido --
-;;
+;; 
+;; flx / flx-ido ---------------------------------------------------------------
 ;; https://github.com/lewang/flx
-;; -----------------------------------------------------------------------------
-
 (require 'flx-ido)
 (flx-ido-mode 1)
 ;; disable ido faces to see flx highlights.
@@ -167,17 +129,15 @@
 ;; =============================================================================
 ;; -- Magit --
 ;; =============================================================================
-
 (require 'magit)
 (setq magit-last-seen-setup-instructions "1.4.0")
+
 
 
 ;; =============================================================================
 ;; -- Markdown --
 ;; =============================================================================
-
 (autoload 'markdown-mode "markdown-mode.el" t)
-
 (setq auto-mode-alist
       (append '(
                 ("\\.text" . markdown-mode)
@@ -198,12 +158,12 @@
 
 ;; ORG PIM Config --------------------------------------------------------------
 ;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
-(setq org-default-notes-file "~/Git/Notes/notes.org")
+(setq org-default-notes-file "~/Documents/Notes/notes.org")
 
 (setq org-agenda-files (quote (
-                               "~/Notes/TODO.org"
-                               "~/Notes/meetings.org"
-                               "~/Notes/habits.org"
+                               "~/Documents/Notes/todo.org" ;; My personal TODO list.
+                               "~/Documents/Notes/notes.org" ;; Notes and TODO items from meetings.
+                               "~/Documents/Notes/habits.org" ;; Recurring stuffs.
                               )))
 (setq org-todo-keywords
            '((sequence "TODO(t@)" "IN PROGRESS(i@)" "|" "DONE(d@/!)")
@@ -212,16 +172,15 @@
              (sequence "|" "WAITING(w@/!)")
              ))
 
-
 ;; Sync Org Pim ----------------------------------------------------------------
 (setq org-icalendar-include-todo t)     ;; Exports org-files with TODO items. 
 
-;; ORG Programming Config ------------------------------------------------------
+;; Org Programming Config ------------------------------------------------------
 (setq org-src-fontify-natively t)
 (add-hook 'text-mode-hook '(lambda () (auto-fill-mode 1)))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-;; -- Babelfish --
+;; Babelfish -------------------------------------------------------------------
 ;;(org-babel-do-load-languages
 ;; 'org-babel-load-languages
 ;; '(
@@ -245,6 +204,7 @@
 ;;(add-hook 'org-mode-hook 'org-display-inline-images)   
 
 
+
 ;; =============================================================================
 ;; -- Pandoc --
 ;;
@@ -256,36 +216,19 @@
 
 
 ;; =============================================================================
-;; -- Perl --
-;; =============================================================================
-
- (add-hook 'perl-mode-hook
-           (lambda () (setq perl-indent-level 4)))
-
-
-
-;; =============================================================================
 ;; -- Perspective --
-;;
 ;; https://github.com/nex3/perspective-el
-;;
 ;; =============================================================================
-
 (require 'perspective)
-(persp-mode)
 (require 'persp-projectile)
+(persp-mode)
+
 
 
 
 ;; =============================================================================
 ;; -- Polymode --
 ;; =============================================================================
-
-(require 'polymode-common)
-(require 'polymode-classes)
-(require 'polymode-methods)
-(require 'polymode-export)
-(require 'polymode-weave)
 (require 'poly-R)
 (require 'poly-markdown)
 
@@ -303,7 +246,6 @@
 ;; https://github.com/bbatsov/projectile
 ;;
 ;; =============================================================================
-
 (require 'projectile)
 (projectile-global-mode)
 (setq projectile-enable-caching t)
@@ -315,37 +257,22 @@
 ;; -- Python --
 ;; =============================================================================
 
-;------------------------;
-;;; python-mode ;;;
-;------------------------;
-
+;; python-mode -----------------------------------------------------------------
 ;(require 'python-mode)
 ;(setq py-shell-name "ipython3")
 
-;; -----------------------
-;; python.el
-;; -----------------------
-
+;; python.el -------------------------------------------------------------------
 (require 'python)
 (setq
   python-shell-interpreter "ipython3"
   python-shell-interpreter-args "--pylab=qt --matplotlib=qt"
 )
 
-;; -----------------------------
-;; EIN
-;; -----------------------------
-
+;; EIN -------------------------------------------------------------------------
 ; use autocompletion, but don't start to autocomplete after a dot
 (setq ein:complete-on-dot -1)
 (setq ein:use-auto-complete 1)
-
-
-; timeout settings
 (setq ein:query-timeout 1000)
-
-; IPython notebook
-;(include-plugin "emacs-ipython-notebook/lisp")
 (require 'ein)
 
 ; shortcut function to load notebooklist
@@ -432,7 +359,6 @@
 ;; =============================================================================
 ;; -- Web --
 ;; =============================================================================
-
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode)) 
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode)) 
@@ -468,15 +394,19 @@
 
 
 ;; =============================================================================
+;; -- YAML --
+;; =============================================================================
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+
+
+;; =============================================================================
 ;; -- Yasnippet --
 ;; =============================================================================
-
 (require 'yasnippet)
-
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"           ;; Local snippets
-        "~/Git/analytic-snippets"       ;; Analytic templates snippets.
         "~/Git/yasnippet-snippets"      ;; https://github.com/AndreaCrotti/yasnippet-snippets.git
         ))
-
 (yas-global-mode 1)

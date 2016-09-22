@@ -16,24 +16,6 @@
 ;; #############################################################################
 
 ;; =============================================================================
-;; -- Analytic Template Integration --
-;;
-;; Small collection of functions to help me integrate my analytic templates
-;; stuff into my workflow. Probably a bit hacky, but whatever.
-;;
-;; =============================================================================
-
-(defun template-files ()
-  (interactive)
-  (find-file "/media/andy/Git/analytic-templates/"))
-
-(defun template-proj ()
-  (interactive)
-  (find-file "/media/andy/Git/analytic-template-r/"))
-
-
-
-;; =============================================================================
 ;; -- Open Functions --
 ;;
 ;; Collection of open-* functions intended to make it easier to open specific
@@ -44,28 +26,20 @@
 ;; -- Open-Specific Files --
 (defun open-buy ()
   (interactive)
-  (find-file "~/Notes/buy.org"))
+  (find-file "~/Documents/Notes/buy.org"))
 
-(defun open-init ()
+(defun open-emacs ()
   (interactive)
   (find-file "~/.emacs.d/"))
 
 (defun open-passwords ()
   (interactive)
-  (find-file "~/Notes/passwords.org.gpg"))
-
-(defun open-sql-conn ()
-  (interactive)
-  (find-file "~/config/sql-connections.el"))
+  (find-file "~/Documents/Notes/passwords.org.gpg"))
 
 ;; -- Open-Specific Folders --
 (defun open-bin ()
   (interactive)
   (find-file "~/bin/"))
-
-(defun open-config ()
-  (interactive)
-  (find-file "~/config/"))
 
 (defun open-documents ()
   (interactive)
@@ -77,7 +51,7 @@
 
 (defun open-notes ()
   (interactive)
-  (find-file "~/Notes/"))
+  (find-file "~/Documents/Notes/"))
 
 (defun open-git ()
   (interactive)

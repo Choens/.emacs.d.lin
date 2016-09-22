@@ -1,8 +1,0 @@
-* Bugs [0/0]
-* Enhancements [1/1]
-** DONE Perspective
-   - State "DONE"       from "IN PROGRESS" [2014-10-01 Wed 14:37]
-   - State "IN PROGRESS" from "TODO"       [2014-10-01 Wed 14:37]
-Need to install / setup Perspective.
-** TODO Finish setting up perspective.
-** TODO Have multiple init files, so I can run slightly different "versions" of emacs in different activities.
