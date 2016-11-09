@@ -37,6 +37,8 @@
 (let ((default-directory "~/.emacs.d/elpa"))
   (normal-top-level-add-subdirs-to-load-path))
 
+;; M-x package-list-packages for a complete list of packages I like.
+;; Stored externally from this file in packages.txt
 
 
 ;; =============================================================================
@@ -113,8 +115,8 @@
 (setq truncate-lines t)                 ; Truncate lines by default
 (setq display-time-mode 1)
 (setq display-time-day-and-date t)      ; Display time & date in mode-line
-(setq cua-mode t)                       ; Enable CUA Mode (Enables rectangular select) by default
-(cua-selection-mode t) 
+;(setq cua-mode t)                       ; Enable CUA Mode (Enables rectangular select) by default
+;(cua-selection-mode t) 
 (delete-selection-mode 1)				; Delete seleted text when typing over selection
 (put 'narrow-to-region 'disabled nil)	; Enable Narrow to region.
 (iimage-mode)							; Enable Inline Images
@@ -125,7 +127,7 @@
       ;;"To err is human... to really foul up requires the root password.\n\n")
       "Nullius in verba.\n\n")
 ; Do I need a splash screen from a text editor?
-;;(setq inhibit-splash-screen t)
+(setq inhibit-splash-screen t)
 
 
 
@@ -176,7 +178,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet yaml-mode web-mode vertica solarized-theme python-mode polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-tree-slide org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp))))
+    (edbi csv-mode yasnippet yaml-mode web-mode vertica python-mode polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-tree-slide org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

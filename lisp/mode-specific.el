@@ -102,6 +102,13 @@
 ;; Loads ESS-R-Data-View and view your data in ESS!
 (autoload 'ess-R-data-view "ess-R-data-view.el")
 
+; Fixes ESS underscore --------------------------------------------------------
+;; I hate the default ESS handling of underscores because I work with databases
+;; a lot and guess what database columns tend to have . . . . 
+(setq ess-S-assign-key (kbd "M--"))
+(ess-toggle-S-assign-key t)
+(ess-toggle-underscore nil)
+
 
 
 ;; =============================================================================

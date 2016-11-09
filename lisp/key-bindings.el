@@ -38,6 +38,7 @@
 ;; -----------------------------------------------------------------------------
 (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
 (global-set-key [(f9)] 'speedbar)
+(global-set-key (kbd "M-s") 'speedbar)
 (global-set-key [f11] 'toggle-fullscreen)
 (global-set-key [f1] 'menu-bar-mode)
 
@@ -45,6 +46,10 @@
 ;; =============================================================================
 ;; -- Mode Specific Key Bindings --
 ;; =============================================================================
+
+;; -- CUA --
+;; Activates CUA Rectangle Mark Mode without the rest of it.x
+(global-set-key (kbd "M-A") 'cua-rectangle-mark-mode)
 
 ;; -- Ess --
 ;;(setq ess-S-assign-key (kbd "C-x <"))
