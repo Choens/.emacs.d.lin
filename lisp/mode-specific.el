@@ -8,7 +8,7 @@
 ;;   - ESHELL
 ;;   - ESS
 ;;   - Ido
-;;    - flx
+;;   - flx
 ;;   - Magit
 ;;   - Markdown
 ;;   - Org Mode
