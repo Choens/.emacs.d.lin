@@ -18,11 +18,13 @@
 ;;   - Projectile
 ;;   - Python
 ;;   - SQL
+;;   - tabbar
 ;;   - Web
 ;;   - YAML
 ;;   - Yasnippet
 ;;
 ;; #############################################################################
+
 
 
 ;; =============================================================================
@@ -121,9 +123,11 @@
 (ido-everywhere 1)
 (setq ido-enable-flex-matching t)
 
-;; 
-;; flx / flx-ido ---------------------------------------------------------------
+;; =============================================================================
+;; -- flx / flx-ido --
 ;; https://github.com/lewang/flx
+;; =============================================================================
+
 (require 'flx-ido)
 (flx-ido-mode 1)
 ;; disable ido faces to see flx highlights.
@@ -203,22 +207,12 @@
 
 ;; Disables org-mode from asking for permission to run stuff -------------------
 ;; Make sure you know what you are doing if you use this.
-(setq org-confirm-babel-evaluate nil)
+;;(setq org-confirm-babel-evaluate nil)
 
 (setq org-html-doctype "html5")
 
 ;;(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)   
 ;;(add-hook 'org-mode-hook 'org-display-inline-images)   
-
-
-
-;; =============================================================================
-;; -- Pandoc --
-;;
-;; https://joostkremers.github.io/pandoc-mode/
-;;
-;; =============================================================================
-;;(load "pandoc-mode")
 
 
 
@@ -229,7 +223,6 @@
 (require 'perspective)
 (require 'persp-projectile)
 (persp-mode)
-
 
 
 
@@ -264,10 +257,6 @@
 ;; -- Python --
 ;; =============================================================================
 
-;; python-mode -----------------------------------------------------------------
-;(require 'python-mode)
-;(setq py-shell-name "ipython3")
-
 ;; python.el -------------------------------------------------------------------
 (require 'python)
 (setq
@@ -295,7 +284,8 @@
 ;; =============================================================================
 
 ;; Stored Passwords ------------------------------------------------------------
-(load-file "~/config/sql-connections.el" ) 
+(load-file "~/.emacs.d/sql-connections.el" )
+
 
 ;; SQL Editing -----------------------------------------------------------------
 (setq-default sql-indent-offset 4)
@@ -312,56 +302,15 @@
 ;; Runs SQL commands asynchronously, improves usability for big stuff.
 (set 'sql-preferred-evaluation-method "background")
 
-;; Save SQL History in product-specific files ----------------------------------
-;; Source: http://www.emacswiki.org/emacs/SqlMode
-(defun my-sql-save-history-hook ()
-  (let ((lval 'sql-input-ring-file-name)
-        (rval 'sql-product))
-    (if (symbol-value rval)
-        (let ((filename 
-               (concat "~/.emacs.d/sql/"
-                       (symbol-name (symbol-value rval))
-                       "-history.sql")))
-          (set (make-local-variable lval) filename))
-      (error
-       (format "SQL history will not be saved because %s is nil"
-               (symbol-name rval))))))
- 
-(add-hook 'sql-interactive-mode-hook 'my-sql-save-history-hook)
 
 
-;; Make SQL Returns look nicer (lines things up correctly) ---------------------
-;; Source: http://www.emacswiki.org/emacs/SqlMode
-(defvar sql-last-prompt-pos 1
-  "position of last prompt when added recording started")
-(make-variable-buffer-local 'sql-last-prompt-pos)
-(put 'sql-last-prompt-pos 'permanent-local t)
+;; =============================================================================
+;; -- tabbar --
+;; https://www.emacswiki.org/emacs/TabBarMode
+;; =============================================================================
 
-(defun sql-add-newline-first (output)
-  "Add newline to beginning of OUTPUT for `comint-preoutput-filter-functions'
-    This fixes up the display of queries sent to the inferior buffer
-    programatically."
-  (let ((begin-of-prompt
-         (or (and comint-last-prompt-overlay
-                  ;; sometimes this overlay is not on prompt
-                  (save-excursion
-                    (goto-char (overlay-start comint-last-prompt-overlay))
-                    (looking-at-p comint-prompt-regexp)
-                    (point)))
-             1)))
-    (if (> begin-of-prompt sql-last-prompt-pos)
-        (progn
-          (setq sql-last-prompt-pos begin-of-prompt)
-          (concat "\n" output))
-      output)))
-
-(defun sqli-add-hooks ()
-  "Add hooks to `sql-interactive-mode-hook'."
-  (add-hook 'comint-preoutput-filter-functions
-            'sql-add-newline-first))
-
-(add-hook 'sql-interactive-mode-hook 'sqli-add-hooks)
-
+;(require 'tabbar)
+;(tabbar-mode t)
 
 ;; =============================================================================
 ;; -- Web --
