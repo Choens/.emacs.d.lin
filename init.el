@@ -76,14 +76,22 @@
 ;; -- Theme --
 ;; If you want, you can have one theme on the console and a different theme in
 ;; the gui. Either way, uncomment preferred theme(s)
+;;
+;; M-x customize-themes
 ;; -----------------------------------------------------------------------------
 ;(load-theme 'ir-black t)
 (load-theme 'leuven)
+;(load-theme 'adwaita)
 ;(load-theme 'solarized-dark t)
 ;(load-theme 'solarized-light t)
 ;(load-theme 'spacegray t)
 ;(load-theme 'tango-dark t)
 
+(add-to-list 'default-frame-alist '(font . "Source Code Pro"))
+(set-face-attribute 'default t :font "Source Code Pro")
+
+;(set-face-attribute 'default nil :font "adobe-source-code-pro-fonts.noarch"))
+;(set-frame-font "adobe-source-code-pro-fonts.noarch" nil t)
 
 ;; -----------------------------------------------------------------------------
 ;; Menu-bar / Toolbar
@@ -178,7 +186,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (edbi csv-mode yasnippet yaml-mode web-mode vertica python-mode polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-tree-slide org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp))))
+    (csv-mode yasnippet yaml-mode web-mode vertica polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
