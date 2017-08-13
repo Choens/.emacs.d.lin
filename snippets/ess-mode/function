@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: function
+# key: func
+# group: definitions
+# --
+${1:fun} <- function(${2:args}){
+
+    $0
+
+} ## END $1

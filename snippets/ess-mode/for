@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: for
+# key: for
+# group: definitions
+# --
+for(i in seq_along(1))
+
+    $0
+
+} ## END for(i in seq_along($1))

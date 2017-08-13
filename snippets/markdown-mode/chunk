@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: chunk
+# key: chunk
+# group: code
+# binding: C-A-i
+# --
+\`\`\`{r ${1:name}, echo=${2:TRUE}, message=${3:FALSE}, warning=${4:FALSE}}
+
+$0
+
+\`\`\`
