@@ -2,8 +2,8 @@
 ;; -- Andy's init.el file --
 ;;
 ;; Sections:
-;; - External Files
 ;; - Proxy Settings
+;; - External Files
 ;; - Package Repos
 ;; - Editor Settings
 ;;   - Theme
@@ -21,34 +21,29 @@
 ;; -------------------------------------
 ;; Uncomment to enable debugging
 ;; -------------------------------------
-(setq debug-on-error t)
+;;(setq debug-on-error t)
+
+
+
+;; =============================================================================
+;; -- Proxy --
+;; =============================================================================
+;(setq url-proxy-services
+;      '("http"  . "localhost:8888")
+;      '("https" . "localhost:8888")
+;      )
 
 
 
 ;; =============================================================================
 ;; -- External Files --
 ;; =============================================================================
-
-
-(package-initialize)
-
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (let ((default-directory "~/.emacs.d/elpa"))
   (normal-top-level-add-subdirs-to-load-path))
 
 ;; M-x package-list-packages for a complete list of packages I like.
-;; Stored externally from this file in packages.txt
-
-
-;; =============================================================================
-;; -- Proxy --
-;; =============================================================================
-
-;(setq url-proxy-services
-;      '("http"  . "localhost:8888")
-;      '("https" . "localhost:8888")
-;      )
 
 
 
@@ -63,8 +58,41 @@
                         ;; I tend to use melpa preferentially over marmalade.
                         ;;("marmalade" . "http://marmalade-repo.org/packages/")
                         ("melpa" . "http://melpa.milkbox.net/packages/")
-                        ("org" . "http://orgmode.org/elpa/")
-                       ))
+                        ("org" . "http://orgmode.org/elpa/")))
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar myPackages
+  '(csv-mode
+    ein
+    elpy
+    emmet-mode
+    ess-R-data-view
+    flx-ido
+    hyde
+    ir-black-theme
+    magit-filenotify
+    markdown-mode
+    material-theme
+    org-gnome
+    org-pandoc
+    org-plus-contrib
+    ox-pandoc
+    ox-reveal
+    pandoc-mode
+    persp-projectile
+    polymode
+    solarized-theme
+    spacegray-theme
+    web-mode
+    yaml-mode
+    yasnippet))
+
+(mapc #'(lambda (package)
+    (unless (package-installed-p package)
+      (package-install package)))
+      myPackages)
 
 
 
@@ -79,9 +107,10 @@
 ;;
 ;; M-x customize-themes
 ;; -----------------------------------------------------------------------------
-;(load-theme 'ir-black t)
-(load-theme 'leuven)
-;(load-theme 'adwaita)
+;;(load-theme 'adwaita t)
+;;(load-theme 'ir-black t)
+;;(load-theme 'leuven t)
+(load-theme 'material t)
 ;(load-theme 'solarized-dark t)
 ;(load-theme 'solarized-light t)
 ;(load-theme 'spacegray t)
@@ -92,6 +121,8 @@
 
 ;(set-face-attribute 'default nil :font "adobe-source-code-pro-fonts.noarch"))
 ;(set-frame-font "adobe-source-code-pro-fonts.noarch" nil t)
+
+(ansi-color-for-comint-mode-on)
 
 ;; -----------------------------------------------------------------------------
 ;; Menu-bar / Toolbar
@@ -117,7 +148,7 @@
 ; EVAL ------------------------
 (setq blink-cursor-mode nil)
 ;(setq x-stretch-cursor 1)
-(setq global-hl-line-mode t)
+(global-hl-line-mode t)
 (setq visible-bell t)                   ; Enable visual bell
 (setq fill-column 80)                   ; Set max # columns = 80
 (setq truncate-lines t)                 ; Truncate lines by default
@@ -165,20 +196,6 @@
 ;;;; =============================================================================
 ;;;; I go back and forth on using this.
 ;;;;(server start)
-;;(custom-set-variables
-;; ;; custom-set-variables was added by Custom.
-;; ;; If you edit it by hand, you could mess it up, so be careful.
-;; ;; Your init file should contain only one such instance.
-;; ;; If there is more than one, they won't work right.
-;; '(package-selected-packages
-;;   (quote
-;;    (yasnippet yaml-mode web-mode vertica solarized-theme python-mode polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-tree-slide org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp))))
-;;(custom-set-faces
-;; ;; custom-set-faces was added by Custom.
-;; ;; If you edit it by hand, you could mess it up, so be careful.
-;; ;; Your init file should contain only one such instance.
-;; ;; If there is more than one, they won't work right.
-;; )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -186,7 +203,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (csv-mode yasnippet yaml-mode web-mode vertica polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp))))
+    (yasnippet yaml-mode web-mode vertica polymode persp-projectile pandoc-mode ox-reveal ox-pandoc org-plus-contrib org-pandoc org-gnome markdown-mode magit-filenotify hyde flx-ido ess-R-data-view emmet-mode ein eimp csv-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

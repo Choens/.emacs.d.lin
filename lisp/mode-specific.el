@@ -3,6 +3,7 @@
 ;;
 ;;   - Comint
 ;;   - Dired
+;;   - EIMP
 ;;   - Emmet
 ;;   - EPA
 ;;   - ESHELL
@@ -17,6 +18,7 @@
 ;;   - Polymode
 ;;   - Projectile
 ;;   - Python
+;;   - Speedbar
 ;;   - SQL
 ;;   - tabbar
 ;;   - Web
@@ -64,8 +66,17 @@
 
 
 ;; =============================================================================
+;; -- EIMP --
+;; Emacs Image Package - Edit Images In Emacs!
+;; =============================================================================
+(autoload 'eimp-mode "eimp" "Emacs Image Manipulation Package." t)
+(add-hook 'image-mode-hook 'eimp-mode)
+
+
+
+;; =============================================================================
 ;; -- EPA --
-; Enables Easy PG (the GNU PG interface for Emacs)
+;; Enables Easy PG (the GNU PG interface for Emacs)
 ;; =============================================================================
 (autoload 'epa-file "epa-file.elc")
 
@@ -95,11 +106,11 @@
 (setq ess-swv-processor 'knitr)
 
 ;; Fixes the ugly endless indentation when chaining functions, using pipes, etc.
-(setq ess-first-continued-statement-offset 2)
-(setq ess-continued-statement-offset 0)
+(setq ess-offset-continued 2)
+;(setq ess-offset-continued 0)
 
 ;; Long functions look better.
-(set 'ess-arg-function-offset t)
+(set 'ess-indent-from-lhs t)
 
 ;; Loads ESS-R-Data-View and view your data in ESS!
 (autoload 'ess-R-data-view "ess-R-data-view.el")
@@ -107,11 +118,10 @@
 ; Fixes ESS underscore --------------------------------------------------------
 ;; I hate the default ESS handling of underscores because I work with databases
 ;; a lot and guess what database columns tend to have . . . . 
-(setq ess-S-assign-key (kbd "M--"))
-(ess-toggle-S-assign-key t)
+;(add-hook 'ess-mode-hook
+;          (lambda ()
+;            (ess-toggle-underscore nil)))
 (ess-toggle-underscore nil)
-
-
 
 ;; =============================================================================
 ;; -- Ido --
@@ -153,8 +163,8 @@
       (append '(
                 ("\\.text" . markdown-mode)
                 ("\\.md" . markdown-mode)
-                ("\\.Rmd" . markdown-mode)
-                ("\\.Rpres" . markdown-mode)
+;                ("\\.Rmd" . markdown-mode)
+;                ("\\.Rpres" . markdown-mode)
                 )
               auto-mode-alist))
 
@@ -247,7 +257,7 @@
 ;;
 ;; =============================================================================
 (require 'projectile)
-(projectile-global-mode)
+(projectile-mode)
 (setq projectile-enable-caching t)
 (setq projectile-switch-project-action 'projectile-dired)
 
@@ -257,12 +267,17 @@
 ;; -- Python --
 ;; =============================================================================
 
+;; elpy
+;;(elpy-enable)
+
 ;; python.el -------------------------------------------------------------------
 (require 'python)
-(setq
-  python-shell-interpreter "ipython3"
-  python-shell-interpreter-args "--pylab=qt --matplotlib=qt"
-)
+(when (executable-find "ipython3")
+  (setq
+   python-shell-interpreter "ipython3"
+   python-shell-interpreter-args "--simple-prompt -i"
+   ;;python-shell-interpreter-args "--pylab=qt --matplotlib=qt"
+   ))
 
 ;; EIN -------------------------------------------------------------------------
 ; use autocompletion, but don't start to autocomplete after a dot
@@ -272,10 +287,22 @@
 (require 'ein)
 
 ; shortcut function to load notebooklist
-(defun load-ein () 
-  (ein:notebooklist-load)
-  (interactive)
-  (ein:notebooklist-open))
+;(defun load-ein () 
+;  (ein:notebooklist-load)
+;  (interactive)
+;  (ein:notebooklist-open))
+
+
+
+;; =============================================================================
+;; -- Speedbar --
+;; =============================================================================
+;(require 'sr-speedbar)
+;(when window-system (speedbar t))
+;(speedbar-add-supported-extension ".R")
+;(speedbar-add-supported-extension ".py")
+;(speedbar-add-supported-extension ".Rmd")
+;(speedbar-add-supported-extension ".Snw")
 
 
 

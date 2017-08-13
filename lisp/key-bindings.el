@@ -49,7 +49,7 @@
 
 ;; -- CUA --
 ;; Activates CUA Rectangle Mark Mode without the rest of it.x
-(global-set-key (kbd "M-A") 'cua-rectangle-mark-mode)
+;(global-set-key (kbd "M-A") 'cua-rectangle-mark-mode)
 
 ;; -- Ess --
 ;;(setq ess-S-assign-key (kbd "C-x <"))
