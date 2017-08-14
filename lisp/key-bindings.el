@@ -1,5 +1,5 @@
 ;; #############################################################################
-;; -- Keybindings --
+;; -- keybindings --
 ;;
 ;; Note - Shortcuts to built in functions tend to start with a C-x.
 ;;        Shortcuts to Emacs extensions tend to start with a C-c.
