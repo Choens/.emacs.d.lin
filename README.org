@@ -1,68 +1,124 @@
 * .emacs.d
 
-My emacs configuration for both Linux and Windows desktop systems.
+If you want, you can copy my Emacs init! But, honestly, there are
+better ones out there:
+
+- https://github.com/jhamrick/emacs/tree/master/.emacs.d
+
+My setup is most likely to be of interest to R and Python users doing
+data science. If you want to see how to best setup Emacs to do
+enterprise Java, you have come to the wrong place.
+
+Disclaimer: Although I try to update this, this  may or may not be
+exactly what I am using today. And it may or may not eat your kittens
+if you try to run it. That said, I think it works nicely.
+
+Also, this config may or may not work perfectly on Windows. I do
+sometimes use Emacs on Windows and shoehorn this beautiful tool into
+the Win32 environment, but it is rarely pretty. I don't have a OSX
+system, so I cannot test it there. But it works well for me on Fedora.
 
 ** Description of Contents
 
-This emacs configuration contains the following:
+Broadly, this repo is divided into two parts. The init.el file in the
+.emacs.d folder (where this README file is located) and everything
+hiding in the lisp folder. The init.el is, of course, the
+director. But almost all of the actual work takes place in the files
+located in the lisp folder. With only one or two exceptions, files in
+the lisp folder are mode-specific. Exceptions to this include
+appearance, edit,  misc, proxy, and any other file which does not
+contain "-config" in the filename.
 
-  - init.el
-  - init-first.el
-  - lisp/
-    - key-bindings.el
-    - misc.el
-    - mode-specific-config.el
-    - sql-connections.el
+In the listing below, if the file-name doesn't have a description, it
+is a file with settings for the emacs mode of that name (minus -config).
 
-The contents of most of these files will be self-explanatory to
-most Emacs users.
-
-_Things Worth Explaining_
-
-- The file, misc.el, contains random stuff that doesn't really seem to
-  fit anywhere else.
-- The file, sql-connections.el, is a template of a file I use to store
-  database passwords for sql-mode. This file is not necessary for
-  everyone, but you will want to comment out the following
-  line from mode-specific.el
+- init.el: The director of the band.
+- lisp/
+  - appearance.el: Settings for how Emacs looks, incuding theme.
+  - comint-config.el
+  - dired-config.el
+  - edit.el: Editor settings (tabs, spaces, etc.)
+  - eimp-config.el
+  - ein-config.el
+  - elpy-config.el
+  - emmet-config.el
+  - epa-config.el
+  - eshell-config.el
+  - ess-config.el
+  - flx-config.el
+  - ido-config.el
+  - magit-config.el
+  - markdown-config.el
+  - misc.el: Some custom functions, and anything else that doesn't fit
+    in some other place.
+  - orgmode-config.el
+  - package-config.el
+  - perspective-config.el
+  - polymode-config.el
+  - projectile-config.el
+  - proxy.el
+  - python-config.el
+  - speedbar-config.el
+  - sql-config.el
+  - tabbar-config.el
+  - web-config.el
+  - yaml-config.el
+  - yasnippet-config.el
+- sql-connections.el: Sorry. No passwords here and the IP Addresses
+  are internal only.
 
 ** Setup
 
-The following bash code ensures that a Ubuntu system does 4 things.
+*** Fedora Setup
 
-1. Installs emacs / emacs-goodies. This should work on ANY linux
-   system using Debian / Ubuntu package names.
+The following bash code does 3 things:
+
+1. Installs emacs and a few extra packages (requires sudo / password).
 2. Changes to the user's home directory.
 3. Clones this repo to the user's home directory, into the .emacs.d
    folder.
-4. Starts emacs, using the init-first.el file rather than
-   init.el. This simplified init.el file is really the core of my
-   personal settings, but relies only on those things that are either
-   part of emacs by default or are brought in by installing
-   emacs-goodies.
 
 #+begin_src sh exports:code
-  sudo apt-get install emacs24 emacs-goodies-el git
+  ## Installs emacs and a few extra packages I like.
+  sudo dnf install \
+     emacs-auctex.noarch emacs-auctex-doc.noarch \
+     emacs-auto-complete.noarch \
+     emacs-ess.noarch emacs-ess-doc.noarch\
+     emacs-goodies.noarch \
+     emacs-magit.noarch \
+     python-ropemacs.noarch \
+     emacs-slime-el.noarch \
+     emacs-yaml-mode.noarch \
+     emacs.x86_64
+
+  ## Change to user's home directory, and then clones this repo.
+  ## I assume git cli is already installed.
   cd ~
   git clone git@github.com:Choens/.emacs.d.lin.git .emacs.d
   emacs -q -l ~/.emacs.d init-first.el
 #+end_src
 
-Then, install the following emacs extensions. Someday I'll automate
-this last part.
+*** Ubuntu Setup
 
-** Details
+I no longer use Ubuntu. The code below worked for me at one point, but
+I no longer test/update it. It is included for
+informational/historical purposes.
 
-#+begin_src lisp exports:code
-  (load-file "~/config/sql-connections.el" ) 
+The following bash code does 3 things.
+
+1. Installs emacs / emacs-goodies.
+2. Changes to the user's home directory.
+3. Clones this repo to the user's home directory, into the .emacs.d
+   folder.
+
+#+begin_src sh exports:code
+
+  ## Installs emacs.
+  sudo apt-get install emacs24 emacs-goodies-el git
+
+  ## Change to user's home directory, and then clones this repo.
+  ## I assume git cli is already installed.
+  cd ~
+  git clone git@github.com:Choens/.emacs.d.lin.git .emacs.d
+  emacs -q -l ~/.emacs.d init-first.el
 #+end_src
-
-A final, installed version of this system will also have the
-following folders:
-
-- backups/
-- elpa/
-- eshell/ (if you use it)
-
-These folders are not tracked by the repo, as they are truly local
-folders and do not belong as part of this project.

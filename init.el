@@ -5,36 +5,22 @@
 ;; - Init
 ;;   - Debug
 ;;   - External Files
-;; - Packages
-;;   - Proxy Settings
-;;   - Package Repos
-;;   - Install Missing
-;; - Links
 ;;   - Appearance
 ;;   - Edit
-;;   - Backup
-;;   - Mode Specific
-;;   - Custom Lisp
+;;   - Proxy Settings
+;;   - Package Repos
+;;   - Package Config
+;;   - Misc (Custom Lisp)
 ;;   - Aliases
-;;   - Keybindings
 ;;   - Session
+;;   - Custom Settings (I ty to keep this cleaned up.)
 ;; #############################################################################
 
-
-
-;; =============================================================================
-;; -- Packages --
-;; =============================================================================
-
 ;; -- Debug --
-(setq debug-on-error t)
+;; Uncomment this if you are having problems.
+;;(setq debug-on-error t)
 
 ;; -- External Files --
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
@@ -49,13 +35,18 @@
 (load "edit.el" )
 
 ;; -- Proxy --
+;; Only useful if you have to fight one of these.
 ;;(load "proxy.el" )
 
 ;; -- Package Repos --
+;; Includes a list of all packages I install/want.
+(load "package-config.el")
 
-
-;; -- Mode Specific --
-(load "package-config.el")        ;; Needs to be first, otherwise alphabetical.
+;; -- Package Config --
+;; Includes packages I install from RPM and elpa.
+;; Listed in alphabetical order.
+;; Packages not being used at the bottom.
+(load "auctex-config.el")
 (load "comint-config.el" )
 (load "dired-config.el" )
 (load "eimp-config.el" )
@@ -67,7 +58,6 @@
 (load "magit-config.el" )
 (load "markdown-config.el" )
 (load "orgmode-config.el" )
-;;(load "perl-config.el" )
 (load "perspective-config.el" )
 (load "polymode-config.el" )
 (load "projectile-config.el" )
@@ -77,17 +67,50 @@
 (load "web-config.el" )
 (load "yaml-config.el" )
 (load "yasnippet-config.el" )
+;;(load "perl-config.el" )
 ;;(load "eshell-config.el" )
 ;;(load "elpy-config.el" )
 ;;(load "speedbar-config.el" )
 
-;; -- Key Bindings --
-(load "key-bindings.el" )
-
 ;; -- Misc --
 (load "misc.el" )
 
-;;;; -- Session Start --
-;;;;(server start)
+;; -- Session Start --
+;;(server start)
 
 ;; -- Custom Settings --
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yaml-mode 
+     web-mode
+     spacegray-theme
+     solarized-theme
+     polymode
+     persp-projectile
+     pandoc-mode
+     ox-reveal
+     ox-pandoc
+     org-plus-contrib
+     org-gnome
+     material-theme
+     markdown-mode
+     magit-filenotify
+     ir-black-theme
+     hyde
+     flx-ido
+     ess-R-data-view
+     emmet-mode
+     elpy
+     ein
+     csv-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

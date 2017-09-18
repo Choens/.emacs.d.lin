@@ -10,9 +10,11 @@
 (setq org-default-notes-file "~/Documents/Notes/notes.org")
 
 (setq org-agenda-files (quote (
-                               "~/Documents/Notes/todo.org" ;; My personal TODO list.
-                               "~/Documents/Notes/notes.org" ;; Notes and TODO items from meetings.
-                               "~/Documents/Notes/habits.org" ;; Recurring stuffs.
+                               "~/Documents/Notes/notes.org"
+                               "~/Documents/Notes/notes-acuitas.org"
+                               "~/Documents/Notes/notes-smba.org"
+                               "~/Documents/Notes/notes-uag.org"
+                               "~/Documents/Notes/habits.org"
                               )))
 (setq org-todo-keywords
            '((sequence "TODO(t@)" "IN PROGRESS(i@)" "|" "DONE(d@/!)")
@@ -30,18 +32,18 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 ;; -- Babelfish --
-;;(org-babel-do-load-languages
-;; 'org-babel-load-languages
-;; '(
-;;   (ditaa      . t)
-;;   (emacs-lisp . t)
-;;   (latex      . t)
-;;   (python     . t)
-;;   (R          . t)
-;;   (sh         . t)
-;;   (sql        . t)
-;;   (sqlite     . t)
-;;   ))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (ditaa      . t)
+   (emacs-lisp . t)
+   (latex      . t)
+   (python     . t)
+   (R          . t)
+   (sh         . t)
+   (sql        . t)
+   (sqlite     . t)
+   ))
 
 ;; Disables org-mode from asking for permission to run stuff
 ;; Make sure you know what you are doing if you use this.
@@ -51,3 +53,9 @@
 
 ;;(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)   
 ;;(add-hook 'org-mode-hook 'org-display-inline-images)   
+
+;; -- Keybindings --
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(define-key global-map "\C-cc" 'org-capture)

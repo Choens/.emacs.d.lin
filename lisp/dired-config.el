@@ -1,5 +1,8 @@
 ;; #############################################################################
 ;; -- dired --
+;;
+;; Configures how dired works. Damned useful for file/folder management.
+;;
 ;; #############################################################################
 
 ;; Makes sizes human-readable
