@@ -28,7 +28,6 @@
     markdown-mode
     material-theme
     org-gnome
-    org-pandoc
     org-plus-contrib
     ox-pandoc
     ox-reveal
