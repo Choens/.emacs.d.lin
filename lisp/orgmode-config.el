@@ -9,13 +9,8 @@
 ;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
 (setq org-default-notes-file "~/Documents/Notes/notes.org")
 
-(setq org-agenda-files (quote (
-                               "~/Documents/Notes/notes.org"
-                               "~/Documents/Notes/notes-acuitas.org"
-                               "~/Documents/Notes/notes-smba.org"
-                               "~/Documents/Notes/notes-uag.org"
-                               "~/Documents/Notes/habits.org"
-                              )))
+(setq org-agenda-files (quote ("~/Documents/Notes/notes.org"
+                               "~/Documents/Notes/habits.org")))
 (setq org-todo-keywords
            '((sequence "TODO(t@)" "IN PROGRESS(i@)" "|" "DONE(d@/!)")
              (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f!)")
