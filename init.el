@@ -51,6 +51,8 @@
 (load "dired-config.el" )
 (load "eimp-config.el" )
 (load "emmet-config.el" )
+(load "ein-config.el" )
+(load "elpy-config.el" )
 (load "epa-config.el" )
 (load "ess-config.el" )
 (load "ido-config.el" )
@@ -61,15 +63,14 @@
 (load "perspective-config.el" )
 (load "polymode-config.el" )
 (load "projectile-config.el" )
-(load "python-config.el" )
 (load "sql-config.el" )
 (load "tabbar-config.el" )
 (load "web-config.el" )
 (load "yaml-config.el" )
 (load "yasnippet-config.el" )
+;;(load "python-config.el" )
 ;;(load "perl-config.el" )
 ;;(load "eshell-config.el" )
-;;(load "elpy-config.el" )
 ;;(load "speedbar-config.el" )
 
 ;; -- Misc --
@@ -86,28 +87,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode 
-     web-mode
-     spacegray-theme
-     solarized-theme
-     polymode
-     persp-projectile
-     pandoc-mode
-     ox-reveal
-     ox-pandoc
-     org-plus-contrib
-     org-gnome
-     material-theme
-     markdown-mode
-     magit-filenotify
-     ir-black-theme
-     hyde
-     flx-ido
-     ess-R-data-view
-     emmet-mode
-     elpy
-     ein
-     csv-mode))))
+    (csv-mode ein elpy emmet-mode ess-R-data-view flycheck flx-ido hyde ir-black-theme magit-filenotify markdown-mode material-theme org-gnome org-plus-contrib ox-pandoc ox-reveal pandoc-mode persp-projectile polymode py-autopep8 solarized-theme spacegray-theme web-mode yaml-mode yasnippet))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

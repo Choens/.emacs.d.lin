@@ -16,11 +16,13 @@
 ;; -- Install Missing --
 ;; M-x package-list-packages installed packages.
 (defvar myPackages
-  '(csv-mode
+  '(
+    csv-mode
     ein
     elpy
     emmet-mode
     ess-R-data-view
+    flycheck
     flx-ido
     hyde
     ir-black-theme
@@ -34,10 +36,11 @@
     pandoc-mode
     persp-projectile
     polymode
+    py-autopep8
     solarized-theme
     spacegray-theme
     web-mode
-    yaml-mode
+    yaml-mode 
     yasnippet))
 
 (mapc #'(lambda (package)

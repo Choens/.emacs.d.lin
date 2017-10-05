@@ -8,6 +8,8 @@
 (setq ein:query-timeout 1000)
 (require 'ein)
 
+(setq ein:use-auto-complete t)
+
 ; shortcut function to load notebooklist
 ;(defun load-ein () 
 ;  (ein:notebooklist-load)
