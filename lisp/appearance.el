@@ -45,8 +45,8 @@
 ;; -- Initial Scratch Message --
 ;; I just had to.
 (setq initial-scratch-message
-      ;;"To err is human... to really foul up requires the root password.\n\n")
-      "Nullius in verba.\n\n")
+      ;;"\n\nTo err is human... to really foul up requires the root password.\n\n")
+      "\n\nNullius in verba\n\n")
 
 ;; -- Buffer Settings --
 (global-hl-line-mode t)

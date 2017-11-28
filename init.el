@@ -8,8 +8,7 @@
 ;;   - Appearance
 ;;   - Edit
 ;;   - Proxy Settings
-;;   - Package Repos
-;;   - Package Config
+;;   - Lisp Packages
 ;;   - Misc (Custom Lisp)
 ;;   - Aliases
 ;;   - Session
@@ -38,11 +37,12 @@
 ;; Only useful if you have to fight one of these.
 ;;(load "proxy.el" )
 
-;; -- Package Repos --
-;; Includes a list of all packages I install/want.
+;; -- Lisp Packages --
+
+;; List of all packages I install/want.
 (load "package-config.el")
 
-;; -- Package Config --
+;; Package Config
 ;; Includes packages I install from RPM and elpa.
 ;; Listed in alphabetical order.
 ;; Packages not being used at the bottom.
@@ -87,7 +87,31 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (csv-mode ein elpy emmet-mode ess-R-data-view flycheck flx-ido hyde ir-black-theme magit-filenotify markdown-mode material-theme org-gnome org-plus-contrib ox-pandoc ox-reveal pandoc-mode persp-projectile polymode py-autopep8 solarized-theme spacegray-theme web-mode yaml-mode yasnippet))))
+    (csv-mode
+     ein
+     elpy
+     emmet-mode
+     ess-R-data-view 
+     flycheck
+     fo 
+     hyde 
+     ir-black-theme
+     magit-filenotify
+     markdown-mode
+     material-theme
+     org-gnome
+     org-plus-contrib
+     ox-pandoc
+     ox-reveal
+     p-mode
+     persp-projectile
+     polymode
+     py-autopep8
+     solarized-theme
+     spacegray-theme
+     web-mode
+     yaml-mode
+     yasnippet))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
