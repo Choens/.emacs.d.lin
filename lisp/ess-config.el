@@ -5,6 +5,7 @@
 
 ;; Basic Settings
 (require 'ess-site)
+;;(setq-default inferior-R-program-name "rice")
 
 ;; Get rid of trailing whitespace.
 (setq ess-nuke-trailing-whitespace-p 't)
