@@ -87,31 +87,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (csv-mode
-     ein
-     elpy
-     emmet-mode
-     ess-R-data-view 
-     flycheck
-     fo 
-     hyde 
-     ir-black-theme
-     magit-filenotify
-     markdown-mode
-     material-theme
-     org-gnome
-     org-plus-contrib
-     ox-pandoc
-     ox-reveal
-     p-mode
-     persp-projectile
-     polymode
-     py-autopep8
-     solarized-theme
-     spacegray-theme
-     web-mode
-     yaml-mode
-     yasnippet))))
+    (csv-mode ein elpy emmet-mode ess-R-data-view flycheck fo hyde ir-black-theme magit-filenotify markdown-mode material-theme org-gnome org-plus-contrib ox-pandoc ox-reveal p-mode persp-projectile polymode py-autopep8 solarized-theme spacegray-theme web-mode yaml-mode yasnippet))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
