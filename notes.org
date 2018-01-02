@@ -1,0 +1,3 @@
+* Useful Notes
+- set-frame-name: Lets the user arbitrarily set the name of the Emacs
+  frame. Very usful for running multiple Emacs instances/frames.
