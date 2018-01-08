@@ -122,3 +122,6 @@ The following bash code does 3 things.
   git clone git@github.com:Choens/.emacs.d.lin.git .emacs.d
   emacs -q -l ~/.emacs.d init-first.el
 #+end_src
+* Useful Tips
+- set-frame-name: Lets the user arbitrarily set the name of the Emacs
+  frame. Very usful for running multiple Emacs instances/frames.
