@@ -17,4 +17,5 @@
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
 ;; Ipython / Jupyter
-(elpy-use-ipython)
+;;(elpy-use-ipython) ;; deprecated
+(setq elpy-rpc-python-command "python3")
