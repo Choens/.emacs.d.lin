@@ -22,6 +22,7 @@
     elpy
     emmet-mode
     ess-R-data-view
+    eval-in-repl
     flycheck
     flx-ido
     hyde

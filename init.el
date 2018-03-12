@@ -54,23 +54,25 @@
 (load "ein-config.el" )
 (load "elpy-config.el" )
 (load "epa-config.el" )
+;;(load "eshell-config.el" )
 (load "ess-config.el" )
+(load "eval-in-repl-config.el")
 (load "ido-config.el" )
 (load "flx-config.el" )
+(load "flycheck-config.el" )
 (load "magit-config.el" )
 (load "markdown-config.el" )
 (load "orgmode-config.el" )
+;;(load "perl-config.el" )
 (load "perspective-config.el" )
 (load "polymode-config.el" )
 (load "projectile-config.el" )
 (load "sql-config.el" )
-(load "tabbar-config.el" )
+;;(load "tabbar-config.el" )
 (load "web-config.el" )
 (load "yaml-config.el" )
 (load "yasnippet-config.el" )
-;;(load "python-config.el" )
-;;(load "perl-config.el" )
-;;(load "eshell-config.el" )
+(load "python-config.el" )
 ;;(load "speedbar-config.el" )
 
 ;; -- Misc --
@@ -87,7 +89,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (csv-mode ein elpy emmet-mode ess-R-data-view flycheck fo hyde ir-black-theme magit-filenotify markdown-mode material-theme org-gnome org-plus-contrib ox-pandoc ox-reveal p-mode persp-projectile polymode py-autopep8 solarized-theme spacegray-theme web-mode yaml-mode yasnippet))))
+    (eval-in-repl python-cell csv-mode ein elpy emmet-mode ess-R-data-view flycheck fo hyde ir-black-theme magit-filenotify markdown-mode material-theme org-gnome org-plus-contrib ox-pandoc ox-reveal p-mode persp-projectile polymode py-autopep8 solarized-theme spacegray-theme web-mode yaml-mode yasnippet))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
