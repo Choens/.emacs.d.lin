@@ -59,7 +59,7 @@
 (load "eval-in-repl-config.el")
 (load "ido-config.el" )
 (load "flx-config.el" )
-(load "flycheck-config.el" )
+;(load "flycheck-config.el" )
 (load "magit-config.el" )
 (load "markdown-config.el" )
 (load "orgmode-config.el" )
