@@ -89,11 +89,10 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (eval-in-repl python-cell csv-mode ein elpy emmet-mode ess-R-data-view flycheck fo hyde ir-black-theme magit-filenotify markdown-mode material-theme org-gnome org-plus-contrib ox-pandoc ox-reveal p-mode persp-projectile polymode py-autopep8 solarized-theme spacegray-theme web-mode yaml-mode yasnippet))))
+    (eval-in-repl python-cell csv-mode ein elpy emmet-mode ess-R-data-view flycheck fo ir-black-theme markdown-mode material-theme org-gnome org-plus-contrib ox-pandoc ox-reveal p-mode persp-projectile polymode py-autopep8 solarized-theme web-mode yaml-mode yasnippet))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(put 'narrow-to-page 'disabled nil)

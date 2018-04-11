@@ -24,7 +24,6 @@
 ;(load-theme 'material-light t)
 ;(load-theme 'solarized-dark t)
 ;(load-theme 'solarized-light t)
-;(load-theme 'spacegray t)
 ;(load-theme 'tango-dark t)
 
 ;; -- Font --

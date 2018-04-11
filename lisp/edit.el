@@ -20,6 +20,7 @@
 
 ;; -- Editing --
 (delete-selection-mode 1)				; Delete when typing over selection
+(put 'narrow-to-page 'disabled nil)     ; Enable Narrow to page.
 (put 'narrow-to-region 'disabled nil)	; Enable Narrow to region.
 (put 'downcase-region 'disabled nil)
 

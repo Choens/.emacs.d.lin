@@ -25,7 +25,6 @@
     eval-in-repl
     flycheck
     flx-ido
-    hyde
     ir-black-theme
     magit-filenotify
     markdown-mode
@@ -39,7 +38,6 @@
     polymode
     py-autopep8
     solarized-theme
-    spacegray-theme
     web-mode
     yaml-mode 
     yasnippet))
