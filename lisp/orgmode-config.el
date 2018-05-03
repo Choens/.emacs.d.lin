@@ -7,7 +7,7 @@
 
 ;; -- ORG PIM --
 ;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
-(setq org-default-notes-file "~/Documents/Notes/notes.org")
+(setq org-default-notes-file "~/Documents/Notes/Daily.org")
 
 (setq org-agenda-files (quote ("~/Documents/Notes/")))
 (setq org-todo-keywords
