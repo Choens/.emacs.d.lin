@@ -4,5 +4,5 @@
 ;; #############################################################################
 
 (require 'perspective)
-(require 'persp-projectile)
+;; (require 'persp-projectile)
 (persp-mode)
