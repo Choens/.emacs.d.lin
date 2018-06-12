@@ -26,7 +26,7 @@
 ;; -- Open-Specific Files --
 (defun open-buy ()
   (interactive)
-  (find-file "~/Documents/Notes/buy.org"))
+  (find-file "~/Documents/Notes/Buy.org"))
 
 (defun open-emacs ()
   (interactive)
@@ -34,7 +34,7 @@
 
 (defun open-passwords ()
   (interactive)
-  (find-file "~/Documents/Notes/passwords.org.gpg"))
+  (find-file "~/Documents/Notes/Passwords.org.gpg"))
 
 ;; -- Open-Specific Folders --
 (defun open-bin ()
