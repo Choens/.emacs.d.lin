@@ -4,3 +4,4 @@
 ;; #############################################################################
 
 (autoload 'epa-file "epa-file.elc")
+(setf epa-pinentry-mode 'loopback)
