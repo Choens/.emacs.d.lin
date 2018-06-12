@@ -31,9 +31,7 @@
     material-theme
     org-gnome
     org-plus-contrib
-    ox-pandoc
     ox-reveal
-    pandoc-mode
     persp-projectile
     polymode
     py-autopep8
