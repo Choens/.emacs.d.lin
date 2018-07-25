@@ -36,6 +36,11 @@
   (interactive)
   (find-file "~/Documents/Notes/Passwords.org.gpg"))
 
+(defun open-sql-yaml ()
+  (interactive)
+  (find-file "~/sql.yaml"))
+
+
 ;; -- Open-Specific Folders --
 (defun open-bin ()
   (interactive)

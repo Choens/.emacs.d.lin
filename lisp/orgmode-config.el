@@ -41,12 +41,17 @@
 
 ;; Disables org-mode from asking for permission to run stuff
 ;; Make sure you know what you are doing if you use this.
-;;(setq org-confirm-babel-evaluate nil)
+(setq org-confirm-babel-evaluate nil)
 
+;; Nicer to look at HTML5 than not.
 (setq org-html-doctype "html5")
 
-;;(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)   
-;;(add-hook 'org-mode-hook 'org-display-inline-images)   
+;; Inlines graphics
+(setq org-display-inline-images t)
+(setq org-redisplay-inline-images t)
+(setq org-startup-with-inline-images "inlineimages")
+;(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)   
+;(add-hook 'org-mode-hook 'org-display-inline-images)   
 
 ;; -- Keybindings --
 (global-set-key "\C-cl" 'org-store-link)

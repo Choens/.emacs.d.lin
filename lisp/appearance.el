@@ -19,8 +19,8 @@
 ;; Manual Instructions: M-x customize-themes
 ;(load-theme 'adwaita t)
 ;(load-theme 'ir-black t)
-;(load-theme 'leuven t)
-(load-theme 'material t)
+(load-theme 'leuven t)
+;(load-theme 'material t)
 ;(load-theme 'material-light t)
 ;(load-theme 'solarized-dark t)
 ;(load-theme 'solarized-light t)
