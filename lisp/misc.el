@@ -62,6 +62,18 @@
   (interactive)
   (find-file "~/Git/"))
 
+(defun open-ad-hoc-ccp ()
+  (interactive)
+  (find-file "~/Documents/Ad Hoc CCP/"))
+
+(defun open-projects-ccp ()
+  (interactive)
+  (find-file "~/Documents/Projects CCP/"))
+
+(defun open-reports-ccp ()
+  (interactive)
+  (find-file "~/Documents/Reports CCP/"))
+
 
 
 ;; =============================================================================
