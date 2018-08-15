@@ -74,6 +74,10 @@
   (interactive)
   (find-file "~/Documents/Reports CCP/"))
 
+(defun open-validation-ccp ()
+  (interactive)
+  (find-file "~/Documents/Validation CCP/"))
+
 
 
 ;; =============================================================================
