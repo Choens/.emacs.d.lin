@@ -5,6 +5,8 @@
 
 ;; Basic Settings
 (require 'ess-site)
+
+;; Use rice to make R look . . . nice?
 ;;(setq-default inferior-R-program-name "rice")
 
 ;; Get rid of trailing whitespace.
@@ -24,18 +26,12 @@
 
 ;; Fixes the ugly endless indentation when chaining functions, using pipes, etc.
 (setq ess-offset-continued 2)
-;(setq ess-offset-continued 0)
 
-;; Long functions look better.
+;; Make long functions look better.
 (set 'ess-indent-from-lhs t)
 
 ;; Loads ESS-R-Data-View and view your data in ESS!
-(autoload 'ess-R-data-view "ess-R-data-view.el")
+;;(autoload 'ess-R-data-view "ess-R-data-view.el")
 
-; Fixes ESS underscore --------------------------------------------------------
-;; I hate the default ESS handling of underscores because I work with databases
-;; a lot and guess what database columns tend to have . . . . 
-;(add-hook 'ess-mode-hook
-;          (lambda ()
-;            (ess-toggle-underscore nil)))
+; Fix ESS underscore
 (ess-toggle-underscore nil)
