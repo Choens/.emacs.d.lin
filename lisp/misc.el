@@ -24,14 +24,6 @@
 ;; =============================================================================
 
 ;; -- Open-Specific Files --
-(defun open-buy ()
-  (interactive)
-  (find-file "~/Documents/Notes/Buy.org"))
-
-(defun open-emacs ()
-  (interactive)
-  (find-file "~/.emacs.d/"))
-
 (defun open-passwords ()
   (interactive)
   (find-file "~/Documents/Notes/Passwords.org.gpg"))
@@ -42,13 +34,15 @@
 
 
 ;; -- Open-Specific Folders --
-(defun open-bin ()
+(defun open-emacs ()
   (interactive)
-  (find-file "~/bin/"))
+  (find-file "~/.emacs.d/")
+  (set-frame-name ".emacs"))
 
 (defun open-documents ()
   (interactive)
-  (find-file "~/Documents/"))
+  (find-file "~/Documents/")
+  (set-frame-name "Documents"))
 
 (defun open-downloads ()
   (interactive)
@@ -56,27 +50,33 @@
 
 (defun open-notes ()
   (interactive)
-  (find-file "~/Documents/Notes/"))
+  (find-file "~/Documents/Notes/")
+  (set-frame-name "Notes"))
 
 (defun open-git ()
   (interactive)
-  (find-file "~/Git/"))
+  (find-file "~/Git/")
+  (set-frame-name "Git"))
 
 (defun open-ad-hoc-ccp ()
   (interactive)
-  (find-file "~/Documents/Ad Hoc CCP/"))
+  (find-file "~/Documents/Ad Hoc CCP/")
+  (set-frame-name "Ad Hoc CCP"))
 
 (defun open-projects-ccp ()
   (interactive)
-  (find-file "~/Documents/Projects CCP/"))
+  (find-file "~/Documents/Projects CCP/")
+  (set-frame-name "Projects CCP"))
 
 (defun open-reports-ccp ()
   (interactive)
-  (find-file "~/Documents/Reports CCP/"))
+  (find-file "~/Documents/Reports CCP/")
+  (set-frame-name "Reports CCP"))
 
 (defun open-validation-ccp ()
   (interactive)
-  (find-file "~/Documents/Validation CCP/"))
+  (find-file "~/Documents/Validation CCP/")
+  (set-frame-name "Validation CCP"))
 
 
 
