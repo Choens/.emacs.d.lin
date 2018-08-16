@@ -3,5 +3,5 @@
 ;; https://www.emacswiki.org/emacs/TabBarMode
 ;; #############################################################################
 
-;(require 'tabbar)
-;(tabbar-mode t)
+(require 'tabbar)
+(tabbar-mode t)
