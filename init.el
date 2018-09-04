@@ -52,14 +52,15 @@
 (load "eimp-config.el" )
 (load "emmet-config.el" )
 (load "ein-config.el" )
-(load "elpy-config.el" )
+;;(load "elpy-config.el" )
 (load "epa-config.el" )
 ;;(load "eshell-config.el" )
 (load "ess-config.el" )
 (load "eval-in-repl-config.el")
-(load "ido-config.el" )
-(load "flx-config.el" )
+;;(load "ido-config.el" )
+;;(load "flx-config.el" )
 ;(load "flycheck-config.el" )
+(load "ivy-config.el" )
 (load "magit-config.el" )
 (load "markdown-config.el" )
 (load "orgmode-config.el" )
@@ -67,6 +68,7 @@
 ;;(load "perspective-config.el" )
 (load "polymode-config.el" )
 (load "projectile-config.el" )
+(load "python-config.el" )
 (load "sql-config.el" )
 ;;(load "tabbar-config.el" )
 (load "web-config.el" )
@@ -80,3 +82,17 @@
 
 ;; -- Session Start --
 ;;(server start)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (magit yaml-mode web-mode solarized-theme py-autopep8 polymode persp-projectile ox-reveal org-plus-contrib org-gnome material-theme markdown-mode flycheck eval-in-repl emmet-mode elpy ein csv-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

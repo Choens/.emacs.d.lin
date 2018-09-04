@@ -2,10 +2,11 @@
 ;; -- python --
 ;; #############################################################################
 
-;; If you want to use regular python.
-;; (setq python-shell-interpreter "python"
-;;       python-shell-interpreter-args "-i")
+;; (require 'python-mode)
 
+;; (autoload 'python-mode "python-mode" "Python Mode." t)
+;; (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+;; (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
 ;; If you want to use ipython.
 (setq python-shell-interpreter "ipython3"

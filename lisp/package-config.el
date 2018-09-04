@@ -16,27 +16,34 @@
 ;; -- Install Missing --
 ;; M-x package-list-packages installed packages.
 (defvar myPackages
-  '(csv-mode
+  '(counsel
+    csv-mode
     ein
     elpy
     emmet-mode
+    ;; I use the version packaged wth Fedora.
+    ;;ess
     eval-in-repl
     flycheck
+    ivy
+    magit
     markdown-mode
     material-theme
     org-gnome
     org-plus-contrib
     ox-reveal
-    persp-projectile
     polymode
     py-autopep8
-    python-cell
     solarized-theme
+    swiper
     web-mode
-    yaml-mode 
+    ;; I use the version packaged wth Fedora.
+    ;;yaml-mode 
     yasnippet))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
       (package-install package)))
       myPackages)
+
+(package-initialize)

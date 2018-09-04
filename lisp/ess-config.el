@@ -20,6 +20,7 @@
 
 ;; Helps Emacs help with large scripts.
 (setq ess-eval-visibly-p 'nowait)
+(setq ess-eval-visibly 'nowait)
 
 ;; Don't use Sweave. Use Knitr!
 (setq ess-swv-processor 'knitr)
