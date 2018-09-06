@@ -65,7 +65,7 @@
 (load "markdown-config.el" )
 (load "orgmode-config.el" )
 ;;(load "perl-config.el" )
-;;(load "perspective-config.el" )
+(load "perspective-config.el" )
 (load "polymode-config.el" )
 (load "projectile-config.el" )
 (load "python-config.el" )
@@ -75,7 +75,7 @@
 (load "yaml-config.el" )
 (load "yasnippet-config.el" )
 (load "python-config.el" )
-;;(load "speedbar-config.el" )
+(load "speedbar-config.el" )
 
 ;; -- Misc --
 (load "misc.el" )

@@ -32,6 +32,7 @@
     org-gnome
     org-plus-contrib
     ox-reveal
+    perspective
     polymode
     py-autopep8
     solarized-theme

@@ -45,7 +45,5 @@
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
-(global-set-key [(f9)] 'speedbar)
-(global-set-key (kbd "M-s") 'speedbar)
 (global-set-key [f11] 'toggle-fullscreen)
 (global-set-key [f1] 'menu-bar-mode)
