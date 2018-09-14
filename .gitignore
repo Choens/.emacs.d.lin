@@ -17,6 +17,7 @@ auto-save-list/
 backups/
 elpa/
 ehsell/
+games/
 sql/
 tutorial/
 eshell/history
@@ -34,6 +35,7 @@ tramp
 bookmarks
 *.eld
 *.cache
+recentf
 session*
 ido*
 ac-comphist.dat
