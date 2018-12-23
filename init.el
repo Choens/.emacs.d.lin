@@ -52,7 +52,7 @@
 (load "eimp-config.el" )
 (load "emmet-config.el" )
 (load "ein-config.el" )
-;;(load "elpy-config.el" )
+(load "elpy-config.el" )
 (load "epa-config.el" )
 ;;(load "eshell-config.el" )
 (load "ess-config.el" )
@@ -65,17 +65,17 @@
 (load "markdown-config.el" )
 (load "orgmode-config.el" )
 ;;(load "perl-config.el" )
-(load "perspective-config.el" )
+;;(load "perspective-config.el" )
 (load "polymode-config.el" )
 (load "projectile-config.el" )
-(load "python-config.el" )
+;;(load "python-config.el" )
+;;(load "speedbar-config.el" )
 (load "sql-config.el" )
 ;;(load "tabbar-config.el" )
 (load "web-config.el" )
 (load "yaml-config.el" )
 (load "yasnippet-config.el" )
-(load "python-config.el" )
-(load "speedbar-config.el" )
+
 
 ;; -- Misc --
 (load "misc.el" )
@@ -87,9 +87,39 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default)))
  '(package-selected-packages
    (quote
-    (magit yaml-mode web-mode solarized-theme py-autopep8 polymode persp-projectile ox-reveal org-plus-contrib org-gnome material-theme markdown-mode flycheck eval-in-repl emmet-mode elpy ein csv-mode))))
+    (
+     anaconda-mode
+     counsel
+     csv-mode
+     ein
+     elpy
+     emmet-mode
+     eval-in-repl
+     flycheck
+     flycheck
+     magit
+     markdown-mode
+     material-theme
+     org-gnome
+     org-plus-contrib
+     ox-reveal
+     persp-projectile
+     poly-R
+     poly-markdown
+     poly-noweb
+     poly-org
+     polymode
+     py-autopep8
+     solarized-theme
+     swiper
+     web-mode
+     yaml-mode
+     ))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
