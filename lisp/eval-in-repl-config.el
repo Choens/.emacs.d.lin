@@ -72,10 +72,10 @@
 
 ;;; Python support
 ;; (require 'python) ; if not done elsewhere
-(require 'eval-in-repl-python)
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (local-set-key (kbd "<C-return>") 'eir-eval-in-python)))
+;; (require 'eval-in-repl-python)
+;; (add-hook 'python-mode-hook
+;;           '(lambda ()
+;;              (local-set-key (kbd "<C-return>") 'eir-eval-in-python)))
 
 ;;; Ruby support
 ;; (require 'ruby-mode) ; if not done elsewhere

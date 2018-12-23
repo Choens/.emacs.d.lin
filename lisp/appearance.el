@@ -17,14 +17,19 @@
 
 ;; -- Theme --
 ;; Manual Instructions: M-x customize-themes
-;(load-theme 'adwaita t)
-;(load-theme 'ir-black t)
-(load-theme 'leuven t)
-;(load-theme 'material t)
-;(load-theme 'material-light t)
-;(load-theme 'solarized-dark t)
-;(load-theme 'solarized-light t)
-;(load-theme 'tango-dark t)
+(if (display-graphic-p) 
+    (load-theme 'material t)
+  (load-theme 'material t))
+
+;; Other themes
+
+;;(load-theme 'adwaita t)
+;;(load-theme 'leuven t)
+;;(load-theme 'material t)
+;;(load-theme 'material-light t)
+;;(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-light t)
+;;(load-theme 'tango-dark t)
 
 ;; -- Font --
 ;; I really like this font.

@@ -23,6 +23,8 @@
 (put 'narrow-to-page 'disabled nil)     ; Enable Narrow to page.
 (put 'narrow-to-region 'disabled nil)	; Enable Narrow to region.
 (put 'downcase-region 'disabled nil)
+;;(setq select-enable-clipboard 1)        ; When in a terminal, use X-Clipboard
+;;(setq select-enable-primary 1)          ; When in a terminal, use Primary
 
 ;; -- Backup --
 (setq  backup-by-copying t )            ; Enables Emacs backups
@@ -47,3 +49,7 @@
 (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
 (global-set-key [f11] 'toggle-fullscreen)
 (global-set-key [f1] 'menu-bar-mode)
+
+;; Use Epiphany When/Where Possible
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "epiphany")

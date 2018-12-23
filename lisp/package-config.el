@@ -34,6 +34,10 @@
     ox-reveal
     perspective
     polymode
+    poly-R
+    poly-markdown
+    poly-noweb
+    poly-org
     py-autopep8
     solarized-theme
     swiper
