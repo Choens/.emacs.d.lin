@@ -36,3 +36,8 @@
 
 ; Fix ESS underscore
 (ess-toggle-underscore nil)
+
+;; Set my path to R
+;; Only needed if I'm using anaconda.
+;(setq inferior-R-program-name "~/anaconda3/envs/rstudio/bin/R")
+
