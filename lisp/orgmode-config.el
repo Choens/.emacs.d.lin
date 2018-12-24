@@ -1,8 +1,8 @@
-;; #############################################################################
-;; -- org --
-;; #############################################################################
+;; orgmode-config.el - How to org!
+;;
+;; Reference:
+;; - http://orgmode.org/
 
-;; Enables org-habit, to help me track my habitual needs.
 (require 'org-habit)
 
 ;; -- ORG PIM --
@@ -34,7 +34,7 @@
    (latex      . t)
    (python     . t)
    (R          . t)
-   ;; (sh         . t)
+   (sh         . t)
    (sql        . t)
    (sqlite     . t)
    ))

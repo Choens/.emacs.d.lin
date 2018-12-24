@@ -1,10 +1,8 @@
-;; #############################################################################
-;; -- auctex --
+;; auctex-config.el - Edit LaTeX in Emacs!
 ;;
-;; Edit LaTeX in Emacs!
-;; https://www.emacswiki.org/emacs/AUCTeX
-;;
-;; #############################################################################
+;; Reference:
+;; - https://www.emacswiki.org/emacs/AUCTeX
+;; - http://cachestocaches.com/2015/8/getting-started-use-package/
 
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)

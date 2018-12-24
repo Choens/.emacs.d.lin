@@ -1,13 +1,9 @@
-;; #############################################################################
-;; -- ess --
-;; The interface between Emacs and R, SAS, etc.
-;; #############################################################################
+;; ess-config.el - The interface between Emacs and R, SAS, etc.
+;;
+;; Reference:
+;; - https://ess.r-project.org/
 
-;; Basic Settings
 (require 'ess-site)
-
-;; Use rice to make R look . . . nice?
-;;(setq-default inferior-R-program-name "rice")
 
 ;; Get rid of trailing whitespace.
 (setq ess-nuke-trailing-whitespace-p 't)

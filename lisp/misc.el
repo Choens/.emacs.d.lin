@@ -1,27 +1,21 @@
-;; #############################################################################
-;; misc.el
+;; misc.el - Collection of miscellaneous lisp
 ;;
-;; Collection of miscellaneous lisp I have collected over the years.
-;;
-;; Note:
 ;; Where possible, I document the original source of the function, but the
 ;; function here may or may not be the same as the original source function(s).
 ;;
-;; - Analytic Template Integration
 ;; - Open Functions
 ;; - Project Functions
 ;; - Highlight Functions
 ;; - toggle-fullscreen
 ;; - Text Manipulation
-;; #############################################################################
 
-;; =============================================================================
-;; -- Open Functions --
+
+
+;; ---- Open Functions ----
 ;;
 ;; Collection of open-* functions intended to make it easier to open specific
 ;; files and folders.
-;;
-;; =============================================================================
+
 
 ;; -- Open-Specific Files --
 (defun open-passwords ()
@@ -80,9 +74,7 @@
 
 
 
-;; =============================================================================
-;; -- Highlight Functions --
-;; =============================================================================
+;; ---- Highlight Functions ----
 
 (defun hl-todo ()
 	"Highlight all instances of the phrase 'TODO - '"
@@ -101,10 +93,9 @@
 
 
 
-;; ============================================================================= 
-;; -- toggle-fullscreen --
+;; ---- toggle-fullscreen ----
 ;; Source: http://www.emacswiki.org/emacs/FullScreen#toc17
-;; =============================================================================
+
 (defun toggle-fullscreen ()
   "Toggles full screen on X11"
   (interactive)

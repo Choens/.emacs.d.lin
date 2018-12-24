@@ -1,7 +1,7 @@
-;; #############################################################################
-;; -- perspective --
-;; https://github.com/nex3/perspective-el
-;; #############################################################################
+;; perspective-config.el
+;;
+;; Reference:
+;; - https://github.com/nex3/perspective-el
 
 (require 'perspective)
 (require 'persp-projectile)

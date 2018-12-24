@@ -1,6 +1,7 @@
-;; #############################################################################
-;; -- markdown --
-;; #############################################################################
+;; markdown.el - Markdown editing in Emacs.
+;;
+;; Reference:
+;; - https://www.emacswiki.org/emacs/MarkdownMode
 
 (autoload 'markdown-mode "markdown-mode.el" t)
 (setq auto-mode-alist

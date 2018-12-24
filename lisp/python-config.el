@@ -2,11 +2,7 @@
 ;; -- python --
 ;; #############################################################################
 
-;;(require 'python)
-
-;;(require 'anaconda-mode)
-;;(add-hook 'python-mode-hook 'anaconda-mode)
-;;(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+(require 'python)
 
 ;; If you want to use ipython.
 (setq python-shell-interpreter "ipython3"

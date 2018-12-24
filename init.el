@@ -1,19 +1,16 @@
-;; #############################################################################
-;; -- Andy's init.el file --
+;; init.el - Andy's Emacs init file
 ;;
 ;; Contents:
-;; - Init
-;;   - Debug
-;;   - External Files
-;;   - Appearance
-;;   - Edit
-;;   - Proxy Settings
-;;   - Lisp Packages
-;;   - Misc (Custom Lisp)
-;;   - Aliases
-;;   - Session
-;;   - Custom Settings (I ty to keep this cleaned up.)
-;; #############################################################################
+;; - Debug
+;; - External Files
+;; - Appearance
+;; - Edit
+;; - Proxy Settings
+;; - Lisp Packages
+;; - Misc (Custom Lisp)
+;; - Aliases
+;; - Session
+;; - Custom Settings (I ty to keep this cleaned up.)
 
 ;; -- Debug --
 ;; Uncomment this if you are having problems.
@@ -50,28 +47,23 @@
 (load "comint-config.el" )
 (load "dired-config.el" )
 (load "eimp-config.el" )
-(load "emmet-config.el" )
+;;(load "emmet-config.el" )
 (load "ein-config.el" )
 (load "elpy-config.el" )
 (load "epa-config.el" )
-;;(load "eshell-config.el" )
 (load "ess-config.el" )
-(load "eval-in-repl-config.el")
-;;(load "ido-config.el" )
-;;(load "flx-config.el" )
+;;(load "eval-in-repl-config.el")
 ;(load "flycheck-config.el" )
 (load "ivy-config.el" )
 (load "magit-config.el" )
 (load "markdown-config.el" )
 (load "orgmode-config.el" )
-;;(load "perl-config.el" )
 ;;(load "perspective-config.el" )
 (load "polymode-config.el" )
 (load "projectile-config.el" )
 ;;(load "python-config.el" )
 ;;(load "speedbar-config.el" )
 (load "sql-config.el" )
-;;(load "tabbar-config.el" )
 (load "web-config.el" )
 (load "yaml-config.el" )
 (load "yasnippet-config.el" )

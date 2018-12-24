@@ -1,9 +1,7 @@
-;; #############################################################################
-;; -- projectile --
+;;  projectile-config.el
 ;;
-;; https://github.com/bbatsov/projectile
-;;
-;; #############################################################################
+;; Reference:
+;; - https://github.com/bbatsov/projectile
 
 (require 'projectile)
 (projectile-mode)

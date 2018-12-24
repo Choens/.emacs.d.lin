@@ -1,6 +1,7 @@
-;; #############################################################################
-;; -- eval-in-repl --
-;; #############################################################################
+;; eval-in-repl -- ESS-like interface.
+;;
+;; Reference:
+;; - 
 
 ;; require the main file containing common functions
 (require 'eval-in-repl)

@@ -1,6 +1,7 @@
-;; #############################################################################
-;; -- polymode --
-;; #############################################################################
+;; polymode-config.el
+;;
+;; Reference:
+;; - https://github.com/polymode/polymode
 
 (require 'poly-R)
 (require 'poly-markdown)

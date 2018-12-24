@@ -1,10 +1,7 @@
-;; #############################################################################
-;; -- ivy --
+;; ivy.el - Includes config for ivy, counsel, and swiper
 ;;
-;; My ivy config includes config for ivy, counsel, and swiper.
-;; https://writequit.org/denver-emacs/presentations/2017-04-11-ivy.html
-;; #############################################################################
-
+;; Reference:
+;; - https://writequit.org/denver-emacs/presentations/2017-04-11-ivy.html
 
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)

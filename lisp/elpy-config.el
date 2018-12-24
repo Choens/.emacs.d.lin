@@ -1,10 +1,9 @@
-;; #############################################################################
-;; -- elpy --
+;; elpy-config.el - Programming for Python
 ;;
-;; Kudos - https://realpython.com/blog/python/emacs-the-best-python-editor/
-;; and   - https://emacs.stackexchange.com/questions/16637/how-to-set-up-elpy-to-use-python3
+;; Reference:
+;; - https://realpython.com/blog/python/emacs-the-best-python-editor/
+;; - https://emacs.stackexchange.com/questions/16637/how-to-set-up-elpy-to-use-python3
 ;;
-;; #############################################################################
 
 (elpy-enable)
 
@@ -20,18 +19,12 @@
 ;; Use Python3 damnit
 (setq elpy-rpc-python-command "python3")
 
-;; Ipython / Jupyter
-;;(elpy-use-ipython) ;; deprecated
-;; (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
-;; (setq python-shell-interpreter "ipython3"
-;;       python-shell-interpreter-args "-i")
-
 (setq python-shell-interpreter "jupyter"
       python-shell-interpreter-args "console --simple-prompt"
       python-shell-prompt-detect-failure-warning nil)
 (add-to-list 'python-shell-completion-native-disabled-interpreters
              "jupyter")
 
-;; Be compatible with Spyder.
+;; USe Spyder-compatible codecells.
 (setq elpy-shell-codecell-beginning-regexp "#%%")
 (setq elpy-shell-cell-boundary-regexp  "#%%")

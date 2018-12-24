@@ -1,9 +1,7 @@
-;; #############################################################################
-;; -- dired --
+;; dired-config.el - Manage files in Emacs!
 ;;
-;; Configures how dired works. Damned useful for file/folder management.
-;;
-;; #############################################################################
+;; Reference:
+;; - https://www.emacswiki.org/emacs/DiredMode
 
 ;; Makes sizes human-readable
 ;; Sorts version numbers

@@ -1,5 +1,4 @@
-;; #############################################################################
-;; -- edit --
+;; edit.el - Alters my Emacs settings related to editing files.
 ;;
 ;; Contents:
 ;;   - Tabs/Indentation
@@ -8,14 +7,12 @@
 ;;   - Custom Lisp
 ;;   - Aliases
 ;;   - Keybindings
-;;   - Session
-;;   - Keybindings
-;; #############################################################################
 
 ;; -- Tabs/Indentation --
 (setq-default tab-width 4)              ; Specifies default offset.
 (setq-default c-basic-offset 4)         ; Specifies offset for C
 (setq-default indent-tabs-mode nil)     ; Use spaces, not tabs!
+
 
 
 ;; -- Editing --
@@ -26,6 +23,8 @@
 ;;(setq select-enable-clipboard 1)        ; When in a terminal, use X-Clipboard
 ;;(setq select-enable-primary 1)          ; When in a terminal, use Primary
 
+
+
 ;; -- Backup --
 (setq  backup-by-copying t )            ; Enables Emacs backups
 (setq   backup-directory-alist          ; Sets the backup directory
@@ -33,6 +32,8 @@
 (setq delete-old-versions t )           ; Delete old versions
 (setq kept-new-versions 5 )             ; Keep no more than 5 new versions
 (setq version-control t )               ; Use 'version' control for files
+
+
 
 ;; -- Keybindings --
 ;; Go to a specific line.
