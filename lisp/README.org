@@ -1,0 +1,5 @@
+* Lisp
+
+A (longish) series of config files. Each file holds the settings for a
+single mode/packge (There are exceptions). The file-name is the name
+of the mode/package, followed by -config. So, settings for ess are in ess-config.el.
