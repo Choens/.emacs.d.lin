@@ -106,33 +106,10 @@
 
 
 
-;; =============================================================================
-;; -- Text Manipulation --
-;; =============================================================================
+;; ---- Text Manipulation ----
 
-;; -----------------------------------------------------------------------------
-;; Clears the current buffer.
-;; -----------------------------------------------------------------------------
+;; -- Clears the current buffer --
 (defun clear-buffer ()
   (interactive)
   (mark-whole-buffer)
   (delete-region (region-beginning) (region-end)))
-
-;; -----------------------------------------------------------------------------
-;; Use M-w and C-w on entire line when a
-;; region is not selected.
-;; Source: http://www.emacswiki.org/emacs/WholeLineOrRegion
-;; -----------------------------------------------------------------------------
-(put 'kill-ring-save 'interactive-form
-     '(interactive
-       (if (use-region-p)
-           (list (region-beginning) (region-end))
-         (list (line-beginning-position) (line-beginning-position 2)))))
-
-(put 'kill-region 'interactive-form      
-     '(interactive
-       (if (use-region-p)
-           (list (region-beginning) (region-end))
-         (list (line-beginning-position) (line-beginning-position 2)))))
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
