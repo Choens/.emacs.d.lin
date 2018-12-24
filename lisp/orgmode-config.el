@@ -34,7 +34,7 @@
    (latex      . t)
    (python     . t)
    (R          . t)
-   (sh         . t)
+   ;;(sh         . t)
    (sql        . t)
    (sqlite     . t)
    ))
