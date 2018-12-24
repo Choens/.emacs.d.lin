@@ -2,13 +2,13 @@
 ;;
 ;; Reference:
 ;; - https://www.emacswiki.org/emacs/MarkdownMode
+;; - https://jblevins.org/projects/markdown-mode/
 
-(autoload 'markdown-mode "markdown-mode.el" t)
-(setq auto-mode-alist
-      (append '(
-                ("\\.text" . markdown-mode)
-                ("\\.md" . markdown-mode)
-;                ("\\.Rmd" . markdown-mode)
-;                ("\\.Rpres" . markdown-mode)
-                )
-              auto-mode-alist))
+(use-package markdown-mode
+    :ensure t
+    :mode (("README\\.md\\'" . gfm-mode)
+           ("\\.md\\'" . markdown-mode)
+           ("\\.markdown\\'" . markdown-mode))
+    :commands (markdown-mode gfm-mode)
+    :config
+    :init (setq markdown-command "multimarkdown"))

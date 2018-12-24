@@ -1,7 +1,7 @@
 ;; package-config.el
 ;;
-;; Reference:
-;; - 
+;; I'm not currently using this. It is commented out in my init.el.
+;; In the future, I may delete this entirely.
 
 (require 'package)
 (setq package-archives'(
@@ -42,6 +42,7 @@
     py-autopep8
     solarized-theme
     swiper
+    use-package
     web-mode
     ;; I use the version packaged wth Fedora.
     ;;yaml-mode 

@@ -3,9 +3,10 @@
 ;; Reference:
 ;; - https://www.emacswiki.org/emacs/DiredMode
 
-;; Makes sizes human-readable
-;; Sorts version numbers
-;; Lists dotfiles and capital-letters first.
+;; -- Basics --
+;; - Human-readable file size,
+;; - Sorts version numbers,
+;; - Lists dotfiles and capital-letters first.
 (setq dired-listing-switches "-aBhl  --group-directories-first")
                                                   
 ;; Tells dired we want recursive copies.                                                  

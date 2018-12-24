@@ -3,3 +3,19 @@
 A (longish) series of config files. Each file holds the settings for a
 single mode/packge (There are exceptions). The file-name is the name
 of the mode/package, followed by -config. So, settings for ess are in ess-config.el.
+
+* References/Thanks
+
+I have _tried_ to note in the config files when/where someone else's
+config was useful to me. That said - trying to wrap my head/config
+around use-package was hard. Thank you to all the great examples
+proided by the following:
+
+- https://github.com/jwiegley/use-package
+- https://github.com/jcf/emacs.d/blob/master/init-languages.org
+- https://github.com/r0man/.emacs.d/blob/master/init.el.org
+- https://github.com/bbatsov/emacs.d/blob/master/init.el
+
+My config is a mix-tape of these, my pre-existing config, and a few
+ideas of my own. That said - thank you to everyone I was able to use
+as a reference.
