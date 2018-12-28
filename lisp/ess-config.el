@@ -17,8 +17,8 @@
     (setq ess-nuke-trailing-whitespace-p 't)
 
     ;; Indentation theme, makes it consistent with RStudio, etc.
-    ;;(setq ess-default-style 'RRR)
-    (setq ess-default-style 'RStudio-)
+    (setq ess-default-style 'RRR)
+    ;;(setq ess-default-style 'RStudio-)
 
     ;; Turns on ESS auto complete!
     (setq ess-use-auto-complete t)
