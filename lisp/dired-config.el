@@ -7,6 +7,7 @@
 ;; - Human-readable file size,
 ;; - Sorts version numbers,
 ;; - Lists dotfiles and capital-letters first.
+
 (setq dired-listing-switches "-aBhl  --group-directories-first")
                                                   
 ;; Tells dired we want recursive copies.                                                  
