@@ -1,7 +1,9 @@
 ;; sql-config.el
 ;;
 ;; Reference:
-;; - 
+;; - https://www.emacswiki.org/emacs/CategorySql
+;; - https://www.emacswiki.org/emacs/SqlMode
+;; - https://github.com/sebasmonia/sqlcmdline
 
 (use-package sql
   :commands sql-mode
