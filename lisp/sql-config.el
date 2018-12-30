@@ -9,7 +9,7 @@
          ("\\.tbl$" . sql-mode)
          ("\\.sp$"  . sql-mode))
   :config
-  (load-if-exists "~/.sql.el")
+  (load "~/secrets.el")
   (setq-default sql-indent-offset 4)
   (set 'sql-preferred-evaluation-method "background")
   (set 'sql-sqlite-program "sqlite3"))
