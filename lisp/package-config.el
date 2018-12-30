@@ -21,25 +21,31 @@
     csv-mode
     ein
     elpy
-    emmet-mode
+    ;;emmet-mode
     ;; I use the version packaged wth Fedora.
     ;;ess
     eval-in-repl
     flycheck
     ivy
+    julia-mode
     magit
     markdown-mode
     material-theme
+    ob-ipython
     org-gnome
     org-plus-contrib
     ox-reveal
+    persp-projectile
     perspective
     polymode
     poly-R
     poly-markdown
+    poly-org
     poly-noweb
     poly-org
     py-autopep8
+    pyvenv
+    request-deferred
     solarized-theme
     swiper
     use-package
