@@ -12,8 +12,8 @@
 ;; -- Theme --
 ;; Manual Instructions: M-x customize-themes
 (if (display-graphic-p) 
-    (load-theme 'material t)
-  (load-theme 'material t))
+    (load-theme 'leuven t)
+  (load-theme 'adwaita t))
 
 ;; Other themes
 ;;(load-theme 'adwaita t)
