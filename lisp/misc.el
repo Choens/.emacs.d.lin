@@ -31,7 +31,7 @@
 (defun open-emacs ()
   (interactive)
   (find-file "~/.emacs.d/")
-  (set-frame-name ".emacs"))
+  (set-frame-name ".emacs.d"))
 
 (defun open-documents ()
   (interactive)
@@ -55,22 +55,22 @@
 (defun open-ad-hoc-ccp ()
   (interactive)
   (find-file "~/Documents/Ad Hoc CCP/")
-  (set-frame-name "Ad Hoc CCP"))
+  (set-frame-name "Ad Hoc: CCP"))
 
 (defun open-projects-ccp ()
   (interactive)
   (find-file "~/Documents/Projects CCP/")
-  (set-frame-name "Projects CCP"))
+  (set-frame-name "Projects: CCP"))
 
 (defun open-reports-ccp ()
   (interactive)
   (find-file "~/Documents/Reports CCP/")
-  (set-frame-name "Reports CCP"))
+  (set-frame-name "Reports: CCP"))
 
 (defun open-validation-ccp ()
   (interactive)
   (find-file "~/Documents/Validation CCP/")
-  (set-frame-name "Validation CCP"))
+  (set-frame-name "Validation: CCP"))
 
 
 
