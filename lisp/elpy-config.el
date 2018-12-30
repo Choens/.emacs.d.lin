@@ -33,11 +33,17 @@
       ;; Use Python3 damnit
       (setq elpy-rpc-python-command "python3")
 
-      (setq python-shell-interpreter "jupyter"
-            python-shell-interpreter-args "console --simple-prompt"
+      ;; (setq python-shell-interpreter "jupyter"
+      ;;       python-shell-interpreter-args "console --simple-prompt"
+      ;;       python-shell-prompt-detect-failure-warning nil)
+      ;; (add-to-list 'python-shell-completion-native-disabled-interpreters
+      ;;              "jupyter")
+
+      (setq python-shell-interpreter "ipython3"
+            python-shell-interpreter-args "--simple-prompt --matplotlib"
             python-shell-prompt-detect-failure-warning nil)
       (add-to-list 'python-shell-completion-native-disabled-interpreters
-                   "jupyter")
+                   "ipython3")
 
       ;; Use Spyder-compatible codecells.
       (setq elpy-shell-codecell-beginning-regexp "#%%")
