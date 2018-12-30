@@ -72,6 +72,7 @@
 (load "ein-config.el" )
 (load "elpy-config.el" )
 (load "epa-config.el" )
+;;(load "eshell-config.el" )
 (load "ess-config.el" )
 ;;(load "flycheck-config.el" )
 (load "json-config.el" )
@@ -99,4 +100,13 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default))))
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default)))
+ '(package-selected-packages
+   (quote
+    (ob-ipython yaml-mode web-mode use-package solarized-theme request-deferred py-autopep8 poly-org poly-R persp-projectile ox-reveal org-plus-contrib org-gnome material-theme magit julia-mode flycheck eval-in-repl emmet-mode elpy ein eimp csv-mode counsel auctex anaconda-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
