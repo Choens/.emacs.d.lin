@@ -12,7 +12,8 @@
 ;; -- Theme --
 ;; Manual Instructions: M-x customize-themes
 (if (display-graphic-p) 
-    (load-theme 'leuven t)
+    ;;(load-theme 'leuven t)
+    (load-theme 'material t)
   (load-theme 'adwaita t))
 
 ;; Other themes
@@ -40,7 +41,7 @@
 
 
 ;; -- Toolbar --
-(tool-bar-mode 1) ; 1 = On, 0 = Off
+(tool-bar-mode 0) ; 1 = On, 0 = Off
 
 
 

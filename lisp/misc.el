@@ -72,6 +72,11 @@
   (find-file "~/Documents/Validation CCP/")
   (set-frame-name "Validation: CCP"))
 
+(defun open-intro-to-data ()
+  (interactive)
+  (find-file "~/Documents/Intro To Data/")
+  (set-frame-name "Intro To Data"))
+
 
 
 ;; ---- Highlight Functions ----

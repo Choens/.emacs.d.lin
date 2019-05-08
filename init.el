@@ -89,3 +89,21 @@
 
 ;; ######## END init.el  ########
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" default)))
+ '(package-selected-packages
+   (quote
+    (poly-org yaml-mode web-mode use-package solarized-theme request-deferred pythonic py-autopep8 poly-R persp-projectile ox-reveal org-plus-contrib org-gnome ob-ipython material-theme magit julia-mode ghub flycheck eval-in-repl emmet-mode elpy ein csv-mode counsel auctex))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(put 'upcase-region 'disabled nil)

@@ -3,8 +3,8 @@
 ;; Reference:
 ;; - http://orgmode.org/
 
-(use-package ob-ipython
-  :ensure t)
+;; (use-package ob-ipython
+;;   :ensure t)
 
 (use-package org
   :mode (("\\.org$" . org-mode))
@@ -18,9 +18,10 @@
   
   ;; -- ORG PIM --
   ;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
-  (setq org-default-notes-file "~/Documents/Notes/Daily.org")
+  (setq org-default-notes-file "~/Documents/Notes/Notes.org")
   
-  (setq org-agenda-files (quote ("~/Documents/Notes/")))
+  (setq org-agenda-files '("~/Documents/Notes/" "~/Documents/Notes/Acuitas Projects/"))
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-todo-keywords
         '((sequence "TODO(t@)" "IN PROGRESS(i@)" "|" "DONE(d@/!)")
           (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f!)")
@@ -42,11 +43,11 @@
    '(
      (ditaa      . t)
      (emacs-lisp . t)
-     (ipython    . t)
+     ;; (ipython    . t)
      (latex      . t)
      (python     . t)
      (R          . t)
-     ;;(sh         . t)
+     (shell      . t)
      (sql        . t)
      (sqlite     . t)
      ))

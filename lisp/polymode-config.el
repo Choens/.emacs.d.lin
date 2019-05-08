@@ -2,6 +2,8 @@
 ;;
 ;; Reference:
 ;; - https://github.com/polymode/polymode
+;; - https://stackoverflow.com/questions/52489905/emacs-polymode-for-markdown-and-python
+;; - http://mpastell.com/pweave/editors.html
 
 (use-package poly-markdown
   :ensure t
