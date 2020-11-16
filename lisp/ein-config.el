@@ -7,9 +7,13 @@
 (use-package ein
     :ensure t
     :init
+    (require 'ein-notebook)
+    ;;(require 'ein-subpackages)
     (setq ein:use-auto-complete t)
-    (setq ein:complete-on-dot -1)    ;; Don't autocomplete after a dot
     (setq ein:query-timeout 1000)
-    (setq ein:jupyter-default-server-command 'jupyter_app)
+    (setq ein:jupyter-default-server-command 'jupyter)
+    (setq ein:jupyter-server-use-subcommand 'notebook)
     (require 'ein)
     )
+
+

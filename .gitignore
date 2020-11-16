@@ -7,7 +7,7 @@
 \#*
 \#*\#
 *.log
-
+*.elc
 
 
 ## ============================================================================
@@ -16,12 +16,13 @@
 auto-save-list/
 backups/
 elpa/
-ehsell/
+elpy/
+eshell/
 games/
+request/
 sql/
+transient/
 tutorial/
-eshell/history
-eshell/lastdir
 url/cookies
 
 

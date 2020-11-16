@@ -11,10 +11,15 @@
 
 ;; -- Theme --
 ;; Manual Instructions: M-x customize-themes
-(if (display-graphic-p) 
-    ;;(load-theme 'leuven t)
-    (load-theme 'material t)
-  (load-theme 'adwaita t))
+;;(load-theme 'leuven t)
+(when (display-graphic-p)
+  (load-theme 'solarized-dark t) ;;(load-theme 'solarized-light t)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1))
+
+(unless (display-graphic-p)
+  (load-theme 'solarized-dark t)
+  (xterm-mouse-mode 1))
 
 ;; Other themes
 ;;(load-theme 'adwaita t)
@@ -26,17 +31,18 @@
 ;;(load-theme 'tango-dark t)
 
 
-
 ;; -- Font --
 ;; I really like this font.
-(add-to-list 'default-frame-alist '(font . "Source Code Pro"))
-(set-face-attribute 'default t :font "Source Code Pro")
+                                        ;(add-to-list 'default-frame-alist '(font . "Source Code Pro"))
+                                        ;(set-face-attribute 'default t :font "Source Code Pro")
+(add-to-list 'default-frame-alist '(font . "Cascadia Code"))
+(set-face-attribute 'default t :font "Cascadia Code" :height 100)
 (ansi-color-for-comint-mode-on)
 
 
 
 ;; -- Menu-bar  --
-(menu-bar-mode 1) ; 1 = On, 0 = Off
+;;(menu-bar-mode 1) ; 1 = On, 0 = Off
 
 
 

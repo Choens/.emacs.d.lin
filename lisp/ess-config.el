@@ -2,47 +2,43 @@
 ;;
 ;; Reference:
 ;; - https://ess.r-project.org/
-;; - I install this via the Fedora repo. Seems more stable this way.
-;; - Add `:ensure t` if/when this is necessary.
+;; - https://github.com/japhir/ArchConfigs/blob/master/myinit.org
+
+(defun ac/insert-r-pipe ()
+  "Insert the pipe operator in R, %>%"
+  (interactive)
+  (just-one-space 1)
+  (insert "%>%")
+  (reindent-then-newline-and-indent)
+  )
 
 (use-package ess
-    ;;:commands R
-    :load-path "site-lisp/ess"
-    :mode (("\\.[rR]\\'" . R-mode)
-           ("\\.jl\\'"   . julia-mode)
-           ("\\.sas\\'"  . sas-mode))
-    ;;:init (require 'ess-site)
-    :config
-    ;; Get rid of trailing whitespace.
-    (setq ess-nuke-trailing-whitespace-p 't)
-
-    ;; Indentation theme, makes it consistent with RStudio, etc.
-    (setq ess-default-style 'RRR)
-    ;;(setq ess-default-style 'RStudio-)
-
-    ;; Turns on ESS auto complete!
-    (setq ess-use-auto-complete t)
-
-    ;; Helps Emacs help with large scripts.
-    (setq ess-eval-visibly-p 'nowait)
-    (setq ess-eval-visibly 'nowait)
-
-    ;; Don't use Sweave. Use Knitr!
-    (setq ess-swv-processor 'knitr)
-
-    ;; Fixes the ugly endless indentation when chaining functions, using pipes, etc.
-    (setq ess-offset-continued 2)
-
-    ;; Make long functions look better.
-    (set 'ess-indent-from-lhs t)
-
-    ;; Loads ESS-R-Data-View and view your data in ESS!
-    ;;(autoload 'ess-R-data-view "ess-R-data-view.el")
-
-    ;; Fix ESS underscore
-    (ess-toggle-underscore nil)
-
-    ;; Set my path to R
-    ;; Only needed if I'm using anaconda.
-    ;;(setq inferior-R-program-name "~/anaconda3/envs/rstudio/bin/R")
-    )
+  :ensure t
+  :init (require 'ess-site)
+  :mode (("\\.jl\\'"   . julia-mode)
+         ("\\.[rR]\\'" . R-mode)
+         ("\\.sas\\'"  . sas-mode)
+         )
+  :commands R
+  :bind (:map ess-r-mode-map
+              (";" . ess-insert-assign)
+              ;; RStudio equivalents
+              ("M--" . ess-insert-assign)
+              ("C-S-m" . ac/insert-r-pipe)
+              :map inferior-ess-r-mode-map
+              (";" . ess-insert-assign)
+              ("M--" . ess-insert-assign)
+              ("C-S-m" . ac/insert-r-pipe))
+  :config
+  (setq
+   ess-set-style 'RStudio-
+   ess-nuke-trailing-whitespace-p 't
+   ;;ess-offset-continued 2
+   ess-indent-with-fancy-comments nil
+   ess-indent-from-lhs t
+   ess-use-auto-complete t
+   ess-eval-visibly-p 'nowait
+   ess-eval-visibly 'nowait
+   ess-swv-processor 'knitr
+   )
+  )

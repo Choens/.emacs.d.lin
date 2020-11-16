@@ -4,6 +4,6 @@
 ;; - https://github.com/jcf/emacs.d/blob/master/init-languages.org
 
 (use-package csv-mode
+  :ensure t
   :mode "\\.[Cc][Ss][Vv]\\'"
-  :init (setq csv-separators '("," ";" "|" " "))
-  :config (use-package csv-nav))
+  :init (setq csv-separators '("," ";" "|" " ")))

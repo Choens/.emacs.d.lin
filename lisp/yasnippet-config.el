@@ -10,9 +10,10 @@
   :ensure t
   :init
   (setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"           ;; Local snippets
-        "~/Git/yasnippet-snippets"      ;; 
-        ))
+        '("~/.emacs.d/snippets"           ;; Local snippets
+          ;;"~/Git/yasnippet-snippets"      ;; 
+          ))
   (yas-reload-all)
   :config
   (yas-global-mode 1)
+)

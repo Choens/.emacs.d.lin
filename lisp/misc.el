@@ -22,6 +22,14 @@
   (interactive)
   (find-file "~/Documents/Notes/Passwords.org.gpg"))
 
+(defun open-renviron ()
+  (interactive)
+  (find-file "~/.Renviron"))
+
+(defun open-secrets-yaml ()
+  (interactive)
+  (find-file "~/secrets.yaml"))
+
 (defun open-sql-yaml ()
   (interactive)
   (find-file "~/sql.yaml"))
@@ -38,44 +46,69 @@
   (find-file "~/Documents/")
   (set-frame-name "Documents"))
 
-(defun open-downloads ()
+(defun open-documents-ccp ()
   (interactive)
-  (find-file "~/Downloads/"))
+  (find-file "~/Documents/CCP/")
+  (set-frame-name "CCP Projects"))
 
-(defun open-notes ()
+(defun open-documents-cdphp ()
+  (interactive)
+  (find-file "~/Documents/CDPHP/")
+  (set-frame-name "CDPHP Projects"))
+
+(defun open-documents-cop ()
+  (interactive)
+  (find-file "~/Documents/COP/")
+  (set-frame-name "COP Projects"))
+
+(defun open-documents-install-scripts ()
+  (interactive)
+  (find-file "~/Documents/Install Scripts/")
+  (set-frame-name "Install Scripts"))
+
+(defun open-documents-intro-to-data ()
+  (interactive)
+  (find-file "~/Documents/Intro To Data/")
+  (set-frame-name "Intro To Data"))
+
+(defun open-documents-intro-to-data-lectures ()
+  (interactive)
+  (find-file "~/Documents/Intro To Data/Lectures/")
+  (set-frame-name "Intro To Data: Lectures"))
+
+(defun open-documents-intro-to-data-labs ()
+  (interactive)
+  (find-file "~/Documents/Intro To Data/Labs/")
+  (set-frame-name "Intro To Data: Labs"))
+
+(defun open-documents-resume ()
+  (interactive)
+  (find-file "~/Documents/Resume/")
+  (set-frame-name "Resume"))
+
+(defun open-documents-review ()
+  (interactive)
+  (find-file "~/Documents/Review/")
+  (set-frame-name "Review"))
+
+(defun open-documents-rsc ()
+  (interactive)
+  (find-file "~/Documents/RSC/")
+  (set-frame-name "RSC Projects"))
+
+(defun open-documents-notes ()
   (interactive)
   (find-file "~/Documents/Notes/")
   (set-frame-name "Notes"))
+
+(defun open-downloads ()
+  (interactive)
+  (find-file "~/Downloads/"))
 
 (defun open-git ()
   (interactive)
   (find-file "~/Git/")
   (set-frame-name "Git"))
-
-(defun open-ad-hoc-ccp ()
-  (interactive)
-  (find-file "~/Documents/Ad Hoc CCP/")
-  (set-frame-name "Ad Hoc: CCP"))
-
-(defun open-projects-ccp ()
-  (interactive)
-  (find-file "~/Documents/Projects CCP/")
-  (set-frame-name "Projects: CCP"))
-
-(defun open-reports-ccp ()
-  (interactive)
-  (find-file "~/Documents/Reports CCP/")
-  (set-frame-name "Reports: CCP"))
-
-(defun open-validation-ccp ()
-  (interactive)
-  (find-file "~/Documents/Validation CCP/")
-  (set-frame-name "Validation: CCP"))
-
-(defun open-intro-to-data ()
-  (interactive)
-  (find-file "~/Documents/Intro To Data/")
-  (set-frame-name "Intro To Data"))
 
 
 
@@ -118,3 +151,18 @@
   (interactive)
   (mark-whole-buffer)
   (delete-region (region-beginning) (region-end)))
+
+;;(defun move-line-up ()
+;;  "Move up the current line."
+;;  (interactive)
+;;  (transpose-lines 1)
+;;  (forward-line -2)
+;;  (indent-according-to-mode))
+;;
+;;(defun move-line-down ()
+;;  "Move down the current line."
+;;  (interactive)
+;;  (forward-line 1)
+;;  (transpose-lines 1)
+;;  (forward-line -1)
+;;  (indent-according-to-mode))

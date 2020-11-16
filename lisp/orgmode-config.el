@@ -7,8 +7,8 @@
 ;;   :ensure t)
 
 (use-package org
+  :ensure t  
   :mode (("\\.org$" . org-mode))
-  :ensure t
   :bind (("\C-cl" . org-store-link)
          ("\C-ca" . org-agenda)
          ("\C-cb" . org-iswitchb)
@@ -24,6 +24,7 @@
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-todo-keywords
         '((sequence "TODO(t@)" "IN PROGRESS(i@)" "|" "DONE(d@/!)")
+          (sequence "FOLLOW UP(f@)" "|" "DONE(d@/!)")
           (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f!)")
           (sequence "|" "CANCELED(c@/!)")
           (sequence "|" "WAITING(w@/!)")
