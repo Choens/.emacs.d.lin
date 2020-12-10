@@ -11,14 +11,19 @@
 
 ;; -- Theme --
 ;; Manual Instructions: M-x customize-themes
-;;(load-theme 'leuven t)
+
 (when (display-graphic-p)
-  (load-theme 'solarized-dark t) ;;(load-theme 'solarized-light t)
+  ;;(load-theme 'solarized-dark t)
+  ;;(load-theme 'solarized-light t)
+  ;;(load-theme 'leuven t)
+  ;;(load-theme 'solarized-light-high-contrastt)
+  (load-theme 'material t)
   (menu-bar-mode -1)
   (tool-bar-mode -1))
 
 (unless (display-graphic-p)
-  (load-theme 'solarized-dark t)
+  ;;(load-theme 'solarized-dark t)
+  (load-theme 'leuven t)
   (xterm-mouse-mode 1))
 
 ;; Other themes

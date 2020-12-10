@@ -110,6 +110,11 @@
   (find-file "~/Git/")
   (set-frame-name "Git"))
 
+(defun open-notes ()
+  (interactive)
+  (find-file "~/Documents/Notes/")
+  (set-frame-name "Notes"))
+
 
 
 ;; ---- Highlight Functions ----
