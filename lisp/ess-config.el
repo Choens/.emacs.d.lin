@@ -12,14 +12,20 @@
   (reindent-then-newline-and-indent)
   )
 
-(use-package ess
-  :ensure t
-  :init (require 'ess-site)
+;(defun myindent-ess-hook ()
+;  (setq ess-indent-offset 2))
+
+(use-package ess-site
+  :ensure ess
   :mode (("\\.jl\\'"   . julia-mode)
          ("\\.[rR]\\'" . R-mode)
          ("\\.sas\\'"  . sas-mode)
          )
   :commands R
+  ;:hook (
+  ;       ;'ess-mode-hook
+  ;       'myindent-ess-hook
+  ;       )
   :bind (:map ess-r-mode-map
               (";" . ess-insert-assign)
               ;; RStudio equivalents
@@ -31,9 +37,10 @@
               ("C-S-m" . ac/insert-r-pipe))
   :config
   (setq
-   ess-set-style 'RStudio-
+   ess-style 'RStudio
+   ;ess-indent-offset 2
+   ess-offset-arguments 'prev-line
    ess-nuke-trailing-whitespace-p 't
-   ;;ess-offset-continued 2
    ess-indent-with-fancy-comments nil
    ess-indent-from-lhs t
    ess-use-auto-complete t

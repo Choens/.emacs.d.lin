@@ -36,6 +36,21 @@
 
 
 ;; -- Open-Specific Folders --
+(defun open-ccp ()
+  (interactive)
+  (find-file "~/Documents/CCP/")
+  (set-frame-name "CCP Project"))
+(defun open-documents-cdphp ()
+  (interactive)
+  (find-file "~/Documents/CDPHP/")
+  (set-frame-name "CDPHP Project"))
+
+(defun open-intro-to-data ()
+  (interactive)
+  (find-file "~/Documents/Intro To Data/")
+  (set-frame-name "Intro To Data"))
+
+
 (defun open-emacs ()
   (interactive)
   (find-file "~/.emacs.d/")
@@ -49,17 +64,17 @@
 (defun open-documents-ccp ()
   (interactive)
   (find-file "~/Documents/CCP/")
-  (set-frame-name "CCP Projects"))
+  (set-frame-name "CCP Project"))
 
 (defun open-documents-cdphp ()
   (interactive)
   (find-file "~/Documents/CDPHP/")
-  (set-frame-name "CDPHP Projects"))
+  (set-frame-name "CDPHP Project"))
 
 (defun open-documents-cop ()
   (interactive)
   (find-file "~/Documents/COP/")
-  (set-frame-name "COP Projects"))
+  (set-frame-name "COP Project"))
 
 (defun open-documents-install-scripts ()
   (interactive)

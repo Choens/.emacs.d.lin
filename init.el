@@ -123,6 +123,8 @@
  '(lsp-ui-doc-border "#5d737a")
  '(nrepl-message-colors
    '("#cc1f24" "#bb3e06" "#a67c00" "#4f6600" "#a8b84b" "#005797" "#11948b" "#c42475" "#5e65b6"))
+ '(org-agenda-files
+   '("/home/andy/Documents/Notes/README.org" "/home/andy/Documents/Notes/acphs.org" "/home/andy/Documents/Notes/acuitas.org" "/home/andy/Documents/Notes/apps.org" "/home/andy/Documents/Notes/notes.org" "/home/andy/Documents/Notes/personal-goals.org" "/home/andy/Documents/Notes/personal.org" "/home/andy/Documents/Notes/read.org" "/home/andy/Documents/Notes/recipes.org" "/home/andy/Documents/Notes/recurring.org" "/home/andy/Documents/Notes/smba.org" "/home/andy/Documents/Notes/snippets.org" "/home/andy/Documents/Notes/sort-test.org"))
  '(package-selected-packages
    '(ess yaml-mode web-mode use-package solarized-theme request-deferred python-x py-autopep8 poly-org poly-R pip-requirements persp-projectile ox-reveal org-plus-contrib ob-ipython material-theme magit leuven-theme jupyter ipython-shell-send ghub flycheck eval-in-repl emmet-mode elpy ein csv-mode counsel auctex anaconda-mode))
  '(pos-tip-background-color "#f4eedb")
