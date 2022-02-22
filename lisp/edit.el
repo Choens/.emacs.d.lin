@@ -9,8 +9,8 @@
 ;;   - Keybindings
 
 ;; -- Tabs/Indentation --
-(setq-default tab-width 2)              ; Specifies default offset.
-(setq-default c-basic-offset 2)         ; Specifies offset for C
+(setq-default tab-width 4)              ; Specifies default offset.
+(setq-default c-basic-offset 4)         ; Specifies offset for C
 (setq-default indent-tabs-mode nil)     ; Use spaces, not tabs!
 
 

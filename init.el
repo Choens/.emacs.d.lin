@@ -82,6 +82,7 @@
 ;;(load "python-config.el")
 (load "sql-config.el")
 ;;(load "test-config.el")
+(load "visual-fill-column-config.el")
 (load "web-config.el")
 (load "yaml-config.el")
 

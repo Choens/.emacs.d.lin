@@ -12,20 +12,16 @@
   (reindent-then-newline-and-indent)
   )
 
-;(defun myindent-ess-hook ()
-;  (setq ess-indent-offset 2))
-
-(use-package ess-site
-  :ensure ess
+(use-package ess
+  :ensure t
+  :init (require 'ess-site)
   :mode (("\\.jl\\'"   . julia-mode)
          ("\\.[rR]\\'" . R-mode)
          ("\\.sas\\'"  . sas-mode)
          )
   :commands R
-  ;:hook (
-  ;       ;'ess-mode-hook
-  ;       'myindent-ess-hook
-  ;       )
+                                        ;:hook (
+                                        ;       )
   :bind (:map ess-r-mode-map
               (";" . ess-insert-assign)
               ;; RStudio equivalents
@@ -36,16 +32,14 @@
               ("M--" . ess-insert-assign)
               ("C-S-m" . ac/insert-r-pipe))
   :config
-  (setq
-   ess-style 'RStudio
-   ;ess-indent-offset 2
-   ess-offset-arguments 'prev-line
-   ess-nuke-trailing-whitespace-p 't
-   ess-indent-with-fancy-comments nil
-   ess-indent-from-lhs t
-   ess-use-auto-complete t
-   ess-eval-visibly-p 'nowait
-   ess-eval-visibly 'nowait
-   ess-swv-processor 'knitr
-   )
+  (setq ess-style 'RStudio)
+  (setq ess-indent-offset 2)
+  (setq ess-offset-arguments 'prev-line)
+  (setq ess-nuke-trailing-whitespace-p 't)
+  (setq ess-indent-with-fancy-comments nil)
+  (setq ess-indent-from-lhs t)
+  (setq ess-use-auto-complete t)
+  (setq ess-eval-visibly-p 'nowait)
+  (setq ess-eval-visibly 'nowait)
+  (setq ess-swv-processor 'knitr)
   )

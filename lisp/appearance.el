@@ -82,3 +82,5 @@
 (setq display-time-mode 1)
 (setq display-time-day-and-date t)      ; Display time & date in mo
 (show-paren-mode t)                     ; Show Parenthesis
+(setq-default fill-column 80)           ; What column to wrap on.
+
