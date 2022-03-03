@@ -15,6 +15,10 @@
          ("\C-cc" . org-capture))
   :config
   (require 'org-habit)
+
+  ;; Disable visual fill in org-mode files.
+  (visual-fill-column-mode -1)
+  (visual-line-mode -1)
   
   ;; -- ORG PIM --
   ;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
