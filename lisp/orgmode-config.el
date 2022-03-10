@@ -13,18 +13,18 @@
          ("\C-ca" . org-agenda)
          ("\C-cb" . org-iswitchb)
          ("\C-cc" . org-capture))
+  :hook
+  (org-mode . (lambda()
+                (visual-fill-column-mode -1)
+                (visual-line-mode -1)))
   :config
   (require 'org-habit)
-
-  ;; Disable visual fill in org-mode files.
-  (visual-fill-column-mode -1)
-  (visual-line-mode -1)
   
   ;; -- ORG PIM --
   ;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
   (setq org-default-notes-file "~/Documents/Notes/Notes.org")
   
-  (setq org-agenda-files '("~/Documents/Notes/" "~/Documents/Notes/Acuitas Projects/"))
+  (setq org-agenda-files '("~/Documents/Notes/" "~/Documents/Notes/journal/"))
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-todo-keywords
         '((sequence "TODO(t@)" "IN PROGRESS(i@)" "|" "DONE(d@/!)")

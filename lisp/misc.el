@@ -114,7 +114,8 @@
 (defun open-documents-notes ()
   (interactive)
   (find-file "~/Documents/Notes/")
-  (set-frame-name "Notes"))
+  (set-frame-name "Notes")
+  )
 
 (defun open-downloads ()
   (interactive)
