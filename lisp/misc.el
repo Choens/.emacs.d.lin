@@ -20,34 +20,16 @@
 ;; -- Open-Specific Files --
 (defun open-passwords ()
   (interactive)
-  (find-file "~/Documents/Notes/Passwords.org.gpg"))
+  (find-file "~/dev/notes/reference.org.gpg"))
 
 (defun open-renviron ()
   (interactive)
   (find-file "~/.Renviron"))
 
-(defun open-secrets-yaml ()
-  (interactive)
-  (find-file "~/secrets.yaml"))
-
-(defun open-sql-yaml ()
-  (interactive)
-  (find-file "~/sql.yaml"))
-
-
 ;; -- Open-Specific Folders --
-(defun open-ccp ()
-  (interactive)
-  (find-file "~/Documents/CCP/")
-  (set-frame-name "CCP Project"))
-(defun open-documents-cdphp ()
-  (interactive)
-  (find-file "~/Documents/CDPHP/")
-  (set-frame-name "CDPHP Project"))
-
 (defun open-intro-to-data ()
   (interactive)
-  (find-file "~/Documents/Intro To Data/")
+  (find-file "~/dev/acphs/")
   (set-frame-name "Intro To Data"))
 
 
@@ -61,77 +43,59 @@
   (find-file "~/Documents/")
   (set-frame-name "Documents"))
 
-(defun open-documents-ccp ()
+(defun open-dev-acuitas ()
   (interactive)
-  (find-file "~/Documents/CCP/")
+  (find-file "~/dev/acuitas/")
   (set-frame-name "CCP Project"))
 
-(defun open-documents-cdphp ()
+(defun open-dev-ccp ()
   (interactive)
-  (find-file "~/Documents/CDPHP/")
+  (find-file "~/dev/acuitas/ccp/")
+  (set-frame-name "CCP Project"))
+
+(defun open-dev-cdphp ()
+  (interactive)
+  (find-file "~/dev/acuitas/cdphp/")
   (set-frame-name "CDPHP Project"))
 
-(defun open-documents-cop ()
-  (interactive)
-  (find-file "~/Documents/COP/")
-  (set-frame-name "COP Project"))
 
-(defun open-documents-install-scripts ()
+(defun open-dev-andy ()
   (interactive)
-  (find-file "~/Documents/Install Scripts/")
+  (find-file "~/dev/andy/")
+  (set-frame-name "Andy's Stuff"))
+
+(defun open-dev-install-scripts ()
+  (interactive)
+  (find-file "~/dev/andy/install-scripts")
   (set-frame-name "Install Scripts"))
 
-(defun open-documents-intro-to-data ()
+
+(defun open-dev-intro-to-data ()
   (interactive)
-  (find-file "~/Documents/Intro To Data/")
+  (find-file "~/dev/acphs/intro-to-data/")
   (set-frame-name "Intro To Data"))
 
-(defun open-documents-intro-to-data-lectures ()
+(defun open-dev-resume ()
   (interactive)
-  (find-file "~/Documents/Intro To Data/Lectures/")
-  (set-frame-name "Intro To Data: Lectures"))
-
-(defun open-documents-intro-to-data-labs ()
-  (interactive)
-  (find-file "~/Documents/Intro To Data/Labs/")
-  (set-frame-name "Intro To Data: Labs"))
-
-(defun open-documents-resume ()
-  (interactive)
-  (find-file "~/Documents/Resume/")
+  (find-file "~/dev/andy/job-search/resume/")
   (set-frame-name "Resume"))
 
-(defun open-documents-review ()
-  (interactive)
-  (find-file "~/Documents/Review/")
-  (set-frame-name "Review"))
 
-(defun open-documents-rsc ()
+(defun open-dev-notes ()
   (interactive)
-  (find-file "~/Documents/RSC/")
-  (set-frame-name "RSC Projects"))
+  (find-file "~/dev/and/notes/")
+  (set-frame-name "Notes")
+  )
 
-(defun open-documents-notes ()
+(defun open-notes ()
   (interactive)
-  (find-file "~/Documents/Notes/")
+  (find-file "~/dev/and/notes/")
   (set-frame-name "Notes")
   )
 
 (defun open-downloads ()
   (interactive)
   (find-file "~/Downloads/"))
-
-(defun open-git ()
-  (interactive)
-  (find-file "~/Git/")
-  (set-frame-name "Git"))
-
-(defun open-notes ()
-  (interactive)
-  (find-file "~/Documents/Notes/")
-  (set-frame-name "Notes"))
-
-
 
 ;; ---- Highlight Functions ----
 
