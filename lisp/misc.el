@@ -83,12 +83,12 @@
 
 (defun open-dev-notes ()
   (interactive)
-  (find-file "~/dev/and/notes/")
+  (find-file "~/dev/andy/notes/")
   (set-frame-name "Notes"))
 
 (defun open-notes ()
   (interactive)
-  (find-file "~/dev/and/notes/")
+  (find-file "~/dev/andy/notes/")
   (set-frame-name "Notes")
   (load-theme 'solarized-light t))
 
