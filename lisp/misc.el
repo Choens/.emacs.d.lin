@@ -91,6 +91,7 @@
   (interactive)
   (find-file "~/dev/and/notes/")
   (set-frame-name "Notes")
+  (load-theme 'solarized-light t)
   )
 
 (defun open-downloads ()
