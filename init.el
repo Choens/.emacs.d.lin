@@ -80,6 +80,7 @@
 (load "polymode-config.el")
 (load "projectile-config.el")
 ;;(load "python-config.el")
+(load "solarized-theme-config.el")
 (load "sql-config.el")
 ;;(load "test-config.el")
 (load "visual-fill-column-config.el")
