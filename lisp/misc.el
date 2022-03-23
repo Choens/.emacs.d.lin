@@ -17,7 +17,7 @@
 ;; files and folders.
 
 
-;; -- Open-Specific Files --
+;; -- Open Specific Files --
 (defun open-passwords ()
   (interactive)
   (find-file "~/dev/notes/reference.org.gpg"))
@@ -26,12 +26,11 @@
   (interactive)
   (find-file "~/.Renviron"))
 
-;; -- Open-Specific Folders --
+;; -- Open Specific Folders --
 (defun open-intro-to-data ()
   (interactive)
   (find-file "~/dev/acphs/")
   (set-frame-name "Intro To Data"))
-
 
 (defun open-emacs ()
   (interactive)
@@ -43,21 +42,25 @@
   (find-file "~/Documents/")
   (set-frame-name "Documents"))
 
+(defun open-dev ()
+  (interactive)
+  (find-file "~/dev/")
+  (set-frame-name "Dev"))
+
 (defun open-dev-acuitas ()
   (interactive)
   (find-file "~/dev/acuitas/")
-  (set-frame-name "CCP Project"))
+  (set-frame-name "Acuitas Projects"))
 
 (defun open-dev-ccp ()
   (interactive)
   (find-file "~/dev/acuitas/ccp/")
-  (set-frame-name "CCP Project"))
+  (set-frame-name "Acuitas - CCP Projects"))
 
 (defun open-dev-cdphp ()
   (interactive)
   (find-file "~/dev/acuitas/cdphp/")
-  (set-frame-name "CDPHP Project"))
-
+  (set-frame-name "Acuitas - CDPHP Project"))
 
 (defun open-dev-andy ()
   (interactive)
@@ -69,7 +72,6 @@
   (find-file "~/dev/andy/install-scripts")
   (set-frame-name "Install Scripts"))
 
-
 (defun open-dev-intro-to-data ()
   (interactive)
   (find-file "~/dev/acphs/intro-to-data/")
@@ -79,7 +81,6 @@
   (interactive)
   (find-file "~/dev/andy/job-search/resume/")
   (set-frame-name "Resume"))
-
 
 (defun open-dev-notes ()
   (interactive)
@@ -98,7 +99,6 @@
   (find-file "~/Downloads/"))
 
 ;; ---- Highlight Functions ----
-
 (defun hl-todo ()
 	"Highlight all instances of the phrase 'TODO - '"
 	(interactive)
