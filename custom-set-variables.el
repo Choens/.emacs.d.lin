@@ -13,7 +13,7 @@
  '(cua-overwrite-cursor-color "#a67c00")
  '(cua-read-only-cursor-color "#778c00")
  '(custom-safe-themes
-   '("a44bca3ed952cb0fd2d73ff3684bda48304565d3eb9e8b789c6cca5c1d9254d1" "aba75724c5d4d0ec0de949694bce5ce6416c132bb031d4e7ac1c4f2dbdd3d580" "57a29645c35ae5ce1660d5987d3da5869b048477a7801ce7ab57bfb25ce12d3e" "d89e15a34261019eec9072575d8a924185c27d3da64899905f8548cbd9491a36" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "f149d9986497e8877e0bd1981d1bef8c8a6d35be7d82cba193ad7e46f0989f6a" "c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "afd761c9b0f52ac19764b99d7a4d871fc329f7392dfc6cd29710e8209c691477" default))
+   '("90a6f96a4665a6a56e36dec873a15cbedf761c51ec08dd993d6604e32dd45940" "a44bca3ed952cb0fd2d73ff3684bda48304565d3eb9e8b789c6cca5c1d9254d1" "aba75724c5d4d0ec0de949694bce5ce6416c132bb031d4e7ac1c4f2dbdd3d580" "57a29645c35ae5ce1660d5987d3da5869b048477a7801ce7ab57bfb25ce12d3e" "d89e15a34261019eec9072575d8a924185c27d3da64899905f8548cbd9491a36" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "f149d9986497e8877e0bd1981d1bef8c8a6d35be7d82cba193ad7e46f0989f6a" "c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "afd761c9b0f52ac19764b99d7a4d871fc329f7392dfc6cd29710e8209c691477" default))
  '(fci-rule-color "#f4eedb")
  '(highlight-changes-colors '("#c42475" "#5e65b6"))
  '(highlight-symbol-colors
@@ -37,8 +37,7 @@
  '(lsp-ui-doc-border "#5d737a")
  '(nrepl-message-colors
    '("#cc1f24" "#bb3e06" "#a67c00" "#4f6600" "#a8b84b" "#005797" "#11948b" "#c42475" "#5e65b6"))
- '(org-agenda-files
-   '("/home/andy/Documents/Notes/README.org" "/home/andy/Documents/Notes/acphs-daily.org" "/home/andy/Documents/Notes/acphs-ideas.org" "/home/andy/Documents/Notes/acphs-todo.org" "/home/andy/Documents/Notes/acuitas-daily.org" "/home/andy/Documents/Notes/acuitas-ideas.org" "/home/andy/Documents/Notes/acuitas-todo.org" "/home/andy/Documents/Notes/apps.org" "/home/andy/Documents/Notes/laptops.org" "/home/andy/Documents/Notes/notes.org" "/home/andy/Documents/Notes/personal-buy.org" "/home/andy/Documents/Notes/personal-daily.org" "/home/andy/Documents/Notes/personal-fun.org" "/home/andy/Documents/Notes/personal-goals.org" "/home/andy/Documents/Notes/personal-todo.org" "/home/andy/Documents/Notes/read.org" "/home/andy/Documents/Notes/recipes.org" "/home/andy/Documents/Notes/recurring.org" "/home/andy/Documents/Notes/save_me.org" "/home/andy/Documents/Notes/smba-notes.org" "/home/andy/Documents/Notes/smba-todo.org" "/home/andy/Documents/Notes/snippets.org"))
+ '(org-agenda-files nil)
  '(package-selected-packages
    '(ess yaml-mode web-mode use-package solarized-theme request-deferred python-x py-autopep8 poly-org poly-R pip-requirements persp-projectile ox-reveal org-plus-contrib ob-ipython material-theme magit leuven-theme jupyter ipython-shell-send ghub flycheck eval-in-repl emmet-mode elpy ein csv-mode counsel auctex anaconda-mode))
  '(pos-tip-background-color "#f4eedb")

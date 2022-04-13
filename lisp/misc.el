@@ -86,13 +86,15 @@
   (interactive)
   (find-file "~/dev/andy/notes/")
   (set-frame-name "Notes")
-  (load-theme 'solarized-light t))
+  ;;(load-theme 'solarized-light t)
+  )
 
 (defun open-notes ()
   (interactive)
   (find-file "~/dev/andy/notes/")
   (set-frame-name "Notes")
-  (load-theme 'material-light t))
+  ;;(load-theme 'material-light t)
+  )
 
 (defun open-downloads ()
   (interactive)

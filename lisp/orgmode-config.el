@@ -24,7 +24,7 @@
   ;;(setq org-agenda-files (list "~/Git/Notes/agenda.org"))
   (setq org-default-notes-file "~/Documents/Notes/Notes.org")
   
-  (setq org-agenda-files '("~/Documents/Notes/" "~/Documents/Notes/journal/"))
+  (setq org-agenda-files '("~/dev/andy/notes/" "~/dev/andy/notes/journal/"))
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-todo-keywords
         '((sequence "TODO(t@)" "IN PROGRESS(i@)" "|" "DONE(d@/!)")
